@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JB Immo - Conciergerie premium et gestion locative à Montpellier. Sous-location légale, Airbnb, home staging.">
+    <meta name="description" content="JB Immo - Conciergerie premium et gestion locative à Montpellier. Augmentez vos revenus locatifs.">
     <title>JB Immo - Conciergerie Premium Montpellier</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,19 +30,19 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section avec images de Montpellier -->
     <section id="accueil" class="hero">
         <div class="slider">
-            <div class="slide active" style="background-image: url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920')"></div>
-            <div class="slide" style="background-image: url('https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1920')"></div>
-            <div class="slide" style="background-image: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920')"></div>
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1590743777741-70fd9c45ad0e?w=1920&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=1920&q=80')"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">JB Immo : La conciergerie qui sécurise, optimise et sublime votre bien.</h1>
-            <p class="hero-subtitle">Une gestion locative d'excellence à Montpellier</p>
+            <h1 class="hero-title">Transformez votre bien en source de revenus optimisée</h1>
+            <p class="hero-subtitle">Conciergerie premium à Montpellier • Gestion transparente • Revenus garantis</p>
             <div class="hero-ctas">
-                <a href="#calculateur" class="cta-primary">Estimer mes revenus</a>
+                <a href="#calculateur" class="cta-primary">Calculer mon potentiel</a>
                 <a href="#contact" class="cta-secondary">Nous contacter</a>
             </div>
         </div>
@@ -51,17 +51,20 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title fade-in">Une gestion locative d'excellence</h2>
+            <h2 class="section-title fade-in">Nos Services</h2>
+            <p class="section-subtitle fade-in">Trois solutions pour maximiser la rentabilité de votre bien</p>
             
             <div class="services-grid">
                 <div class="service-card fade-in">
+                    <div class="service-icon">🏠</div>
                     <h3 class="service-title">Sous-location Légale</h3>
                     <p class="service-tagline">Plus qu'une conciergerie, votre locataire de confiance.</p>
                     <p class="service-description">Nous devenons votre locataire officiel via un bail légal. Vous recevez un loyer fixe chaque mois, quoi qu'il arrive. Zéro tracas, zéro impayé, 100% tranquillité.</p>
                 </div>
 
                 <div class="service-card fade-in">
-                    <h3 class="service-title">Conciergerie Airbnb</h3>
+                    <div class="service-icon">✨</div>
+                    <h3 class="service-title">Conciergerie Premium</h3>
                     <p class="service-tagline">Révélez le véritable potentiel de votre bien.</p>
                     <p class="service-description">Gestion A à Z : photos professionnelles, pricing dynamique, communication 7j/7, ménage et maintenance. Nous maximisons vos revenus pour vous.</p>
                     <p class="service-commission"><strong>Commission : 25% sur les revenus générés.</strong></p>
@@ -76,12 +79,12 @@
         </div>
     </section>
 
-    <!-- Calculateur Section -->
+    <!-- Calculateur Section - SANS CHECKBOXES -->
     <section id="calculateur" class="calculator">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title fade-in">Révélez le véritable potentiel de votre bien.</h2>
-                <p class="section-subtitle fade-in">Obtenez une estimation gratuite de vos revenus optimisés en 30 secondes.</p>
+                <h2 class="section-title fade-in">Estimez votre potentiel de revenus</h2>
+                <p class="section-subtitle fade-in">Calculateur gratuit • Estimation personnalisée en 30 secondes</p>
             </div>
             
             <div class="calculator-wrapper fade-in">
@@ -111,7 +114,7 @@
                         </div>
 
                         <div class="input-group">
-                            <label for="nuitsLouees">Nuits louées par mois (actuel)</label>
+                            <label for="nuitsLouees">Nuits louées par mois actuellement</label>
                             <input type="number" id="nuitsLouees" placeholder="18" min="0" max="31" required>
                         </div>
                     </div>
@@ -128,29 +131,8 @@
                         </div>
                     </div>
 
-                    <div class="optimizations">
-                        <p class="optimizations-title">Nos optimisations recommandées :</p>
-                        <div class="checkbox-row">
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="canape" checked>
-                                <label for="canape">
-                                    <span class="checkbox-label">Canapé-lit supplémentaire</span>
-                                    <span class="checkbox-benefit">+25€/nuit</span>
-                                </label>
-                            </div>
-
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="photos" checked>
-                                <label for="photos">
-                                    <span class="checkbox-label">Photos pro + Mise en scène</span>
-                                    <span class="checkbox-benefit">+12€/nuit</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
                     <button id="calculateBtn" class="cta-primary large">
-                        Calculer mon potentiel de revenus
+                        Calculer mon potentiel
                     </button>
                 </div>
 
@@ -178,7 +160,7 @@
 
             <div class="stats-grid">
                 <div class="stat-card fade-in">
-                    <div class="stat-number">+847€</div>
+                    <div class="stat-number">+259€</div>
                     <div class="stat-label">Revenus supplémentaires/mois en moyenne</div>
                 </div>
                 <div class="stat-card fade-in">
@@ -186,7 +168,7 @@
                     <div class="stat-label">Propriétaires satisfaits à Montpellier</div>
                 </div>
                 <div class="stat-card fade-in">
-                    <div class="stat-number">24j</div>
+                    <div class="stat-number">22j</div>
                     <div class="stat-label">Taux d'occupation moyen garanti</div>
                 </div>
             </div>
@@ -194,7 +176,7 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"J'ai doublé mes revenus en passant de 18 à 24 jours d'occupation par mois. JB Immo gère tout, je n'ai plus rien à faire."</p>
+                    <p class="testimonial-text">"Mes revenus ont augmenté de 18% en passant par JB Immo. La gestion est totalement transparente et professionnelle."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">M.L</div>
                         <div class="author-info">
@@ -218,7 +200,7 @@
 
                 <div class="testimonial-card fade-in">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Les photos professionnelles et le home staging ont transformé mon bien. +32€ par nuit et réservations en continu."</p>
+                    <p class="testimonial-text">"L'optimisation du bien a vraiment fait la différence. Photos professionnelles et conseils d'aménagement au top."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">S.M</div>
                         <div class="author-info">
