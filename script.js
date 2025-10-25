@@ -1,10 +1,11 @@
 // ========================================
-// JB IMMO V4 - SCRIPT.JS COMPLET
-// Slider + Menu Sticky + Calculateur CORRIGÉ + Animations
-// CORRECTION IMPORTANTE : Utilisation de "Nuits louées" au lieu de "Surface"
+// JB IMMO V5 - SCRIPT.JS COMPLET
+// Slider + Menu Sticky + Calculateur RÉALISTE + Animations
+// CALCULS RÉALISTES : +15€ canapé, +8€ photos, 22 jours
+// SANS CHECKBOXES : Optimisations appliquées automatiquement
 // ========================================
 
-// === 1. SLIDER HERO (3 images, changement toutes les 5 secondes) ===
+// === 1. SLIDER HERO (3 images de Montpellier, changement toutes les 5 secondes) ===
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
@@ -75,13 +76,11 @@ document.querySelectorAll('.fade-in').forEach(element => {
     observer.observe(element);
 });
 
-// === 5. CALCULATEUR INTELLIGENT (CORRIGÉ V4) ===
+// === 5. CALCULATEUR RÉALISTE (V5 - SANS CHECKBOXES) ===
 const quartierSelect = document.getElementById('quartier');
-const nuitsLoueesInput = document.getElementById('nuitsLouees'); // CORRECTION : remplace surfaceInput
+const nuitsLoueesInput = document.getElementById('nuitsLouees');
 const capaciteInput = document.getElementById('capacite');
 const prixNuitInput = document.getElementById('prixNuit');
-const canapeCheckbox = document.getElementById('canape');
-const photosCheckbox = document.getElementById('photos');
 const calculateBtn = document.getElementById('calculateBtn');
 const resultDiv = document.getElementById('calculatorResult');
 const resultContent = document.getElementById('resultContent');
@@ -92,11 +91,9 @@ calculateBtn.addEventListener('click', calculerPotentiel);
 function calculerPotentiel() {
     // Récupérer les valeurs
     const quartierValue = quartierSelect.value;
-    const nuitsLouees = parseInt(nuitsLoueesInput.value); // CORRECTION : récupère nuits louées
+    const nuitsLouees = parseInt(nuitsLoueesInput.value);
     const capacite = parseInt(capaciteInput.value);
     const prixNuit = parseFloat(prixNuitInput.value);
-    const ajouterCanape = canapeCheckbox.checked;
-    const ajouterPhotos = photosCheckbox.checked;
 
     // Validation des champs
     if (!quartierValue) {
@@ -105,7 +102,6 @@ function calculerPotentiel() {
         return;
     }
 
-    // CORRECTION : Validation pour nuitsLouees au lieu de surface
     if (!nuitsLouees || nuitsLouees < 0 || nuitsLouees > 31) {
         alert('⚠️ Veuillez entrer un nombre de nuits valide (0-31)');
         nuitsLoueesInput.focus();
@@ -140,30 +136,25 @@ function calculerPotentiel() {
         return;
     }
 
-    // TIER 1 & TIER 2 : Calcul automatique
+    // TIER 1 & TIER 2 : Calcul automatique avec optimisations RÉALISTES
     if (quartierValue === 'tier1' || quartierValue === 'tier2') {
         // === CALCULS AVANT OPTIMISATION ===
-        // CORRECTION CRUCIALE : On utilise la saisie personnalisée du proprio !
-        const joursAvant = nuitsLouees; // On utilise la valeur saisie par l'utilisateur
+        const joursAvant = nuitsLouees; // Valeur saisie par le proprio
         const revenuBrutAvant = prixNuit * joursAvant;
         const commissionAvant = 0; // Pas de commission (gestion perso)
         const revenuNetAvant = revenuBrutAvant - commissionAvant;
 
-        // === CALCULS APRÈS OPTIMISATION ===
+        // === CALCULS APRÈS OPTIMISATION (RÉALISTES V5) ===
         let prixNuitApres = prixNuit;
 
-        // Levier 1 : Canapé-lit (+2 places) = +25€/nuit
-        if (ajouterCanape) {
-            prixNuitApres += 25;
-        }
+        // OPTIMISATION 1 : Canapé-lit (+2 places) = +15€/nuit (RÉALISTE)
+        prixNuitApres += 15;
 
-        // Levier 2 : Photos professionnelles + Mise en scène = +12€/nuit
-        if (ajouterPhotos) {
-            prixNuitApres += 12;
-        }
+        // OPTIMISATION 2 : Photos professionnelles + Mise en scène = +8€/nuit (RÉALISTE)
+        prixNuitApres += 8;
 
-        // Levier 3 : Pricing dynamique + Réactivité JB Immo = 24 jours d'occupation garantis
-        const joursApres = 24;
+        // OPTIMISATION 3 : Pricing dynamique + Réactivité JB Immo = 22 jours d'occupation (RÉALISTE)
+        const joursApres = 22;
 
         // Revenu brut APRÈS optimisation
         const revenuBrutApres = prixNuitApres * joursApres;
@@ -183,8 +174,8 @@ function calculerPotentiel() {
             <div class="result-table">
                 <div class="result-row">
                     <div class="result-label"></div>
-                    <div class="result-label" style="text-align: center; font-weight: 700; color: #999;">AVANT</div>
-                    <div class="result-label" style="text-align: center; font-weight: 700; color: var(--marron-terre);">APRÈS JB IMMO</div>
+                    <div class="result-label" style="text-align: center; font-weight: 700; color: var(--gris-text);">AVANT</div>
+                    <div class="result-label" style="text-align: center; font-weight: 700; color: var(--bleu-electrique);">AVEC JB IMMO</div>
                 </div>
 
                 <div class="result-row">
@@ -208,7 +199,7 @@ function calculerPotentiel() {
                 <div class="result-row">
                     <div class="result-label">Commission</div>
                     <div class="result-value before">${commissionAvant.toFixed(0)} €</div>
-                    <div class="result-value after">${commissionApres.toFixed(0)} € (Notre commission de 25%)</div>
+                    <div class="result-value after">${commissionApres.toFixed(0)} € (25%)</div>
                 </div>
 
                 <div class="result-row">
@@ -219,9 +210,9 @@ function calculerPotentiel() {
             </div>
 
             <div class="result-gain">
-                <h3>VOTRE GAIN NET AVEC JB IMMO</h3>
+                <h3>VOTRE GAIN NET</h3>
                 <div class="gain-amount">+${gainNet.toFixed(0)} €/mois</div>
-                <p>Soit <strong>+${gainAnnuel.toFixed(0)} € par an</strong></p>
+                <p>Soit <strong>+${gainAnnuel.toFixed(0)} € par an</strong> avec JB Immo</p>
             </div>
         `;
 
@@ -242,7 +233,6 @@ quartierSelect.addEventListener('change', () => {
 });
 
 // === 7. VALIDATION DES INPUTS (Nombres positifs uniquement) ===
-// CORRECTION : nuitsLoueesInput au lieu de surfaceInput
 [nuitsLoueesInput, capaciteInput, prixNuitInput].forEach(input => {
     input.addEventListener('input', (e) => {
         // Empêcher les valeurs négatives
@@ -253,7 +243,9 @@ quartierSelect.addEventListener('change', () => {
 });
 
 // === 8. INITIALISATION & LOG ===
-console.log('✅ JB Immo V4 - Script chargé avec succès');
-console.log('🎨 Palette Airbnb Premium appliquée');
-console.log('📊 Calculateur CORRIGÉ : utilise "Nuits louées" personnalisées');
-console.log('🔥 Site prêt pour Vercel !');
+console.log('✅ JB Immo V5 - Script chargé avec succès');
+console.log('🎨 Design moderne 2025 activé');
+console.log('📊 Calculateur RÉALISTE : +15€ canapé, +8€ photos, 22 jours');
+console.log('🚫 Checkboxes supprimées - Calcul automatique');
+console.log('🖼️ Images de Montpellier chargées');
+console.log('🔥 Site V5 prêt pour Vercel !');
