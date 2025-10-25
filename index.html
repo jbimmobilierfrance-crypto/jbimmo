@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JB Immo - Gagnez +847€/mois avec votre bien à Montpellier. Conciergerie premium, sous-location légale.">
-    <title>JB Immo - Gagnez +847€/mois avec votre bien | Montpellier</title>
+    <meta name="description" content="JB Immo - Conciergerie premium et gestion locative à Montpellier. Sous-location légale, Airbnb, home staging.">
+    <title>JB Immo - Conciergerie Premium Montpellier</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,6 +21,7 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#calculateur">Simulateur</a></li>
                 <li><a href="#temoignages">Témoignages</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -38,14 +39,39 @@
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-badge">Conciergerie Premium Montpellier</div>
-            <div class="hero-gain">+847€</div>
-            <div class="hero-gain-label">par mois en moyenne</div>
-            <h1 class="hero-title">Transformez votre bien en machine à revenus</h1>
-            <p class="hero-subtitle">Gestion locative optimisée • Légal • Garanti • Sans effort</p>
+            <h1 class="hero-title">JB Immo : La conciergerie qui sécurise, optimise et sublime votre bien.</h1>
+            <p class="hero-subtitle">Une gestion locative d'excellence à Montpellier</p>
             <div class="hero-ctas">
-                <a href="#calculateur" class="cta-primary">Calculer mon potentiel</a>
+                <a href="#calculateur" class="cta-primary">Estimer mes revenus</a>
                 <a href="#contact" class="cta-secondary">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title fade-in">Une gestion locative d'excellence</h2>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <h3 class="service-title">Sous-location Légale</h3>
+                    <p class="service-tagline">Plus qu'une conciergerie, votre locataire de confiance.</p>
+                    <p class="service-description">Nous devenons votre locataire officiel via un bail légal. Vous recevez un loyer fixe chaque mois, quoi qu'il arrive. Zéro tracas, zéro impayé, 100% tranquillité.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <h3 class="service-title">Conciergerie Airbnb</h3>
+                    <p class="service-tagline">Révélez le véritable potentiel de votre bien.</p>
+                    <p class="service-description">Gestion A à Z : photos professionnelles, pricing dynamique, communication 7j/7, ménage et maintenance. Nous maximisons vos revenus pour vous.</p>
+                    <p class="service-commission"><strong>Commission : 25% sur les revenus générés.</strong></p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <h3 class="service-title">Home Staging & Décoration</h3>
+                    <p class="service-tagline">L'art de sublimer et rentabiliser votre bien.</p>
+                    <p class="service-description">De l'optimisation de l'espace à la mise en scène "lifestyle" pour les photos, nous transformons votre bien pour déclencher le coup de cœur et justifier un prix plus élevé.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -54,12 +80,11 @@
     <section id="calculateur" class="calculator">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Simulateur gratuit</span>
-                <h2 class="section-title">Découvrez le vrai potentiel de votre bien</h2>
-                <p class="section-subtitle">Estimation personnalisée en 30 secondes • 100% gratuit • Sans engagement</p>
+                <h2 class="section-title fade-in">Révélez le véritable potentiel de votre bien.</h2>
+                <p class="section-subtitle fade-in">Obtenez une estimation gratuite de vos revenus optimisés en 30 secondes.</p>
             </div>
             
-            <div class="calculator-wrapper">
+            <div class="calculator-wrapper fade-in">
                 <div class="calculator-inputs">
                     <div class="input-row">
                         <div class="input-group">
@@ -86,8 +111,8 @@
                         </div>
 
                         <div class="input-group">
-                            <label for="surface">Surface (m²)</label>
-                            <input type="number" id="surface" placeholder="55" min="15" max="200" required>
+                            <label for="nuitsLouees">Nuits louées par mois (actuel)</label>
+                            <input type="number" id="nuitsLouees" placeholder="18" min="0" max="31" required>
                         </div>
                     </div>
 
@@ -147,27 +172,27 @@
     <section id="temoignages" class="testimonials">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Ils nous font confiance</span>
-                <h2 class="section-title">15 propriétaires ont déjà augmenté leurs revenus</h2>
+                <h2 class="section-title fade-in">Ils nous font confiance</h2>
+                <p class="section-subtitle fade-in">15 propriétaires ont déjà augmenté leurs revenus</p>
             </div>
 
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card fade-in">
                     <div class="stat-number">+847€</div>
                     <div class="stat-label">Revenus supplémentaires/mois en moyenne</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card fade-in">
                     <div class="stat-number">15</div>
                     <div class="stat-label">Propriétaires satisfaits à Montpellier</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card fade-in">
                     <div class="stat-number">24j</div>
                     <div class="stat-label">Taux d'occupation moyen garanti</div>
                 </div>
             </div>
 
             <div class="testimonials-grid">
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"J'ai doublé mes revenus en passant de 18 à 24 jours d'occupation par mois. JB Immo gère tout, je n'ai plus rien à faire."</p>
                     <div class="testimonial-author">
@@ -179,7 +204,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"Loyer fixe garanti chaque mois, zéro tracas. Exactement ce que je cherchais pour mon bien que je n'utilisais pas."</p>
                     <div class="testimonial-author">
@@ -191,7 +216,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"Les photos professionnelles et le home staging ont transformé mon bien. +32€ par nuit et réservations en continu."</p>
                     <div class="testimonial-author">
@@ -210,38 +235,38 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Parlons de votre projet</span>
-                <h2 class="section-title">Réponse garantie sous 24h</h2>
+                <h2 class="section-title fade-in">Contactez-nous</h2>
+                <p class="section-subtitle fade-in">Réponse garantie sous 24h</p>
             </div>
             
             <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="contact-card">
+                    <div class="contact-card fade-in">
                         <div class="contact-icon">📧</div>
                         <h3>Email</h3>
                         <a href="mailto:jbimmobilier.france@gmail.com">jbimmobilier.france@gmail.com</a>
                     </div>
 
-                    <div class="contact-card">
+                    <div class="contact-card fade-in">
                         <div class="contact-icon">📱</div>
                         <h3>Téléphone</h3>
                         <a href="tel:+33658797037">06 58 79 70 37</a>
                     </div>
 
-                    <div class="contact-card">
+                    <div class="contact-card fade-in">
                         <div class="contact-icon">📍</div>
                         <h3>Zone d'intervention</h3>
                         <p>Montpellier & Agglomération</p>
                     </div>
 
-                    <div class="contact-card">
+                    <div class="contact-card fade-in">
                         <div class="contact-icon">🏢</div>
                         <h3>Adresse</h3>
                         <p>70, allée Kléber<br>34000 Montpellier</p>
                     </div>
                 </div>
 
-                <div class="contact-form-wrapper">
+                <div class="contact-form-wrapper fade-in">
                     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                         <input type="hidden" name="form-name" value="contact">
                         <p class="hidden">
