@@ -1,6 +1,7 @@
 // ========================================
-// JB IMMO V1.2 - SCRIPT.JS COMPLET
-// Slider + Menu Sticky + Calculateur + Animations
+// JB IMMO V4 - SCRIPT.JS COMPLET
+// Slider + Menu Sticky + Calculateur CORRIGÉ + Animations
+// CORRECTION IMPORTANTE : Utilisation de "Nuits louées" au lieu de "Surface"
 // ========================================
 
 // === 1. SLIDER HERO (3 images, changement toutes les 5 secondes) ===
@@ -74,9 +75,9 @@ document.querySelectorAll('.fade-in').forEach(element => {
     observer.observe(element);
 });
 
-// === 5. CALCULATEUR INTELLIGENT ===
+// === 5. CALCULATEUR INTELLIGENT (CORRIGÉ V4) ===
 const quartierSelect = document.getElementById('quartier');
-const surfaceInput = document.getElementById('surface');
+const nuitsLoueesInput = document.getElementById('nuitsLouees'); // CORRECTION : remplace surfaceInput
 const capaciteInput = document.getElementById('capacite');
 const prixNuitInput = document.getElementById('prixNuit');
 const canapeCheckbox = document.getElementById('canape');
@@ -91,7 +92,7 @@ calculateBtn.addEventListener('click', calculerPotentiel);
 function calculerPotentiel() {
     // Récupérer les valeurs
     const quartierValue = quartierSelect.value;
-    const surface = parseFloat(surfaceInput.value);
+    const nuitsLouees = parseInt(nuitsLoueesInput.value); // CORRECTION : récupère nuits louées
     const capacite = parseInt(capaciteInput.value);
     const prixNuit = parseFloat(prixNuitInput.value);
     const ajouterCanape = canapeCheckbox.checked;
@@ -104,9 +105,10 @@ function calculerPotentiel() {
         return;
     }
 
-    if (!surface || surface < 15 || surface > 200) {
-        alert('⚠️ Veuillez entrer une surface valide (15-200 m²)');
-        surfaceInput.focus();
+    // CORRECTION : Validation pour nuitsLouees au lieu de surface
+    if (!nuitsLouees || nuitsLouees < 0 || nuitsLouees > 31) {
+        alert('⚠️ Veuillez entrer un nombre de nuits valide (0-31)');
+        nuitsLoueesInput.focus();
         return;
     }
 
@@ -141,7 +143,8 @@ function calculerPotentiel() {
     // TIER 1 & TIER 2 : Calcul automatique
     if (quartierValue === 'tier1' || quartierValue === 'tier2') {
         // === CALCULS AVANT OPTIMISATION ===
-        const joursAvant = 18; // Taux d'occupation moyen sans optimisation
+        // CORRECTION CRUCIALE : On utilise la saisie personnalisée du proprio !
+        const joursAvant = nuitsLouees; // On utilise la valeur saisie par l'utilisateur
         const revenuBrutAvant = prixNuit * joursAvant;
         const commissionAvant = 0; // Pas de commission (gestion perso)
         const revenuNetAvant = revenuBrutAvant - commissionAvant;
@@ -181,7 +184,7 @@ function calculerPotentiel() {
                 <div class="result-row">
                     <div class="result-label"></div>
                     <div class="result-label" style="text-align: center; font-weight: 700; color: #999;">AVANT</div>
-                    <div class="result-label" style="text-align: center; font-weight: 700; color: #1a1a1a;">APRÈS JB IMMO</div>
+                    <div class="result-label" style="text-align: center; font-weight: 700; color: var(--marron-terre);">APRÈS JB IMMO</div>
                 </div>
 
                 <div class="result-row">
@@ -205,7 +208,7 @@ function calculerPotentiel() {
                 <div class="result-row">
                     <div class="result-label">Commission</div>
                     <div class="result-value before">${commissionAvant.toFixed(0)} €</div>
-                    <div class="result-value after">${commissionApres.toFixed(0)} € (25%)</div>
+                    <div class="result-value after">${commissionApres.toFixed(0)} € (Notre commission de 25%)</div>
                 </div>
 
                 <div class="result-row">
@@ -239,7 +242,8 @@ quartierSelect.addEventListener('change', () => {
 });
 
 // === 7. VALIDATION DES INPUTS (Nombres positifs uniquement) ===
-[surfaceInput, capaciteInput, prixNuitInput].forEach(input => {
+// CORRECTION : nuitsLoueesInput au lieu de surfaceInput
+[nuitsLoueesInput, capaciteInput, prixNuitInput].forEach(input => {
     input.addEventListener('input', (e) => {
         // Empêcher les valeurs négatives
         if (e.target.value < 0) {
@@ -249,7 +253,7 @@ quartierSelect.addEventListener('change', () => {
 });
 
 // === 8. INITIALISATION & LOG ===
-console.log('✅ JB Immo V1.2 - Script chargé avec succès');
-console.log('📊 Calculateur intelligent prêt');
-console.log('🎨 Animations activées');
-console.log('📱 Responsive activé');
+console.log('✅ JB Immo V4 - Script chargé avec succès');
+console.log('🎨 Palette Airbnb Premium appliquée');
+console.log('📊 Calculateur CORRIGÉ : utilise "Nuits louées" personnalisées');
+console.log('🔥 Site prêt pour Vercel !');
