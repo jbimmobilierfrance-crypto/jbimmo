@@ -1,9 +1,22 @@
 /* ========================================
-   JB IMMO V1.2 - STYLE.CSS PARTIE 1/2
-   Reset + Base + Navigation + Hero + Calculateur
-   Typographie moderne : Montserrat + Inter
-   Pas de filtre rouge sur les images
+   JB IMMO V4 - STYLE.CSS PARTIE 1/2
+   Palette Airbnb Premium : Beige/Marron/Gris chaleureux
+   Polices : Playfair Display + Lato
+   Reset + Base + Navigation + Hero + Services + Calculateur
    ======================================== */
+
+/* === IMPORT GOOGLE FONTS === */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap');
+
+/* === PALETTE AIRBNB PREMIUM === */
+:root {
+    --beige-light: #F7F5F2;
+    --beige-medium: #E8E3DC;
+    --marron-terre: #8B7355;
+    --gris-chaud: #4A4A4A;
+    --noir-doux: #2C2C2C;
+    --blanc: #FFFFFF;
+}
 
 /* === RESET & BASE === */
 * {
@@ -17,9 +30,9 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: #1a1a1a;
-    background-color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    color: var(--gris-chaud);
+    background-color: var(--beige-light);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -31,9 +44,9 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--noir-doux);
 }
 
 a {
@@ -71,9 +84,9 @@ a {
 }
 
 .logo h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 1px;
     color: #fff;
     margin: 0;
@@ -81,7 +94,7 @@ a {
 }
 
 .logo span {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 2px;
@@ -91,11 +104,11 @@ a {
 }
 
 #navbar.scrolled .logo h1 {
-    color: #1a1a1a;
+    color: var(--noir-doux);
 }
 
 #navbar.scrolled .logo span {
-    color: #666;
+    color: var(--gris-chaud);
 }
 
 .nav-menu {
@@ -129,16 +142,16 @@ a {
 }
 
 #navbar.scrolled .nav-menu a {
-    color: #1a1a1a;
+    color: var(--noir-doux);
 }
 
 #navbar.scrolled .nav-menu a::after {
-    background: #1a1a1a;
+    background: var(--marron-terre);
 }
 
 .nav-cta {
     background: #fff;
-    color: #1a1a1a;
+    color: var(--noir-doux);
     padding: 12px 28px;
     border-radius: 30px;
     font-size: 14px;
@@ -152,7 +165,7 @@ a {
 }
 
 #navbar.scrolled .nav-cta {
-    background: #1a1a1a;
+    background: var(--marron-terre);
     color: #fff;
 }
 
@@ -197,7 +210,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25));
 }
 
 .hero-content {
@@ -209,49 +222,21 @@ a {
     padding: 0 30px;
 }
 
-.hero-badge {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    padding: 10px 24px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.hero-gain {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 96px;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 10px;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.hero-gain-label {
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 35px;
-    opacity: 0.95;
-}
-
 .hero-title {
+    font-family: 'Playfair Display', serif;
     font-size: 48px;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.3;
     margin-bottom: 25px;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
     margin-bottom: 45px;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 .hero-ctas {
@@ -263,19 +248,20 @@ a {
 
 .cta-primary {
     display: inline-block;
-    background: #1a1a1a;
+    background: var(--marron-terre);
     color: #fff;
     padding: 18px 40px;
     font-size: 16px;
     font-weight: 600;
     border-radius: 30px;
     transition: all 0.3s ease;
-    border: 2px solid #1a1a1a;
+    border: 2px solid var(--marron-terre);
 }
 
 .cta-primary:hover {
+    background: #755f46;
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 30px rgba(139, 115, 85, 0.3);
 }
 
 .cta-primary.large {
@@ -300,7 +286,74 @@ a {
 
 .cta-secondary:hover {
     background: #fff;
-    color: #1a1a1a;
+    color: var(--noir-doux);
+}
+
+/* === SERVICES SECTION === */
+.services {
+    padding: 100px 0;
+    background: var(--beige-light);
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--noir-doux);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background: var(--blanc);
+    padding: 45px 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    border-top: 4px solid var(--marron-terre);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px rgba(139, 115, 85, 0.15);
+}
+
+.service-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--marron-terre);
+    margin-bottom: 15px;
+}
+
+.service-tagline {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--noir-doux);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.service-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--gris-chaud);
+    margin-bottom: 20px;
+}
+
+.service-commission {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--marron-terre);
+    padding: 10px 15px;
+    background: var(--beige-medium);
+    border-radius: 6px;
+    display: inline-block;
 }
 
 /* === SECTION HEADER === */
@@ -309,46 +362,26 @@ a {
     margin-bottom: 70px;
 }
 
-.section-badge {
-    display: inline-block;
-    background: #f5f5f5;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.section-title {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #1a1a1a;
-}
-
 .section-subtitle {
     font-size: 18px;
-    color: #666;
+    color: var(--gris-chaud);
     max-width: 700px;
     margin: 0 auto;
 }
 
 /* === CALCULATEUR SECTION === */
 .calculator {
-    padding: 120px 0;
-    background: #fafafa;
+    padding: 100px 0;
+    background: var(--blanc);
 }
 
 .calculator-wrapper {
     max-width: 900px;
     margin: 0 auto;
-    background: #fff;
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.06);
+    background: var(--beige-medium);
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 .calculator-inputs {
@@ -371,7 +404,7 @@ a {
 .input-group label {
     font-size: 14px;
     font-weight: 600;
-    color: #1a1a1a;
+    color: var(--noir-doux);
     margin-bottom: 10px;
 }
 
@@ -379,23 +412,23 @@ a {
 .input-group select {
     padding: 16px 20px;
     font-size: 16px;
-    border: 2px solid #e5e5e5;
+    border: 2px solid #ddd;
     border-radius: 12px;
-    background: #fff;
-    color: #1a1a1a;
+    background: var(--blanc);
+    color: var(--noir-doux);
     transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 .input-group input:focus,
 .input-group select:focus {
     outline: none;
-    border-color: #1a1a1a;
-    box-shadow: 0 0 0 4px rgba(26, 26, 26, 0.05);
+    border-color: var(--marron-terre);
+    box-shadow: 0 0 0 4px rgba(139, 115, 85, 0.1);
 }
 
 .optimizations {
-    background: #fafafa;
+    background: var(--blanc);
     padding: 25px;
     border-radius: 12px;
     margin-top: 10px;
@@ -404,7 +437,7 @@ a {
 .optimizations-title {
     font-size: 15px;
     font-weight: 600;
-    color: #1a1a1a;
+    color: var(--noir-doux);
     margin-bottom: 15px;
 }
 
@@ -424,7 +457,7 @@ a {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    accent-color: #1a1a1a;
+    accent-color: var(--marron-terre);
     margin-top: 2px;
 }
 
@@ -438,19 +471,19 @@ a {
 .checkbox-label {
     font-size: 14px;
     font-weight: 500;
-    color: #1a1a1a;
+    color: var(--noir-doux);
 }
 
 .checkbox-benefit {
     font-size: 13px;
     font-weight: 600;
-    color: #666;
+    color: var(--marron-terre);
 }
 
 .calculator-result {
     margin-top: 40px;
     padding: 40px;
-    background: #fafafa;
+    background: var(--blanc);
     border-radius: 16px;
 }
 
@@ -473,7 +506,7 @@ a {
 
 .result-label {
     font-size: 15px;
-    color: #1a1a1a;
+    color: var(--noir-doux);
     font-weight: 500;
 }
 
@@ -488,47 +521,48 @@ a {
 }
 
 .result-value.after {
-    color: #1a1a1a;
+    color: var(--marron-terre);
 }
 
 .result-gain {
     text-align: center;
     padding: 40px;
-    background: linear-gradient(135deg, #1a1a1a, #333);
+    background: linear-gradient(135deg, var(--marron-terre), #755f46);
     color: #fff;
     border-radius: 16px;
     margin-top: 20px;
 }
 
 .result-gain h3 {
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 15px;
     color: #fff;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 .result-gain .gain-amount {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 56px;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .result-gain p {
     font-size: 15px;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 .audit-message {
     margin-top: 40px;
     padding: 50px 40px;
-    background: #fff;
+    background: var(--blanc);
     border-radius: 16px;
     text-align: center;
-    border: 2px solid #f0f0f0;
+    border: 2px solid var(--beige-medium);
 }
 
 .audit-icon {
@@ -538,28 +572,29 @@ a {
 
 .audit-message h3 {
     font-size: 28px;
-    color: #1a1a1a;
+    color: var(--noir-doux);
     margin-bottom: 15px;
 }
 
 .audit-message p {
     font-size: 16px;
-    color: #666;
+    color: var(--gris-chaud);
     margin-bottom: 30px;
     line-height: 1.7;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
+
 /* ========================================
-   JB IMMO V1.2 - STYLE.CSS PARTIE 2/2
+   JB IMMO V4 - STYLE.CSS PARTIE 2/2
    Témoignages + Contact + Footer + Animations + Responsive
    ======================================== */
 
 /* === TÉMOIGNAGES SECTION === */
 .testimonials {
-    padding: 120px 0;
-    background: #fff;
+    padding: 100px 0;
+    background: var(--beige-light);
 }
 
 .stats-grid {
@@ -572,27 +607,28 @@ a {
 .stat-card {
     text-align: center;
     padding: 40px 30px;
-    background: #fafafa;
+    background: var(--blanc);
     border-radius: 16px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .stat-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(139, 115, 85, 0.12);
 }
 
 .stat-number {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 48px;
-    font-weight: 800;
-    color: #1a1a1a;
+    font-weight: 700;
+    color: var(--marron-terre);
     margin-bottom: 10px;
 }
 
 .stat-label {
     font-size: 15px;
-    color: #666;
+    color: var(--gris-chaud);
     line-height: 1.5;
 }
 
@@ -603,20 +639,21 @@ a {
 }
 
 .testimonial-card {
-    background: #fafafa;
+    background: var(--blanc);
     padding: 35px;
     border-radius: 16px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .testimonial-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(139, 115, 85, 0.12);
 }
 
 .testimonial-stars {
     font-size: 18px;
-    color: #ffd700;
+    color: #f5a623;
     margin-bottom: 20px;
     letter-spacing: 2px;
 }
@@ -624,7 +661,7 @@ a {
 .testimonial-text {
     font-size: 15px;
     line-height: 1.7;
-    color: #1a1a1a;
+    color: var(--gris-chaud);
     margin-bottom: 25px;
 }
 
@@ -638,7 +675,7 @@ a {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #1a1a1a;
+    background: var(--marron-terre);
     color: #fff;
     display: flex;
     align-items: center;
@@ -653,19 +690,19 @@ a {
 
 .author-name {
     font-weight: 600;
-    color: #1a1a1a;
+    color: var(--noir-doux);
     margin-bottom: 3px;
 }
 
 .author-location {
     font-size: 13px;
-    color: #666;
+    color: var(--gris-chaud);
 }
 
 /* === CONTACT SECTION === */
 .contact {
-    padding: 120px 0;
-    background: #fafafa;
+    padding: 100px 0;
+    background: var(--blanc);
 }
 
 .contact-grid {
@@ -681,7 +718,7 @@ a {
 }
 
 .contact-card {
-    background: #fff;
+    background: var(--beige-medium);
     padding: 25px;
     border-radius: 12px;
     transition: all 0.3s ease;
@@ -689,7 +726,7 @@ a {
 
 .contact-card:hover {
     transform: translateX(5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 5px 20px rgba(139, 115, 85, 0.1);
 }
 
 .contact-icon {
@@ -698,33 +735,34 @@ a {
 }
 
 .contact-card h3 {
+    font-family: 'Playfair Display', serif;
     font-size: 16px;
-    font-weight: 600;
-    color: #1a1a1a;
+    font-weight: 700;
+    color: var(--noir-doux);
     margin-bottom: 8px;
 }
 
 .contact-card a {
-    color: #666;
+    color: var(--marron-terre);
     transition: color 0.3s ease;
     font-size: 15px;
+    font-weight: 500;
 }
 
 .contact-card a:hover {
-    color: #1a1a1a;
+    color: #755f46;
 }
 
 .contact-card p {
     font-size: 15px;
-    color: #666;
+    color: var(--gris-chaud);
     line-height: 1.6;
 }
 
 .contact-form-wrapper {
-    background: #fff;
+    background: var(--beige-medium);
     padding: 45px;
     border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
 }
 
 .form-group {
@@ -741,7 +779,7 @@ a {
     display: block;
     font-size: 14px;
     font-weight: 600;
-    color: #1a1a1a;
+    color: var(--noir-doux);
     margin-bottom: 10px;
 }
 
@@ -750,19 +788,19 @@ a {
     width: 100%;
     padding: 16px 20px;
     font-size: 16px;
-    border: 2px solid #e5e5e5;
+    border: 2px solid #ddd;
     border-radius: 12px;
-    background: #fff;
-    color: #1a1a1a;
+    background: var(--blanc);
+    color: var(--noir-doux);
     transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #1a1a1a;
-    box-shadow: 0 0 0 4px rgba(26, 26, 26, 0.05);
+    border-color: var(--marron-terre);
+    box-shadow: 0 0 0 4px rgba(139, 115, 85, 0.1);
 }
 
 .form-group textarea {
@@ -772,7 +810,7 @@ a {
 
 /* === FOOTER === */
 .footer {
-    background: #1a1a1a;
+    background: var(--noir-doux);
     color: #fff;
     padding: 50px 0;
 }
@@ -784,9 +822,9 @@ a {
 }
 
 .footer-brand h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 700;
     color: #fff;
     margin-bottom: 8px;
 }
@@ -824,10 +862,6 @@ a {
         gap: 30px;
     }
 
-    .hero-gain {
-        font-size: 72px;
-    }
-
     .hero-title {
         font-size: 40px;
     }
@@ -861,19 +895,6 @@ a {
         min-height: 600px;
     }
 
-    .hero-badge {
-        font-size: 11px;
-        padding: 8px 18px;
-    }
-
-    .hero-gain {
-        font-size: 64px;
-    }
-
-    .hero-gain-label {
-        font-size: 16px;
-    }
-
     .hero-title {
         font-size: 32px;
     }
@@ -902,10 +923,15 @@ a {
         font-size: 16px;
     }
 
+    .services,
     .calculator,
     .testimonials,
     .contact {
-        padding: 80px 0;
+        padding: 70px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 
     .calculator-wrapper {
@@ -972,10 +998,6 @@ a {
 @media (max-width: 480px) {
     .logo h1 {
         font-size: 20px;
-    }
-
-    .hero-gain {
-        font-size: 52px;
     }
 
     .hero-title {
