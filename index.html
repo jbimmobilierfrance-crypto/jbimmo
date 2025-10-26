@@ -110,37 +110,62 @@
                 <p>Découvrez le potentiel réel de votre bien avec notre estimation personnalisée</p>
             </div>
             <div class="calc-box">
-                <div class="calc-inputs">
-                    <div class="input-group">
-                        <label for="quartier">Quartier</label>
-                        <select id="quartier">
-                            <option value="70">Centre historique (70€/nuit)</option>
-                            <option value="65">Antigone (65€/nuit)</option>
-                            <option value="60">Port Marianne (60€/nuit)</option>
-                            <option value="55">Autres quartiers (55€/nuit)</option>
-                        </select>
+                <form id="form-calculateur">
+                    <div class="calc-inputs">
+                        
+                        <div class="input-group full-width">
+                            <label for="quartier">Quartier de votre bien</label>
+                            <select id="quartier" required>
+                                <option value="" disabled selected>Sélectionnez votre quartier</option>
+                                <optgroup label="🏆 Zone Or (Tier 1)">
+                                    <option value="tier1">Comédie / Gare / Écusson</option>
+                                    <option value="tier1">Le Corum</option>
+                                    <option value="tier1">Les Arceaux / Clemenceau</option>
+                                    <option value="tier1">Antigone / Rives-du-Lez</option>
+                                    <option value="tier1">Port-Marianne</option>
+                                </optgroup>
+                                <optgroup label="🥈 Zone Argent (Tier 2)">
+                                    <option value="tier2">Beaux-Arts</option>
+                                    <option value="tier2">Près-d'Arènes / Aiguerelles</option>
+                                    <option value="tier2">Ovalie</option>
+                                    <option value="tier2">Millénaire / Odysseum</option>
+                                </optgroup>
+                                <optgroup label="📋 Autre">
+                                    <option value="tier3">Autre quartier (audit personnalisé)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="nuitsLouees">Nuits louées par mois actuellement</label>
+                            <input type="number" id="nuitsLouees" placeholder="18" min="0" max="31" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="capacite">Capacité d'accueil (personnes)</label>
+                            <input type="number" id="capacite" placeholder="4" min="1" max="12" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="prixNuit">Prix moyen par nuit actuel (€)</label>
+                            <input type="number" id="prixNuit" placeholder="65" min="30" max="300" required>
+                        </div>
+
                     </div>
-                    <div class="input-group">
-                        <label for="nuitsLouees">Nuits louées par mois actuellement</label>
-                        <input type="number" id="nuitsLouees" placeholder="18" min="0" max="31" value="18">
-                    </div>
-                    <div class="input-group">
-                        <label for="capacite">Capacité d'accueil</label>
-                        <select id="capacite">
-                            <option value="2">2 personnes</option>
-                            <option value="4">4 personnes</option>
-                            <option value="6">6 personnes</option>
-                            <option value="8">8+ personnes</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label for="prixNuit">Prix moyen par nuit actuel</label>
-                        <input type="number" id="prixNuit" placeholder="65" min="30" max="200" value="65">
-                    </div>
+                    
+                    <button type="button" class="btn-calculate" onclick="calculer()">Calculer mon potentiel</button>
+                </form>
+                
+                <!-- Message pour Tier 3 (Autre quartier) -->
+                <div id="messageAudit" class="audit-message" style="display: none;">
+                    <div class="audit-icon">📋</div>
+                    <h3>Audit Personnalisé Requis</h3>
+                    <p>Votre quartier nécessite une analyse approfondie pour estimer précisément le potentiel de votre bien.</p>
+                    <p><strong>Nous vous proposons un audit gratuit sous 48h.</strong></p>
+                    <a href="#contact" class="btn-audit">Demander mon audit gratuit</a>
                 </div>
-                
-                <button class="btn-calculate" onclick="calculer()">Calculer mon potentiel</button>
-                
+
+                <!-- Résultats du calculateur (pour Tier 1 & 2) -->
                 <div id="resultats" class="calc-results" style="display: none;">
                     <div class="result-row">
                         <div class="result-col">
@@ -149,15 +174,30 @@
                             <span class="result-sub" id="detailAvant"></span>
                         </div>
                         <div class="result-col highlight">
-                            <span class="result-label">Avec JB Immo</span>
+                            <span class="result-label">Avec JB Immo (Revenu Net)</span>
                             <span class="result-value green" id="revenuApres">0€</span>
                             <span class="result-sub" id="detailApres"></span>
                         </div>
                     </div>
                     <div class="result-gain">
-                        <span class="gain-label">Gain mensuel estimé</span>
+                        <span class="gain-label">Gain net mensuel estimé</span>
                         <span class="gain-value" id="gain">+0€</span>
                         <span class="gain-percent" id="pourcentage">0%</span>
+                    </div>
+                    <div class="result-breakdown">
+                        <h4>Détail de l'optimisation :</h4>
+                        <div class="breakdown-item">
+                            <span>Revenu brut optimisé</span>
+                            <span id="revenuBrut">0€</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Commission JB Immo (25%)</span>
+                            <span id="commission">-0€</span>
+                        </div>
+                        <div class="breakdown-item total">
+                            <span>Votre revenu net final</span>
+                            <span id="revenuNetFinal">0€</span>
+                        </div>
                     </div>
                     <p class="calc-note">*Estimation basée sur notre expérience moyenne à Montpellier. Résultats réels variables selon le bien.</p>
                 </div>
