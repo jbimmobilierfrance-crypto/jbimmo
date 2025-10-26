@@ -1,6 +1,7 @@
 /* =================================
-   V6 - MINIMALISTE TECH PREMIUM
+   V6 FINAL - MINIMALISTE TECH PREMIUM
    Palette: Noir / Blanc / Gris
+   PARTIE 1/2
    ================================= */
 
 * {
@@ -17,6 +18,7 @@
     --blanc: #FFFFFF;
     --blanc-casse: #FAFAFA;
     --accent: #2A2A2A;
+    --vert: #4ADE80;
 }
 
 body {
@@ -349,7 +351,10 @@ section {
 
 .service-features li:last-child {
     border-bottom: none;
-}
+}/* =================================
+   V6 FINAL - MINIMALISTE TECH PREMIUM
+   PARTIE 2/2
+   ================================= */
 
 /* CALCULATEUR */
 .calculator {
@@ -377,6 +382,10 @@ section {
     flex-direction: column;
 }
 
+.input-group.full-width {
+    grid-column: 1 / -1;
+}
+
 .input-group label {
     font-size: 13px;
     font-weight: 500;
@@ -402,6 +411,17 @@ section {
     border-color: var(--blanc);
 }
 
+.input-group select optgroup {
+    background: var(--gris-fonce);
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+.input-group select option {
+    background: var(--noir);
+    padding: 8px;
+}
+
 .btn-calculate {
     width: 100%;
     padding: 18px;
@@ -420,6 +440,56 @@ section {
     background: var(--gris-clair);
 }
 
+/* MESSAGE AUDIT (Tier 3) */
+.audit-message {
+    margin-top: 48px;
+    padding: 48px;
+    background: var(--noir);
+    border: 2px solid var(--blanc);
+    text-align: center;
+}
+
+.audit-icon {
+    font-size: 48px;
+    margin-bottom: 24px;
+}
+
+.audit-message h3 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.audit-message p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.audit-message p strong {
+    color: var(--vert);
+    font-weight: 600;
+}
+
+.btn-audit {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 16px 36px;
+    background: var(--blanc);
+    color: var(--noir);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-audit:hover {
+    background: var(--gris-clair);
+}
+
+/* RÉSULTATS CALCULATEUR */
 .calc-results {
     margin-top: 48px;
     padding-top: 48px;
@@ -462,7 +532,7 @@ section {
 }
 
 .result-value.green {
-    color: #4ADE80;
+    color: var(--vert);
 }
 
 .result-sub {
@@ -475,6 +545,7 @@ section {
     text-align: center;
     padding: 40px;
     background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+    margin-bottom: 40px;
 }
 
 .gain-label {
@@ -490,7 +561,7 @@ section {
     display: block;
     font-size: 56px;
     font-weight: 300;
-    color: #4ADE80;
+    color: var(--vert);
     margin-bottom: 12px;
     letter-spacing: -2px;
 }
@@ -499,6 +570,43 @@ section {
     display: block;
     font-size: 20px;
     color: rgba(255, 255, 255, 0.8);
+}
+
+/* BREAKDOWN (Détail Revenu) */
+.result-breakdown {
+    background: var(--noir);
+    padding: 32px;
+    border: 1px solid var(--gris-moyen);
+    margin-bottom: 32px;
+}
+
+.result-breakdown h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.5px;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gris-moyen);
+    font-size: 15px;
+}
+
+.breakdown-item:last-child {
+    border-bottom: none;
+}
+
+.breakdown-item.total {
+    margin-top: 12px;
+    padding-top: 20px;
+    border-top: 2px solid var(--blanc);
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--vert);
 }
 
 .calc-note {
@@ -744,6 +852,10 @@ footer {
     }
     
     .calc-box {
+        padding: 32px 24px;
+    }
+    
+    .audit-message {
         padding: 32px 24px;
     }
 }
