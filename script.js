@@ -1,6 +1,6 @@
 // ========================================
-// JB IMMO V6 - JAVASCRIPT
-// Slider + Calculateur CORRIGÉ + Animations
+// JB IMMO V6 FINAL - JAVASCRIPT CORRIGÉ
+// Slider + Calculateur CORRIGÉ (Filtre Quartier + Prix Saisi + Revenu NET)
 // ========================================
 
 // ========== SLIDER HERO ==========
@@ -73,50 +73,93 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// ========== CALCULATEUR REVENUS (CORRIGÉ) ==========
+// ========== CALCULATEUR REVENUS (LOGIQUE CORRIGÉE V6 FINAL) ==========
 function calculer() {
-    // Récupération des valeurs
-    const quartier = parseInt(document.getElementById('quartier').value);
+    // Récupération des valeurs du formulaire
+    const quartierSelect = document.getElementById('quartier');
+    const quartierValue = quartierSelect.value;
     const nuitsLouees = parseInt(document.getElementById('nuitsLouees').value);
     const capacite = parseInt(document.getElementById('capacite').value);
     const prixNuit = parseInt(document.getElementById('prixNuit').value);
 
-    // Validation
-    if (!quartier || !nuitsLouees || !capacite || !prixNuit) {
+    // Validation des champs
+    if (!quartierValue || !nuitsLouees || !capacite || !prixNuit) {
         alert('Veuillez remplir tous les champs');
         return;
     }
 
-    // ========== CORRECTION DU BUG CRITIQUE ==========
-    // AVANT (FAUX) : const joursAvant = 18; // ❌ Valeur fixe
-    // MAINTENANT (CORRECT) : On utilise la valeur saisie par l'utilisateur
-    const joursAvant = nuitsLouees; // ✅ Utilise la saisie du proprio
+    // Cacher les deux sections avant d'afficher la bonne
+    document.getElementById('resultats').style.display = 'none';
+    document.getElementById('messageAudit').style.display = 'none';
 
-    // CALCUL SITUATION ACTUELLE
-    const revenuAvant = joursAvant * prixNuit;
+    // ========== LOGIQUE DE FILTRAGE PAR QUARTIER ==========
+    if (quartierValue === 'tier3') {
+        // Si "Autre quartier" (Tier 3) → Afficher message audit
+        document.getElementById('messageAudit').style.display = 'block';
+        
+        // Scroll vers le message
+        setTimeout(() => {
+            document.getElementById('messageAudit').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'nearest' 
+            });
+        }, 100);
+        
+        return; // On arrête ici, pas de calcul
+    }
 
-    // LEVIERS D'OPTIMISATION JB IMMO (réalistes et honnêtes)
-    const bonusCanape = capacite >= 4 ? 15 : 0; // +15€/nuit si canapé-lit possible
-    const bonusPhotos = 8; // +8€/nuit avec photos pro
-    const joursApres = 22; // Augmentation à 22 jours d'occupation
+    // ========== SI TIER 1 OU TIER 2 → CALCUL ==========
+    // La logique ci-dessous s'exécute UNIQUEMENT pour Tier 1 et Tier 2
 
-    // CALCUL AVEC JB IMMO
-    const nouveauPrix = prixNuit + bonusCanape + bonusPhotos;
-    const revenuApres = joursApres * nouveauPrix;
+    // ========== CALCUL SITUATION ACTUELLE (AVANT JB IMMO) ==========
+    // On utilise TOUJOURS le prix saisi par le proprio
+    const revenuNetAvant = nuitsLouees * prixNuit;
 
-    // GAIN
-    const gain = revenuApres - revenuAvant;
-    const pourcentage = Math.round((gain / revenuAvant) * 100);
-
-    // AFFICHAGE DES RÉSULTATS
-    document.getElementById('revenuAvant').textContent = revenuAvant + '€';
-    document.getElementById('detailAvant').textContent = `${joursAvant} nuits × ${prixNuit}€`;
+    // ========== CALCUL AVEC JB IMMO (APRÈS) ==========
     
-    document.getElementById('revenuApres').textContent = revenuApres + '€';
-    document.getElementById('detailApres').textContent = `${joursApres} nuits × ${nouveauPrix}€`;
+    // LEVIER 1 : Optimisation couchage (canapé-lit) → +15€/nuit
+    const bonusCanape = capacite >= 4 ? 15 : 0;
     
+    // LEVIER 2 : Photos professionnelles → +8€/nuit
+    const bonusPhotos = 8;
+    
+    // LEVIER 3 : Augmentation occupation à 22 jours/mois
+    const joursApres = 22;
+
+    // Prix optimisé après nos leviers
+    const prixNuitOptimise = prixNuit + bonusCanape + bonusPhotos;
+
+    // REVENU BRUT (avant commission)
+    const revenuBrutApres = joursApres * prixNuitOptimise;
+
+    // COMMISSION JB IMMO (25%)
+    const commission = Math.round(revenuBrutApres * 0.25);
+
+    // REVENU NET (après commission) = Ce que le proprio garde réellement
+    const revenuNetApres = revenuBrutApres - commission;
+
+    // ========== CALCUL DU GAIN ==========
+    const gain = revenuNetApres - revenuNetAvant;
+    const pourcentage = Math.round((gain / revenuNetAvant) * 100);
+
+    // ========== AFFICHAGE DES RÉSULTATS ==========
+    
+    // Situation AVANT
+    document.getElementById('revenuAvant').textContent = revenuNetAvant + '€';
+    document.getElementById('detailAvant').textContent = `${nuitsLouees} nuits × ${prixNuit}€`;
+    
+    // Situation APRÈS (Revenu NET)
+    document.getElementById('revenuApres').textContent = revenuNetApres + '€';
+    document.getElementById('detailApres').textContent = `${joursApres} nuits × ${prixNuitOptimise}€ (net après commission)`;
+    
+    // Gain
     document.getElementById('gain').textContent = '+' + gain + '€';
     document.getElementById('pourcentage').textContent = '+' + pourcentage + '%';
+
+    // Détail breakdown (nouveau)
+    document.getElementById('revenuBrut').textContent = revenuBrutApres + '€';
+    document.getElementById('commission').textContent = '-' + commission + '€';
+    document.getElementById('revenuNetFinal').textContent = revenuNetApres + '€';
 
     // Afficher les résultats avec animation
     const resultats = document.getElementById('resultats');
