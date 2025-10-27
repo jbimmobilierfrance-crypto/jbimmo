@@ -1,183 +1,109 @@
-// ========================================
-// JB IMMO V6 FINAL - JAVASCRIPT CORRIGÉ
-// Slider + Calculateur CORRIGÉ (Filtre Quartier + Prix Saisi + Revenu NET)
-// ========================================
+/* ========== CALCULATEUR DE LOYER GARANTI ========== */
 
-// ========== SLIDER HERO ==========
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-const totalSlides = slides.length;
+function calculateLoyer() {
+    const quartier = document.getElementById('quartier').value;
+    const surface = parseFloat(document.getElementById('surface').value);
+    const pieces = parseInt(document.getElementById('pieces').value);
+    const loyerActuel = document.getElementById('loyer').value;
 
-function showSlide(n) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    currentSlide = (n + totalSlides) % totalSlides;
-    
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-}
-
-function nextSlide() {
-    showSlide(currentSlide + 1);
-}
-
-function prevSlide() {
-    showSlide(currentSlide - 1);
-}
-
-// Navigation slider
-document.querySelector('.next').addEventListener('click', nextSlide);
-document.querySelector('.prev').addEventListener('click', prevSlide);
-
-// Dots navigation
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => showSlide(index));
-});
-
-// Auto-play slider
-setInterval(nextSlide, 5000);
-
-// ========== SMOOTH SCROLL ==========
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const headerOffset = 80;
-            const elementPosition = target.offsetTop;
-            const offsetPosition = elementPosition - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// ========== HEADER SCROLL ==========
-let lastScroll = 0;
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        header.style.boxShadow = '0 2px 12px rgba(0,0,0,0.08)';
-    } else {
-        header.style.boxShadow = 'none';
-    }
-    
-    lastScroll = currentScroll;
-});
-
-// ========== CALCULATEUR REVENUS (LOGIQUE CORRIGÉE V6 FINAL) ==========
-function calculer() {
-    // Récupération des valeurs du formulaire
-    const quartierSelect = document.getElementById('quartier');
-    const quartierValue = quartierSelect.value;
-    const nuitsLouees = parseInt(document.getElementById('nuitsLouees').value);
-    const capacite = parseInt(document.getElementById('capacite').value);
-    const prixNuit = parseInt(document.getElementById('prixNuit').value);
-
-    // Validation des champs
-    if (!quartierValue || !nuitsLouees || !capacite || !prixNuit) {
-        alert('Veuillez remplir tous les champs');
+    // Validation
+    if (!quartier || !surface || !pieces) {
+        alert('Veuillez remplir tous les champs requis (Quartier, Surface, Pièces).');
         return;
     }
 
-    // Cacher les deux sections avant d'afficher la bonne
-    document.getElementById('resultats').style.display = 'none';
-    document.getElementById('messageAudit').style.display = 'none';
+    // Coefficients par quartier (€ par m²)
+    const quarterCoefficients = {
+        'centre': 25,
+        'ecusson': 24,
+        'regordane': 23,
+        'comedie': 26,
+        'clemenceau': 22,
+        'foch': 23,
+        'peyrou': 21,
+        'antigone': 24,
+        'polygone': 25,
+        'boutonnet': 18,
+        'paillade': 16,
+        'montpellieraine': 17,
+        'proche-ouest': 19,
+        'autre': 15
+    };
 
-    // ========== LOGIQUE DE FILTRAGE PAR QUARTIER ==========
-    if (quartierValue === 'tier3') {
-        // Si "Autre quartier" (Tier 3) → Afficher message audit
-        document.getElementById('messageAudit').style.display = 'block';
-        
-        // Scroll vers le message
-        setTimeout(() => {
-            document.getElementById('messageAudit').scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'nearest' 
-            });
-        }, 100);
-        
-        return; // On arrête ici, pas de calcul
+    // Coefficient par nombre de pièces
+    const pieceCoefficients = {
+        1: 0.9,
+        2: 1.0,
+        3: 1.15,
+        4: 1.25,
+        5: 1.35
+    };
+
+    // Récupération du coefficient quartier
+    const quarterCoeff = quarterCoefficients[quartier] || 15;
+    const pieceCoeff = pieceCoefficients[pieces] || 1.0;
+
+    // Calcul de base : Surface × Coeff Quartier × Coeff Pièces
+    const loyerBase = surface * quarterCoeff * pieceCoeff;
+
+    // Bonus pour bien bien entretenu (si loyer actuel saisi)
+    let bonusEntretien = 0;
+    if (loyerActuel) {
+        const loyerActuelNum = parseFloat(loyerActuel);
+        // Si bien correctement loué, petite prime
+        if (loyerActuelNum > 0) {
+            bonusEntretien = 50; // +50€ pour bien déjà loué et bien entretenu
+        }
     }
 
-    // ========== SI TIER 1 OU TIER 2 → CALCUL ==========
-    // La logique ci-dessous s'exécute UNIQUEMENT pour Tier 1 et Tier 2
+    // Commission JB Immo (25%) - On affiche le NET
+    const loyerEstimeBrut = Math.round(loyerBase + bonusEntretien);
+    const commission = loyerEstimeBrut * 0.25;
+    const loyerEstimeNet = Math.round(loyerEstimeBrut - commission);
 
-    // ========== CALCUL SITUATION ACTUELLE (AVANT JB IMMO) ==========
-    // On utilise TOUJOURS le prix saisi par le proprio
-    const revenuNetAvant = nuitsLouees * prixNuit;
+    // Affichage du résultat
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('resultValue').textContent = loyerEstimeNet + '€/mois';
 
-    // ========== CALCUL AVEC JB IMMO (APRÈS) ==========
-    
-    // LEVIER 1 : Optimisation couchage (canapé-lit) → +15€/nuit
-    const bonusCanape = capacite >= 4 ? 15 : 0;
-    
-    // LEVIER 2 : Photos professionnelles → +8€/nuit
-    const bonusPhotos = 8;
-    
-    // LEVIER 3 : Augmentation occupation à 22 jours/mois
-    const joursApres = 22;
-
-    // Prix optimisé après nos leviers
-    const prixNuitOptimise = prixNuit + bonusCanape + bonusPhotos;
-
-    // REVENU BRUT (avant commission)
-    const revenuBrutApres = joursApres * prixNuitOptimise;
-
-    // COMMISSION JB IMMO (25%)
-    const commission = Math.round(revenuBrutApres * 0.25);
-
-    // REVENU NET (après commission) = Ce que le proprio garde réellement
-    const revenuNetApres = revenuBrutApres - commission;
-
-    // ========== CALCUL DU GAIN ==========
-    const gain = revenuNetApres - revenuNetAvant;
-    const pourcentage = Math.round((gain / revenuNetAvant) * 100);
-
-    // ========== AFFICHAGE DES RÉSULTATS ==========
-    
-    // Situation AVANT
-    document.getElementById('revenuAvant').textContent = revenuNetAvant + '€';
-    document.getElementById('detailAvant').textContent = `${nuitsLouees} nuits × ${prixNuit}€`;
-    
-    // Situation APRÈS (Revenu NET)
-    document.getElementById('revenuApres').textContent = revenuNetApres + '€';
-    document.getElementById('detailApres').textContent = `${joursApres} nuits × ${prixNuitOptimise}€ (net après commission)`;
-    
-    // Gain
-    document.getElementById('gain').textContent = '+' + gain + '€';
-    document.getElementById('pourcentage').textContent = '+' + pourcentage + '%';
-
-    // Détail breakdown (nouveau)
-    document.getElementById('revenuBrut').textContent = revenuBrutApres + '€';
-    document.getElementById('commission').textContent = '-' + commission + '€';
-    document.getElementById('revenuNetFinal').textContent = revenuNetApres + '€';
-
-    // Afficher les résultats avec animation
-    const resultats = document.getElementById('resultats');
-    resultats.style.display = 'block';
-    
-    // Scroll smooth vers les résultats
-    setTimeout(() => {
-        resultats.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 100);
+    // Scroll vers le résultat
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ========== ANIMATIONS SCROLL ==========
+/* ========== FORMULAIRE DE CONTACT ========== */
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Récupération des données
+    const name = document.querySelector('[placeholder="Votre nom"]').value;
+    const email = document.querySelector('[placeholder="Votre email"]').value;
+    const phone = document.querySelector('[placeholder="Votre téléphone"]').value;
+    const message = document.querySelector('[placeholder*="Décrivez"]').value;
+
+    // Validation basique
+    if (!name || !email || !phone || !message) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+    }
+
+    // Simulation d'envoi (dans un vrai site, ce serait une API/backend)
+    console.log('Formulaire soumis:', { name, email, phone, message });
+
+    // Message de confirmation
+    alert(`Merci ${name} ! Votre demande a été envoyée. Nous vous recontacterons au ${phone} ou à ${email} sous 24h.`);
+
+    // Réinitialisation du formulaire
+    this.reset();
+});
+
+/* ========== ANIMATIONS AU SCROLL ========== */
+
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -100px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
@@ -186,30 +112,33 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Appliquer l'animation aux cartes
-document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.service-card, .engagement-card');
-    
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
+// Observer les cards et sections
+document.querySelectorAll('.problem-card, .benefit-card, .faq-item, .step').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
 });
 
-// ========== FORM VALIDATION ==========
-const contactForm = document.querySelector('.contact-form');
+/* ========== UTILITAIRES ========== */
 
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        const nom = contactForm.querySelector('input[name="nom"]').value;
-        const email = contactForm.querySelector('input[name="email"]').value;
-        const message = contactForm.querySelector('textarea[name="message"]').value;
+// Empêcher les champs numériques de devenir négatifs
+document.getElementById('surface').addEventListener('input', function() {
+    if (this.value < 15) this.value = 15;
+    if (this.value > 200) this.value = 200;
+});
 
-        if (!nom || !email || !message) {
-            e.preventDefault();
-            alert('Veuillez remplir tous les champs obligatoires');
-        }
-    });
+document.getElementById('loyer').addEventListener('input', function() {
+    if (this.value < 0) this.value = 0;
+    if (this.value > 2000) this.value = 2000;
+});
+
+// Masquer le résultat au changement d'input
+function hideResult() {
+    document.getElementById('result').style.display = 'none';
 }
+
+document.getElementById('quartier').addEventListener('change', hideResult);
+document.getElementById('surface').addEventListener('input', hideResult);
+document.getElementById('pieces').addEventListener('change', hideResult);
+document.getElementById('loyer').addEventListener('input', hideResult);
