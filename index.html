@@ -3,351 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JB Immo - Conciergerie premium à Montpellier. Sécurisez et optimisez vos revenus locatifs.">
-    <title>JB Immo | Conciergerie Premium Montpellier</title>
+    <title>JB Immo - Sous-location Légale à Montpellier | Loyer Garanti</title>
+    <meta name="description" content="JB Immo : Votre locataire idéal pour la sous-location légale. Loyer garanti, bien entretenu, contrat 100% légal.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <!-- HEADER -->
-    <header>
-        <div class="container">
-            <div class="logo">JB IMMO</div>
-            <nav>
-                <a href="#services">Services</a>
-                <a href="#calculateur">Calculateur</a>
-                <a href="#engagements">Engagements</a>
-                <a href="#contact">Contact</a>
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">JB Immo</div>
+            <nav class="nav">
+                <a href="#solution">Solution</a>
+                <a href="#process">Comment ça marche</a>
+                <a href="#calculator">Calculateur</a>
+                <a href="#faq">FAQ</a>
             </nav>
         </div>
     </header>
 
-    <!-- HERO SLIDER -->
-    <section class="hero">
-        <div class="slider">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1600&q=80')"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80')"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&q=80')"></div>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>JB Immo : La conciergerie qui sécurise, optimise et sublime votre bien.</h1>
-            <p>Une gestion locative d'excellence à Montpellier</p>
-            <div class="hero-btns">
-                <a href="#calculateur" class="btn-primary">Estimer mes revenus</a>
-                <a href="#contact" class="btn-secondary">Nous contacter</a>
-            </div>
-        </div>
-        <div class="slider-nav">
-            <button class="prev">‹</button>
-            <button class="next">›</button>
-        </div>
-        <div class="slider-dots">
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-intro">
-                <h2>Nos Services</h2>
-                <p>Trois solutions sur-mesure pour valoriser votre patrimoine immobilier</p>
-            </div>
-            <div class="services-grid">
-                
-                <div class="service-card">
-                    <div class="service-number">01</div>
-                    <h3>Sous-location Légale</h3>
-                    <p class="service-slogan">Plus qu'une conciergerie, votre locataire de confiance.</p>
-                    <p class="service-desc">Je deviens votre locataire officiel via un bail légal. Vous recevez un loyer fixe garanti chaque mois, sans aucun tracas de gestion.</p>
-                    <ul class="service-features">
-                        <li>Loyer garanti à date fixe</li>
-                        <li>Bail légal déclaré</li>
-                        <li>Vous gardez la propriété</li>
-                        <li>Sérénité totale</li>
-                    </ul>
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Le locataire dont tous les propriétaires rêvent.</h1>
+                <p class="hero-subtitle">Loyer garanti chaque mois. Bien toujours entretenu. Contrat 100% légal.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary" onclick="document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})">Estimer mon loyer garanti</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('process').scrollIntoView({behavior: 'smooth'})">Comment ça marche ?</button>
                 </div>
-
-                <div class="service-card featured">
-                    <div class="service-badge">Recommandé</div>
-                    <div class="service-number">02</div>
-                    <h3>Conciergerie Airbnb</h3>
-                    <p class="service-slogan">Révélez le véritable potentiel de votre bien.</p>
-                    <p class="service-desc">Gestion A à Z de votre location courte durée : photos professionnelles, pricing intelligent, communication 7j/7, ménage et maintenance.</p>
-                    <ul class="service-features">
-                        <li>Photos & annonce professionnelles</li>
-                        <li>Pricing dynamique optimisé</li>
-                        <li>Communication 24/7</li>
-                        <li>Commission 25% transparente</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-number">03</div>
-                    <h3>Home Staging & Décoration</h3>
-                    <p class="service-slogan">L'art de sublimer et rentabiliser votre bien.</p>
-                    <p class="service-desc">Optimisation complète de votre espace : aménagement, décoration lifestyle, mise en scène pour maximiser l'attractivité et les revenus.</p>
-                    <ul class="service-features">
-                        <li>Analyse de l'espace</li>
-                        <li>Décoration lifestyle</li>
-                        <li>Mise en scène professionnelle</li>
-                        <li>ROI mesurable</li>
-                    </ul>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- CALCULATEUR -->
-    <section id="calculateur" class="calculator">
+    <!-- ========== SECTION : PROBLÈME ========== -->
+    <section class="problems">
         <div class="container">
-            <div class="section-intro dark">
-                <h2>Calculateur de Revenus</h2>
-                <p>Découvrez le potentiel réel de votre bien avec notre estimation personnalisée</p>
+            <h2>Vous en avez assez des locataires traditionnels ?</h2>
+            <p class="section-subtitle">Les 5 galères de la location classique que JB Immo résout :</p>
+            
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <h3>Impayés & Retards</h3>
+                    <p>Locataires qui paient tard, incomplets, ou pas du tout. Stress constant.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🚨</div>
+                    <h3>Dégradations</h3>
+                    <p>Travaux non déclarés, usure prématurée. Coûts réparation imprévisibles.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔄</div>
+                    <h3>Turnover Constant</h3>
+                    <p>Changement locataire chaque an. Vacance locative. Relocation coûteuse.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⚖️</div>
+                    <h3>Gestion & Juridique</h3>
+                    <p>Baux à gérer, contentieux, évictions. Galère administrative permanente.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📉</div>
+                    <h3>Bien Qui Se Dégrade</h3>
+                    <p>Pas d'entretien régulier. Le bien vieillit mal. Perte de valeur.</p>
+                </div>
             </div>
-            <div class="calc-box">
-                <form id="form-calculateur">
-                    <div class="calc-inputs">
-                        
-                        <div class="input-group full-width">
-                            <label for="quartier">Quartier de votre bien</label>
-                            <select id="quartier" required>
-                                <option value="" disabled selected>Sélectionnez votre quartier</option>
-                                <optgroup label="🏆 Zone Or (Tier 1)">
-                                    <option value="tier1">Comédie / Gare / Écusson</option>
-                                    <option value="tier1">Le Corum</option>
-                                    <option value="tier1">Les Arceaux / Clemenceau</option>
-                                    <option value="tier1">Antigone / Rives-du-Lez</option>
-                                    <option value="tier1">Port-Marianne</option>
-                                </optgroup>
-                                <optgroup label="🥈 Zone Argent (Tier 2)">
-                                    <option value="tier2">Beaux-Arts</option>
-                                    <option value="tier2">Près-d'Arènes / Aiguerelles</option>
-                                    <option value="tier2">Ovalie</option>
-                                    <option value="tier2">Millénaire / Odysseum</option>
-                                </optgroup>
-                                <optgroup label="📋 Autre">
-                                    <option value="tier3">Autre quartier (audit personnalisé)</option>
-                                </optgroup>
-                            </select>
-                        </div>
 
-                        <div class="input-group">
-                            <label for="nuitsLouees">Nuits louées par mois actuellement</label>
-                            <input type="number" id="nuitsLouees" placeholder="18" min="0" max="31" required>
-                        </div>
+            <p class="problems-transition">Et si vous aviez un locataire qui paie toujours à date, entretient votre bien comme le sien, ne part jamais... et paie une vraie rente mensuelle garantie ?</p>
+        </div>
+    </section>
 
-                        <div class="input-group">
-                            <label for="capacite">Capacité d'accueil (personnes)</label>
-                            <input type="number" id="capacite" placeholder="4" min="1" max="12" required>
-                        </div>
+    <!-- ========== SECTION : SOLUTION IBA ========== -->
+    <section class="solution" id="solution">
+        <div class="container">
+            <h2>La Solution : JB Immo, Votre Locataire de Confiance</h2>
+            <p class="section-subtitle">Nous devenons votre locataire. Mais un locataire différent.</p>
 
-                        <div class="input-group">
-                            <label for="prixNuit">Prix moyen par nuit actuel (€)</label>
-                            <input type="number" id="prixNuit" placeholder="65" min="30" max="300" required>
-                        </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-number">01</div>
+                    <h3>Confiance & Cadre Légal</h3>
+                    <p>Bail professionnel rédigé par avocat. Société déclarée au K-BIS. Activité légale certifiée. Un seul interlocuteur professionnel.</p>
+                </div>
 
+                <div class="benefit-card">
+                    <div class="benefit-number">02</div>
+                    <h3>Loyer Garanti Chaque Mois</h3>
+                    <p>Loyer versé à date fixe, sans jamais manquer. Fonds de sécurité constitus. Aucune vacance locative. Vous êtes payé même si le bien est inoccupé.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-number">03</div>
+                    <h3>Entretien Professionnel Régulier</h3>
+                    <p>Ménage professionnel après chaque séjour. Petites réparations incluses. Appartement constamment entretenu et valorisé.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-number">04</div>
+                    <h3>Sécurité & Couverture Complète</h3>
+                    <p>Responsabilité Civile Professionnelle (RC Pro) complète. Protège votre logement, notre activité et les tiers. Bien supérieur à l'assurance habitation classique.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-number">05</div>
+                    <h3>Valorisation du Bien</h3>
+                    <p>Investissement dans la décoration et aménagements fonctionnels. Mise en valeur photographique professionnelle. Votre bien gagne en attractivité et valeur.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-number">06</div>
+                    <h3>Communication Fluide & Transparence</h3>
+                    <p>Interlocuteur unique. Gestion centralisée 24/7. Réactivité garantie pour toute urgence. Rapports réguliers et transparence totale.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-number">07</div>
+                    <h3>Flexibilité & Relation Gagnant-Gagnant</h3>
+                    <p>Baux souples et prévoyants. Possibilité de reprendre le logement selon préavis convenu. Ajustement des conditions selon vos besoins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION : COMMENT ÇA MARCHE ========== -->
+    <section class="process" id="process">
+        <div class="container">
+            <h2>Comment Ça Marche ? 3 Étapes Simples</h2>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Évaluation Personnalisée</h3>
+                    <p>Vous décrivez votre bien (localisation, état, surface). Nous estimons votre loyer garanti et analysons le potentiel.</p>
+                </div>
+
+                <div class="step-arrow">→</div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Signature du Bail</h3>
+                    <p>Rendez-vous avec avocat pour finaliser le bail professionnel. Contrat 100% légal, transparent, conforme à la sous-location.</p>
+                </div>
+
+                <div class="step-arrow">→</div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Sérénité Totale</h3>
+                    <p>À partir du mois suivant, loyer garanti chaque mois. Vous ne gérez rien. Nous prenons soin de votre bien.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TABLEAU COMPARATIF ========== -->
+    <section class="comparison">
+        <div class="container">
+            <h2>Locataire Classique vs JB Immo</h2>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Critère</th>
+                            <th>Locataire Classique</th>
+                            <th>JB Immo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Paiement du loyer</strong></td>
+                            <td>Souvent en retard ou incomplet ❌</td>
+                            <td>Garanti, à date fixe ✅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Entretien du bien</strong></td>
+                            <td>Minimal, locataire peu impliqué ❌</td>
+                            <td>Professionnel, régulier, valorisant ✅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Assurance & Couverture</strong></td>
+                            <td>Assurance habitation classique ❌</td>
+                            <td>RC Pro complète ✅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Communication</strong></td>
+                            <td>Locataire souvent absent/réactif ❌</td>
+                            <td>Interlocuteur professionnel 24/7 ✅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Valorisation du bien</strong></td>
+                            <td>Bien qui se dégrade progressivement ❌</td>
+                            <td>Bien constamment amélioré ✅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vacance locative</strong></td>
+                            <td>Vous ne touchez rien pendant vide ❌</td>
+                            <td>Loyer garanti même si bien inoccupé ✅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Légalité & Cadre</strong></td>
+                            <td>Bail standard, quelques risques ❌</td>
+                            <td>Bail professionnel, 100% légal ✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION : CALCULATEUR ========== -->
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <h2>Estimateur de Loyer Garanti</h2>
+            <p class="section-subtitle">Découvrez combien vous pourriez toucher en confiant votre bien à JB Immo</p>
+
+            <div class="calculator-box">
+                <form class="calculator-form">
+                    <div class="form-group">
+                        <label for="quartier">Quartier de Montpellier</label>
+                        <select id="quartier" required>
+                            <option value="">-- Sélectionner --</option>
+                            <optgroup label="Zones Premium (Tier 1)">
+                                <option value="centre">Hypercentre / Corum</option>
+                                <option value="ecusson">Écusson Ancien</option>
+                                <option value="regordane">Rue de la Régordane</option>
+                                <option value="comedie">Place de la Comédie</option>
+                                <option value="clemenceau">Les Arceaux / Clemenceau</option>
+                                <option value="foch">Avenue Foch</option>
+                                <option value="peyrou">Jardin du Peyrou</option>
+                                <option value="antigone">Antigone</option>
+                                <option value="polygone">Polygone / Port Marianne</option>
+                            </optgroup>
+                            <optgroup label="Zones Dynamiques (Tier 2)">
+                                <option value="boutonnet">Boutonnet</option>
+                                <option value="paillade">La Paillade</option>
+                                <option value="montpellieraine">La Montpelliéraine</option>
+                                <option value="proche-ouest">Proche Ouest</option>
+                            </optgroup>
+                            <optgroup label="Zones Autres">
+                                <option value="autre">Autre quartier</option>
+                            </optgroup>
+                        </select>
                     </div>
-                    
-                    <button type="button" class="btn-calculate" onclick="calculer()">Calculer mon potentiel</button>
+
+                    <div class="form-group">
+                        <label for="surface">Surface du bien (m²)</label>
+                        <input type="number" id="surface" min="15" max="200" placeholder="Ex: 45" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pieces">Nombre de pièces</label>
+                        <select id="pieces" required>
+                            <option value="">-- Sélectionner --</option>
+                            <option value="1">1 pièce (Studio)</option>
+                            <option value="2">2 pièces (T2)</option>
+                            <option value="3">3 pièces (T3)</option>
+                            <option value="4">4 pièces (T4)</option>
+                            <option value="5">5+ pièces</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loyer">Votre loyer actuel (€/mois) <span class="optional">(optionnel)</span></label>
+                        <input type="number" id="loyer" min="300" max="2000" placeholder="Ex: 800">
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-full" onclick="calculateLoyer()">Calculer mon estimation</button>
                 </form>
-                
-                <!-- Message pour Tier 3 (Autre quartier) -->
-                <div id="messageAudit" class="audit-message" style="display: none;">
-                    <div class="audit-icon">📋</div>
-                    <h3>Audit Personnalisé Requis</h3>
-                    <p>Votre quartier nécessite une analyse approfondie pour estimer précisément le potentiel de votre bien.</p>
-                    <p><strong>Nous vous proposons un audit gratuit sous 48h.</strong></p>
-                    <a href="#contact" class="btn-audit">Demander mon audit gratuit</a>
-                </div>
 
-                <!-- Résultats du calculateur (pour Tier 1 & 2) -->
-                <div id="resultats" class="calc-results" style="display: none;">
-                    <div class="result-row">
-                        <div class="result-col">
-                            <span class="result-label">Situation actuelle</span>
-                            <span class="result-value" id="revenuAvant">0€</span>
-                            <span class="result-sub" id="detailAvant"></span>
+                <div id="result" class="result" style="display: none;">
+                    <div class="result-content">
+                        <h3>Votre Estimation de Loyer Garanti</h3>
+                        <div class="result-box">
+                            <div class="result-item">
+                                <span>Loyer estimé mensuel</span>
+                                <div class="result-value" id="resultValue">--</div>
+                            </div>
                         </div>
-                        <div class="result-col highlight">
-                            <span class="result-label">Avec JB Immo (Revenu Net)</span>
-                            <span class="result-value green" id="revenuApres">0€</span>
-                            <span class="result-sub" id="detailApres"></span>
-                        </div>
+                        <p class="result-note">💡 Cette estimation est basée sur la surface, les pièces et la localisation. Le montant exact sera confirmé lors d'une évaluation personnalisée.</p>
+                        <button type="button" class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Demander une évaluation précise</button>
                     </div>
-                    <div class="result-gain">
-                        <span class="gain-label">Gain net mensuel estimé</span>
-                        <span class="gain-value" id="gain">+0€</span>
-                        <span class="gain-percent" id="pourcentage">0%</span>
-                    </div>
-                    <div class="result-breakdown">
-                        <h4>Détail de l'optimisation :</h4>
-                        <div class="breakdown-item">
-                            <span>Revenu brut optimisé</span>
-                            <span id="revenuBrut">0€</span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span>Commission JB Immo (25%)</span>
-                            <span id="commission">-0€</span>
-                        </div>
-                        <div class="breakdown-item total">
-                            <span>Votre revenu net final</span>
-                            <span id="revenuNetFinal">0€</span>
-                        </div>
-                    </div>
-                    <p class="calc-note">*Estimation basée sur notre expérience moyenne à Montpellier. Résultats réels variables selon le bien.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NOS ENGAGEMENTS -->
-    <section id="engagements" class="engagements">
+    <!-- ========== SECTION : FAQ ========== -->
+    <section class="faq" id="faq">
         <div class="container">
-            <div class="section-intro">
-                <h2>Nos Engagements</h2>
-                <p>Les valeurs qui guident notre travail au quotidien</p>
-            </div>
-            <div class="engagements-grid">
-                <div class="engagement-card">
-                    <div class="engagement-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9 11l3 3L22 4"></path>
-                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                        </svg>
-                    </div>
-                    <h3>Transparence Totale</h3>
-                    <p>Commission de 25% affichée clairement. Aucun frais caché, reporting mensuel détaillé.</p>
+            <h2>Questions Fréquemment Posées</h2>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>C'est légal, la sous-location ?</h3>
+                    <p>Oui, 100% légal. La sous-location meublée est encadrée par la loi Alur (2014). Notre activité est inscrite au K-BIS. Nous disposons d'un bail professionnel rédigé par avocat, conforme à la loi.</p>
                 </div>
-                <div class="engagement-card">
-                    <div class="engagement-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Contrats Légaux</h3>
-                    <p>Tous nos baux et contrats sont conformes à la législation en vigueur. Société déclarée avec K-BIS.</p>
+
+                <div class="faq-item">
+                    <h3>Et si je veux reprendre mon bien ?</h3>
+                    <p>Possible ! Le bail stipule un préavis convenu (ex: 3 mois). Vous gardez le contrôle total. Nous trouvons ensemble une date qui vous convient.</p>
                 </div>
-                <div class="engagement-card">
-                    <div class="engagement-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                    </div>
-                    <h3>Paiements à Date Fixe</h3>
-                    <p>Vos revenus versés le même jour chaque mois. Ponctualité et fiabilité garanties.</p>
+
+                <div class="faq-item">
+                    <h3>Quel est le montant de la commission ?</h3>
+                    <p>Transparent et négocié lors du contrat. Notre commission couvre la gestion complète, l'entretien, les assurances, et les réparations courantes. Pas de surprise.</p>
                 </div>
-                <div class="engagement-card">
-                    <div class="engagement-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="17 8 12 3 7 8"></polyline>
-                            <line x1="12" y1="3" x2="12" y2="15"></line>
-                        </svg>
-                    </div>
-                    <h3>Reporting Mensuel</h3>
-                    <p>Tableau de bord détaillé avec toutes les métriques : occupation, revenus, dépenses, tendances.</p>
+
+                <div class="faq-item">
+                    <h3>Mon bien doit-il être meublé ?</h3>
+                    <p>Idéalement oui, car cela permettra une occupation courte durée. Mais on peut en discuter selon votre situation. Nous pouvons vous conseiller sur l'investissement mobilier.</p>
                 </div>
-                <div class="engagement-card">
-                    <div class="engagement-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Optimisation Continue</h3>
-                    <p>Ajustement permanent du pricing, amélioration des annonces, analyse concurrentielle régulière.</p>
+
+                <div class="faq-item">
+                    <h3>Comment gérez-vous les urgences / réparations ?</h3>
+                    <p>Nous avons un réseau de prestataires de confiance. Les petites réparations sont incluses. Les urgences sont traitées 24/7 par notre équipe.</p>
                 </div>
-                <div class="engagement-card">
-                    <div class="engagement-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Disponibilité 7j/7</h3>
-                    <p>Réactivité garantie pour vos questions et celles de vos voyageurs. Support permanent.</p>
+
+                <div class="faq-item">
+                    <h3>Je dois faire quelle démarche pour commencer ?</h3>
+                    <p>Simple : 1) Nous faire connaître votre bien et situation. 2) Évaluation personnalisée. 3) Signature du bail. 4) Première rente mensuelle au mois suivant.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
+    <!-- ========== SECTION : CTA FINAL ========== -->
+    <section class="cta-final" id="contact">
         <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>Prêt à démarrer ?</h2>
-                    <p>Discutons de votre projet immobilier. Nous sommes à Montpellier et répondons rapidement.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            <span>06 58 79 70 37</span>
-                        </div>
-                        <div class="contact-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            <span>jbimmobilier.france@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            <span>Montpellier & Agglomération</span>
-                        </div>
-                    </div>
+            <h2>Prêt à découvrir votre potentiel ?</h2>
+            <p>Laissez-nous un message. Nous vous recontacterons sous 24h pour discuter de votre situation.</p>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Votre nom" required>
                 </div>
-                <form class="contact-form" name="contact" method="POST" data-netlify="true">
-                    <input type="hidden" name="form-name" value="contact">
-                    <input type="text" name="nom" placeholder="Votre nom" required>
-                    <input type="email" name="email" placeholder="Votre email" required>
-                    <input type="tel" name="telephone" placeholder="Votre téléphone">
-                    <textarea name="message" placeholder="Parlez-nous de votre projet..." rows="4" required></textarea>
-                    <button type="submit" class="btn-submit">Envoyer ma demande</button>
-                </form>
+                <div class="form-group">
+                    <input type="email" placeholder="Votre email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Votre téléphone" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Décrivez brièvement votre bien et votre situation" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Envoyer ma demande d'évaluation</button>
+            </form>
+
+            <div class="contact-info">
+                <p><strong>Email:</strong> jbimmobilier.france@gmail.com</p>
+                <p><strong>Téléphone:</strong> 06 58 79 70 37</p>
+                <p><strong>Zone d'intervention:</strong> Montpellier & Agglomération</p>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h4>JB Immo</h4>
-                    <p>Conciergerie premium à Montpellier depuis 2025. Sécurité, transparence et optimisation de vos revenus locatifs.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <a href="#services">Sous-location Légale</a>
-                    <a href="#services">Conciergerie Airbnb</a>
-                    <a href="#services">Home Staging</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <a href="tel:0658797037">06 58 79 70 37</a>
-                    <a href="mailto:jbimmobilier.france@gmail.com">jbimmobilier.france@gmail.com</a>
-                    <span>Montpellier, France</span>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 JB Immo - SASU au capital social - Tous droits réservés</p>
-            </div>
+            <p>&copy; 2025 JB Immo. Tous droits réservés. | Sous-location légale à Montpellier</p>
         </div>
     </footer>
 
