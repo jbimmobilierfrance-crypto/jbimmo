@@ -926,6 +926,148 @@ h3 {
 }
 
 /* ================================================================================
+   BOUTON CTA FIXE
+   ================================================================================ */
+
+.cta-fixe {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--or-discret) 0%, var(--or-clair) 100%);
+    color: var(--blanc);
+    padding: 16px 28px;
+    border-radius: 50px;
+    box-shadow: 0 8px 30px rgba(201, 168, 106, 0.5);
+    z-index: 999;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    transition: all 0.3s ease;
+    animation: pulse-cta 2s ease-in-out infinite;
+}
+
+.cta-fixe:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(201, 168, 106, 0.6);
+}
+
+.cta-fixe-small {
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.95;
+}
+
+@keyframes pulse-cta {
+    0%, 100% {
+        box-shadow: 0 8px 30px rgba(201, 168, 106, 0.5);
+    }
+    50% {
+        box-shadow: 0 8px 40px rgba(201, 168, 106, 0.7);
+    }
+}
+
+/* ================================================================================
+   SECTION CTA FINALE
+   ================================================================================ */
+
+.cta-finale-section {
+    background: linear-gradient(135deg, var(--gris-fonce) 0%, var(--charbon) 100%);
+    padding: 80px 0;
+}
+
+.cta-finale-box {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-finale-box h2 {
+    font-family: var(--font-title);
+    font-size: 32px;
+    color: var(--blanc);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.cta-finale-box p {
+    font-size: 18px;
+    color: var(--blanc);
+    margin-bottom: 35px;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+.btn-large {
+    padding: 20px 50px;
+    font-size: 18px;
+    min-width: 280px;
+}
+
+/* ================================================================================
+   ANIMATIONS AU SCROLL
+   ================================================================================ */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animations pour les cartes avec délai */
+.probleme-card,
+.benefit-card,
+.fonctionnement-card,
+.faq-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.probleme-card.visible,
+.benefit-card.visible,
+.fonctionnement-card.visible,
+.faq-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Délai progressif pour les cartes */
+.probleme-card:nth-child(1) { transition-delay: 0.1s; }
+.probleme-card:nth-child(2) { transition-delay: 0.2s; }
+.probleme-card:nth-child(3) { transition-delay: 0.3s; }
+.probleme-card:nth-child(4) { transition-delay: 0.4s; }
+.probleme-card:nth-child(5) { transition-delay: 0.5s; }
+
+.benefit-card:nth-child(1) { transition-delay: 0.1s; }
+.benefit-card:nth-child(2) { transition-delay: 0.2s; }
+.benefit-card:nth-child(3) { transition-delay: 0.3s; }
+.benefit-card:nth-child(4) { transition-delay: 0.4s; }
+.benefit-card:nth-child(5) { transition-delay: 0.5s; }
+.benefit-card:nth-child(6) { transition-delay: 0.6s; }
+.benefit-card:nth-child(7) { transition-delay: 0.7s; }
+
+/* ================================================================================
    RESPONSIVE
    ================================================================================ */
 
@@ -1019,10 +1161,43 @@ h3 {
     .comparatif-table td {
         padding: 12px;
     }
+    
+    .cta-fixe {
+        bottom: 20px;
+        right: 20px;
+        padding: 14px 22px;
+        font-size: 14px;
+    }
+    
+    .cta-fixe-small {
+        font-size: 11px;
+    }
+    
+    .cta-finale-box h2 {
+        font-size: 26px;
+    }
+    
+    .cta-finale-box p {
+        font-size: 16px;
+    }
+    
+    .btn-large {
+        padding: 18px 35px;
+        font-size: 16px;
+        min-width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-title {
         font-size: 28px;
+    }
+    
+    .cta-fixe span:first-child {
+        font-size: 13px;
+    }
+    
+    .cta-finale-box h2 {
+        font-size: 22px;
     }
 }
