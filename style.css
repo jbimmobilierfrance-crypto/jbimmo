@@ -50,8 +50,10 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: rgba(250, 248, 245, 0);
+    background-color: rgba(44, 44, 44, 0.95);
+    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 #header.scrolled {
@@ -132,6 +134,13 @@ h3 {
     line-height: 1.2;
 }
 
+.sous-titre {
+    font-size: 16px;
+    color: var(--or-discret);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 .intro-text {
     font-size: 16px;
     color: var(--gris-fonce);
@@ -183,15 +192,17 @@ h3 {
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: var(--gris-fonce);
-    border: 2px solid var(--gris-fonce);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--blanc);
+    border: 2px solid var(--blanc);
+    backdrop-filter: blur(5px);
 }
 
 .btn-secondary:hover {
-    background-color: var(--gris-clair);
+    background-color: var(--blanc);
+    color: var(--gris-fonce);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.15);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
 
 .section-cta {
@@ -637,7 +648,7 @@ h3 {
    ================================================================================ */
 
 .contact-section {
-    background-color: var(--blanc-casse);
+    background: linear-gradient(135deg, var(--blanc-casse) 0%, var(--gris-clair) 100%);
     padding: 100px 0;
 }
 
@@ -652,35 +663,76 @@ h3 {
     width: 100%;
 }
 
+.contact-form {
+    background-color: var(--blanc);
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
 .contact-form .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.contact-form .form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gris-fonce);
+    margin-bottom: 8px;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--gris-moyen);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus {
+    outline: none;
+    border-color: var(--or-discret);
+    box-shadow: 0 0 0 3px rgba(201, 168, 106, 0.1);
 }
 
 .contact-form .btn {
     width: 100%;
     padding: 16px;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 .contact-info {
-    background-color: var(--blanc);
-    padding: 40px;
-    border: 1px solid var(--gris-moyen);
-    border-radius: 4px;
+    background: linear-gradient(135deg, var(--gris-fonce) 0%, var(--charbon) 100%);
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     height: fit-content;
+    color: var(--blanc);
 }
 
 .contact-info h3 {
-    font-size: 20px;
-    color: var(--gris-fonce);
-    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--or-discret);
+    margin-bottom: 30px;
+    font-family: var(--font-title);
 }
 
 .contact-info p {
-    font-size: 14px;
-    color: var(--gris-fonce);
-    line-height: 1.8;
-    margin-bottom: 12px;
+    font-size: 15px;
+    color: var(--blanc);
+    line-height: 2;
+    margin-bottom: 15px;
+    opacity: 0.95;
+}
+
+.contact-info p strong {
+    color: var(--or-clair);
+    font-weight: 600;
 }
 
 /* ================================================================================
@@ -688,34 +740,39 @@ h3 {
    ================================================================================ */
 
 .footer {
-    background-color: var(--gris-fonce);
+    background: linear-gradient(135deg, #3a3a3a 0%, var(--gris-fonce) 100%);
     color: var(--blanc);
-    padding: 40px 0;
+    padding: 50px 0 30px;
     text-align: center;
+    border-top: 3px solid var(--or-discret);
 }
 
 .footer p {
-    font-size: 13px;
-    opacity: 0.8;
-    margin-bottom: 15px;
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    line-height: 1.8;
 }
 
 .footer-links {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 25px;
 }
 
 .footer-links a {
-    color: var(--blanc);
-    font-size: 13px;
+    color: var(--or-clair);
+    font-size: 14px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .footer-links a:hover {
-    color: var(--or-clair);
+    color: var(--or-discret);
+    transform: translateY(-2px);
 }
 
 /* ================================================================================
@@ -780,6 +837,11 @@ h3 {
     .contact-layout {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+    
+    .contact-form,
+    .contact-info {
+        padding: 35px 25px;
     }
     
     .steps-container {
