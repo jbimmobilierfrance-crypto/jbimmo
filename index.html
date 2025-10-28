@@ -21,7 +21,6 @@
             <ul class="nav-menu">
                 <li><a href="#solution">Solution</a></li>
                 <li><a href="#fonctionnement">Comment ça marche</a></li>
-                <li><a href="#calculateur">Calculateur</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -49,7 +48,7 @@
                 <p class="hero-subtitle">Loyer garanti chaque mois. Bien toujours entretenu. Contrat 100% légal.</p>
                 
                 <div class="hero-cta-buttons">
-                    <a href="#calculateur" class="btn btn-primary">Estimer mon Loyer Garanti</a>
+                    <a href="#contact" class="btn btn-primary">Contactez-nous</a>
                     <a href="#solution" class="btn btn-secondary">Découvrir la Solution</a>
                 </div>
             </div>
@@ -185,7 +184,7 @@
             </div>
             
             <div class="section-cta">
-                <a href="#calculateur" class="btn btn-primary">Obtenir une estimation gratuite</a>
+                <a href="#contact" class="btn btn-primary">Nous contacter</a>
             </div>
         </div>
     </section>
@@ -244,81 +243,7 @@
         </div>
     </section>
 
-    <!-- SECTION 6 - CALCULATEUR -->
-    <section id="calculateur" class="calculateur-section">
-        <div class="container">
-            <h2 class="section-title">Estimez Votre Loyer Garanti Mensuel</h2>
-            <p class="sous-titre">Découvrez le potentiel réel de votre bien</p>
-            
-            <div class="calc-box">
-                <form id="calc-form" class="calc-form">
-                    <div class="form-group">
-                        <label for="quartier">Secteur de Montpellier</label>
-                        <select id="quartier" name="quartier" required>
-                            <option value="">-- Sélectionnez votre quartier --</option>
-                            <optgroup label="Tiers 1 - Centre Premium">
-                                <option value="tier1" data-tier="1">Place de la Comédie</option>
-                                <option value="tier1" data-tier="1">Gare</option>
-                                <option value="tier1" data-tier="1">L'Écusson</option>
-                                <option value="tier1" data-tier="1">Le Corum</option>
-                                <option value="tier1" data-tier="1">Les Arceaux</option>
-                                <option value="tier1" data-tier="1">Clemenceau</option>
-                                <option value="tier1" data-tier="1">Antigone</option>
-                                <option value="tier1" data-tier="1">Rives-du-lez</option>
-                                <option value="tier1" data-tier="1">Port-Marianne</option>
-                            </optgroup>
-                            <optgroup label="Tiers 2 - Zones Attractives">
-                                <option value="tier2" data-tier="2">Beaux-Arts</option>
-                                <option value="tier2" data-tier="2">Près-d'Arènes</option>
-                                <option value="tier2" data-tier="2">Aiguerelles</option>
-                                <option value="tier2" data-tier="2">Ovalie</option>
-                                <option value="tier2" data-tier="2">Millénaire/Odysseum</option>
-                            </optgroup>
-                            <optgroup label="Autres Quartiers">
-                                <option value="tier3" data-tier="3">Autre quartier de Montpellier</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="surface">Surface (m²)</label>
-                        <input type="number" id="surface" name="surface" placeholder="Ex: 50" min="10" max="500" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="pieces">Nombre de pièces</label>
-                        <input type="number" id="pieces" name="pieces" placeholder="Ex: 3" min="1" max="10" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="loyer-actuel">Loyer actuel (optionnel)</label>
-                        <input type="number" id="loyer-actuel" name="loyer-actuel" placeholder="Ex: 800">
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-calc">Estimer Mon Loyer Garanti</button>
-                </form>
-                
-                <!-- RESULTATS BOX -->
-                <div id="resultats-box" class="resultats-box" style="display: none;">
-                    <p class="result-label">Estimation de Loyer Garanti</p>
-                    <p class="result-value" id="montant-estime"></p>
-                    <p class="result-note">par mois</p>
-                    <p class="disclaimer">Cette estimation est basée sur votre secteur, la surface et le nombre de pièces. Le montant exact sera confirmé lors d'une évaluation personnalisée.</p>
-                    <a href="#contact" class="btn btn-primary">Demander une Évaluation Précise</a>
-                </div>
-                
-                <!-- AUDIT MESSAGE BOX -->
-                <div id="audit-message-box" class="audit-message-box" style="display: none;">
-                    <h3>Évaluation Personnalisée Requise</h3>
-                    <p>Votre secteur nécessite une analyse approfondie pour estimer précisément le potentiel de votre bien.</p>
-                    <p>Nous vous proposons une évaluation gratuite sous 48 heures.</p>
-                    <a href="#contact" class="btn btn-primary">Demander Une Évaluation</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 7 - FAQ -->
+    <!-- SECTION 6 - FAQ -->
     <section id="faq" class="faq-section">
         <div class="container">
             <h2 class="section-title">Vos Questions Fréquentes</h2>
@@ -357,7 +282,7 @@
         </div>
     </section>
 
-    <!-- SECTION 8 - CONTACT / CTA FINAL -->
+    <!-- SECTION 7 - CONTACT / CTA FINAL -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title">Prêt à Sécuriser Vos Revenus ?</h2>
@@ -401,7 +326,7 @@
         </div>
     </section>
 
-    <!-- SECTION 9 - FOOTER -->
+    <!-- SECTION 8 - FOOTER -->
     <footer class="footer">
         <div class="container">
             <p>Copyright © 2025 JB Immo (SASU). Tous droits réservés. | Gestion Locative Professionnelle - Montpellier</p>
