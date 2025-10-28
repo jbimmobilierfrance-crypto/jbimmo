@@ -1,151 +1,139 @@
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-
-function showSlide(n) {
-    if (n >= slides.length) slideIndex = 0;
-    if (n < 0) slideIndex = slides.length - 1;
-
-    slides.forEach(slide => slide.classList.remove('slide-active'));
-    dots.forEach(dot => dot.classList.remove('dot-active'));
-
-    slides[slideIndex].classList.add('slide-active');
-    dots[slideIndex].classList.add('dot-active');
-}
-
-function nextSlide() {
-    slideIndex++;
-    showSlide(slideIndex);
-}
-
-function prevSlide() {
-    slideIndex--;
-    showSlide(slideIndex);
-}
-
-function currentSlide(n) {
-    slideIndex = n;
-    showSlide(slideIndex);
-}
-
-setInterval(nextSlide, 5000);
-
-function scrollTo(selector) {
-    const element = document.querySelector(selector);
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-function calculateLoyer() {
-    const quartier = document.getElementById('quartier').value;
-    const surface = parseInt(document.getElementById('surface').value);
-    const pieces = parseInt(document.getElementById('pieces').value);
-
-    if (!quartier || !surface || !pieces) {
-        alert('Veuillez remplir tous les champs requis');
-        return;
-    }
-
-    document.getElementById('resultContent').style.display = 'none';
-    document.getElementById('auditMessage').style.display = 'none';
-
-    if (quartier === 'tier3') {
-        document.getElementById('auditMessage').style.display = 'block';
-        scrollToElement(document.getElementById('auditMessage'));
-        return;
-    }
-
-    const tierCoefficients = {
-        'tier1': 22,
-        'tier2': 16
-    };
-
-    const pieceCoefficients = {
-        1: 0.85,
-        2: 1.0,
-        3: 1.15,
-        4: 1.25,
-        5: 1.35
-    };
-
-    const basePrice = tierCoefficients[quartier] || 15;
-    const pieceCoeff = pieceCoefficients[pieces] || 1.0;
-
-    const loyerEstime = Math.round(surface * basePrice * pieceCoeff * 0.85);
-
-    document.getElementById('resultValue').textContent = loyerEstime + ' €';
-    document.getElementById('resultContent').style.display = 'block';
-
-    scrollToElement(document.getElementById('resultContent'));
-}
-
-function scrollToElement(element) {
-    setTimeout(() => {
-        element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 100);
-}
-
-document.getElementById('quartier').addEventListener('change', function() {
-    document.getElementById('resultContent').style.display = 'none';
-    document.getElementById('auditMessage').style.display = 'none';
-});
-
-document.getElementById('surface').addEventListener('input', function() {
-    document.getElementById('resultContent').style.display = 'none';
-    document.getElementById('auditMessage').style.display = 'none';
-});
-
-document.getElementById('pieces').addEventListener('input', function() {
-    document.getElementById('resultContent').style.display = 'none';
-    document.getElementById('auditMessage').style.display = 'none';
-});
-
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const data = {
-            nom: this.querySelector('input[type="text"]').value,
-            email: this.querySelector('input[type="email"]').value,
-            tel: this.querySelector('input[type="tel"]').value,
-            message: this.querySelector('textarea').value
-        };
-
-        console.log('Formulaire soumis:', data);
-
-        alert('Merci pour votre message. Nous vous recontacterons sous 24 heures.');
-        
-        this.reset();
-    });
-}
-
-const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+// ================================================================================
+// CALCULATEUR DE LOYER GARANTI - JB IMMO
+// ================================================================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll(
-        '.problem-card, .benefit-card, .step, .faq-item'
-    );
-
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+    const calcForm = document.getElementById('calc-form');
+    const resultatsBox = document.getElementById('resultats-box');
+    const auditMessageBox = document.getElementById('audit-message-box');
+    const montantEstime = document.getElementById('montant-estime');
+    
+    // Gestion de la soumission du formulaire
+    if (calcForm) {
+        calcForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Récupération des valeurs du formulaire
+            const quartierSelect = document.getElementById('quartier');
+            const surface = parseFloat(document.getElementById('surface').value);
+            const pieces = parseInt(document.getElementById('pieces').value);
+            const loyerActuel = document.getElementById('loyer-actuel').value;
+            
+            // Validation des champs obligatoires
+            if (!quartierSelect.value || !surface || !pieces) {
+                alert('Veuillez remplir tous les champs obligatoires.');
+                return;
+            }
+            
+            // Récupération du tier sélectionné
+            const selectedOption = quartierSelect.options[quartierSelect.selectedIndex];
+            const tier = selectedOption.getAttribute('data-tier');
+            
+            // Masquer les deux boxes au départ
+            resultatsBox.style.display = 'none';
+            auditMessageBox.style.display = 'none';
+            
+            // Logique selon le Tier
+            if (tier === '1' || tier === '2') {
+                // Calcul pour Tier 1 et 2
+                const estimation = calculerEstimation(tier, surface, pieces);
+                montantEstime.textContent = estimation.toLocaleString('fr-FR') + ' €';
+                resultatsBox.style.display = 'block';
+                
+                // Scroll vers les résultats
+                resultatsBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else if (tier === '3') {
+                // Afficher la box d'audit pour Tier 3
+                auditMessageBox.style.display = 'block';
+                
+                // Scroll vers la box d'audit
+                auditMessageBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    }
+    
+    // Fonction de calcul d'estimation
+    function calculerEstimation(tier, surface, pieces) {
+        // Tarifs de base au m² selon le Tier
+        const tarifM2 = {
+            '1': 22,  // Tier 1 : quartiers premium (22€/m²)
+            '2': 18   // Tier 2 : quartiers attractifs (18€/m²)
+        };
+        
+        // Bonus selon le nombre de pièces
+        const bonusPieces = {
+            1: 0,
+            2: 50,
+            3: 100,
+            4: 150,
+            5: 200
+        };
+        
+        // Calcul de base
+        let estimation = surface * tarifM2[tier];
+        
+        // Ajout du bonus pièces (max à 5 pièces)
+        const bonus = bonusPieces[Math.min(pieces, 5)] || 200;
+        estimation += bonus;
+        
+        // Arrondir au multiple de 50 le plus proche
+        estimation = Math.round(estimation / 50) * 50;
+        
+        // S'assurer que l'estimation minimale est de 600€
+        estimation = Math.max(estimation, 600);
+        
+        return estimation;
+    }
+    
+    // Smooth scroll pour tous les liens d'ancrage
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
+    
+    // Gestion du formulaire de contact (simple validation et message)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validation basique
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const telephone = document.getElementById('telephone').value;
+            const message = document.getElementById('message').value;
+            
+            if (!nom || !email || !telephone || !message) {
+                alert('Veuillez remplir tous les champs du formulaire.');
+                return;
+            }
+            
+            // Validation email basique
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Veuillez entrer une adresse email valide.');
+                return;
+            }
+            
+            // Message de confirmation
+            alert('Merci pour votre message ! Nous vous recontacterons sous 24 heures.\n\nVos coordonnées ont été enregistrées.');
+            
+            // Réinitialiser le formulaire
+            contactForm.reset();
+            
+            // Note : Dans une version production, ici vous enverriez les données à un backend
+            // via fetch() ou XMLHttpRequest vers votre serveur/API
+        });
+    }
 });
-
-showSlide(slideIndex);
