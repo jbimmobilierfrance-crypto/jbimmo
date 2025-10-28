@@ -3,367 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JB Immo - Gestion Locative Professionnelle | Montpellier</title>
-    <meta name="description" content="JB Immo : Votre partenaire en gestion locative professionnelle. Loyer garanti, bien entretenu, contrat 100% légal.">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>JB Immo - Loyer Garanti Montpellier | Gestion Locative Professionnelle</title>
+    <meta name="description" content="JB Immo, votre locataire idéal. Loyer garanti, bien entretenu, contrat 100% légal. Déléguez la location de votre bien à Montpellier.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
-    <div class="container header-content">
-        <div class="logo">
-            <span class="logo-text">JB Immo</span>
+    <!-- SECTION 1 - HERO / BANNIERE D'ACCUEIL -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Le locataire idéal pour votre bien existe déjà.</h1>
+                <p class="hero-subtitle">JB Immo — Loyer garanti, bien entretenu, contrat 100 % légal.</p>
+                <p class="hero-description">Déléguez la location de votre bien à des professionnels sérieux, et encaissez vos loyers chaque mois sans jamais gérer un seul locataire.</p>
+                
+                <div class="hero-cta-buttons">
+                    <a href="#calculateur" class="btn btn-primary">Je veux mon estimation gratuite</a>
+                    <a href="#contact" class="btn btn-secondary">Être rappelé par un conseiller JB Immo</a>
+                </div>
+                
+                <div class="confiance-box">
+                    <p>✓ Loyer garanti chaque mois | ✓ Contrat rédigé par avocat | ✓ Société enregistrée (SASU JB Immo) | ✓ Assurance professionnelle incluse</p>
+                </div>
+            </div>
         </div>
-        <nav class="nav">
-            <a href="#solution">Solution</a>
-            <a href="#comment-ca-marche">Comment ça marche</a>
-            <a href="#calculateur">Calculateur</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </div>
-</header>
+    </section>
 
-<section class="hero" id="hero">
-    <div class="slider">
-        <div class="slide slide-active" style="background-image: url('https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&h=600&fit=crop')"></div>
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&h=600&fit=crop')"></div>
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=1200&h=600&fit=crop')"></div>
-    </div>
-    <div class="slider-overlay"></div>
-    
-    <div class="slider-nav">
-        <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
-        <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
-    </div>
-    
-    <div class="slider-dots">
-        <span class="dot dot-active" onclick="currentSlide(0)"></span>
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-    </div>
-    
-    <div class="hero-content">
-        <h1>Le locataire dont tous les propriétaires rêvent.</h1>
-        <p class="hero-subtitle">Loyer garanti chaque mois. Bien toujours entretenu. Contrat 100% légal.</p>
-        <div class="hero-cta">
-            <button class="btn btn-primary" onclick="scrollTo('#calculateur')">Estimer mon Loyer Garanti</button>
-            <button class="btn btn-secondary" onclick="scrollTo('#solution')">Découvrir la Solution</button>
-        </div>
-    </div>
-</section>
-
-<section class="probleme" id="probleme">
-    <div class="container">
-        <h2>Vous en avez assez des locataires traditionnels ?</h2>
-        <p class="section-intro">Les 5 galères de la location classique</p>
-        
-        <div class="problems-grid">
-            <div class="problem-card">
-                <div class="problem-icon">$</div>
-                <h3>Impayés et Retards</h3>
-                <p>Locataires qui paient tard, incomplets, ou pas du tout. Stress permanent.</p>
+    <!-- SECTION 2 - LE PROBLEME -->
+    <section id="probleme" class="probleme-section">
+        <div class="container">
+            <h2 class="section-title">Trop de propriétaires vivent la location comme un stress constant.</h2>
+            <p class="intro-text">Vous connaissez la chanson :</p>
+            
+            <div class="problemes-grid">
+                <div class="probleme-card">
+                    <p>Loyers en retard ou impayés</p>
+                </div>
+                <div class="probleme-card">
+                    <p>Locataires négligents</p>
+                </div>
+                <div class="probleme-card">
+                    <p>Appels à 22 h pour une ampoule</p>
+                </div>
+                <div class="probleme-card">
+                    <p>Mois sans revenus entre deux locations</p>
+                </div>
+                <div class="probleme-card">
+                    <p>Gestion administrative chronophage</p>
+                </div>
             </div>
             
-            <div class="problem-card">
-                <div class="problem-icon">!</div>
-                <h3>Dégradations</h3>
-                <p>Travaux non déclarés, usure prématurée, coûts imprévisibles.</p>
+            <p class="transition-text">Et si tout ça disparaissait ?</p>
+            
+            <div class="cta-text-box">
+                <p>Chez JB Immo, nous avons créé une solution simple :<br>Vous touchez vos loyers. Nous gérons tout le reste.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 - LA SOLUTION -->
+    <section id="solution" class="solution-section">
+        <div class="container">
+            <h2 class="section-title">Louez sans stress. Profitez sans risque.</h2>
+            <p class="intro-text">Avec JB Immo, vous signez un bail professionnel 100 % légal qui garantit :</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">1</div>
+                    <h3 class="benefit-title">Confiance et Cadre Juridique Clair</h3>
+                    <p class="benefit-text">Bail professionnel rédigé par avocat. Société déclarée au K-BIS. Activité légale certifiée. Un interlocuteur professionnel unique.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">2</div>
+                    <h3 class="benefit-title">Loyer Garanti Chaque Mois</h3>
+                    <p class="benefit-text">Versement à date fixe, sans jamais manquer. Fonds de sécurité constitués. Aucune vacance locative. Vous êtes payé même en cas d'inoccupation.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">3</div>
+                    <h3 class="benefit-title">Entretien Professionnel Régulier</h3>
+                    <p class="benefit-text">Ménage professionnel après chaque occupation. Petites réparations incluses. Appartement constamment entretenu et valorisé.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">4</div>
+                    <h3 class="benefit-title">Sécurité et Couverture Complète</h3>
+                    <p class="benefit-text">Responsabilité Civile Professionnelle complète. Protège votre logement, notre activité et les tiers. Bien supérieur à l'assurance habitation classique.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">5</div>
+                    <h3 class="benefit-title">Valorisation Constante du Bien</h3>
+                    <p class="benefit-text">Investissement dans la décoration et aménagements fonctionnels. Mise en valeur photographique professionnelle. Votre bien gagne en attractivité.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">6</div>
+                    <h3 class="benefit-title">Communication Fluide et Transparence</h3>
+                    <p class="benefit-text">Interlocuteur unique, gestion centralisée. Réactivité garantie 24/7 pour toute urgence. Rapports réguliers et transparence totale.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">7</div>
+                    <h3 class="benefit-title">Flexibilité et Relation Gagnant-Gagnant</h3>
+                    <p class="benefit-text">Baux souples et prévoyants. Possibilité de reprendre le logement selon préavis convenu. Ajustement des conditions selon vos besoins.</p>
+                </div>
             </div>
             
-            <div class="problem-card">
-                <div class="problem-icon">↻</div>
-                <h3>Turnover Constant</h3>
-                <p>Changement de locataire chaque an, vacance locative, relocation coûteuse.</p>
+            <div class="section-cta">
+                <a href="#fonctionnement" class="btn btn-primary">Découvrir comment ça marche</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 - COMMENT CA FONCTIONNE -->
+    <section id="fonctionnement" class="fonctionnement-section">
+        <div class="container">
+            <h2 class="section-title">Votre tranquillité en 3 étapes simples</h2>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-circle">1</div>
+                    <h3 class="step-title">Vous nous confiez votre bien.</h3>
+                    <p class="step-text">Un bail clair, sans engagement caché, rédigé par un professionnel.</p>
+                </div>
+                
+                <div class="step-arrow">→</div>
+                
+                <div class="step">
+                    <div class="step-circle">2</div>
+                    <h3 class="step-title">Nous gérons tout.</h3>
+                    <p class="step-text">Entretien, ménage, maintenance, sélection rigoureuse de chaque occupant.</p>
+                </div>
+                
+                <div class="step-arrow">→</div>
+                
+                <div class="step">
+                    <div class="step-circle">3</div>
+                    <h3 class="step-title">Vous encaissez chaque mois.</h3>
+                    <p class="step-text">Un virement fixe, sans retard, sans appel de locataire, sans mauvaise surprise.</p>
+                </div>
             </div>
             
-            <div class="problem-card">
-                <div class="problem-icon">⚙</div>
-                <h3>Gestion Administrative</h3>
-                <p>Baux à gérer, contentieux, évictions. Galère permanente.</p>
+            <div class="section-cta">
+                <a href="#calculateur" class="btn btn-primary">Obtenir une estimation gratuite</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 - COMPARATIF TABLE -->
+    <section id="comparatif" class="comparatif-section">
+        <div class="container">
+            <h2 class="section-title">Pourquoi des dizaines de propriétaires nous font confiance</h2>
+            <p class="intro-text">Voici la différence claire entre un locataire classique et JB Immo :</p>
+            
+            <div class="table-wrapper">
+                <table class="comparatif-table">
+                    <thead>
+                        <tr>
+                            <th>Critère</th>
+                            <th>Locataire Classique</th>
+                            <th>JB Immo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Loyers</td>
+                            <td>Souvent en retard ou incomplet</td>
+                            <td>Garanti, à date fixe</td>
+                        </tr>
+                        <tr>
+                            <td>Entretien</td>
+                            <td>Minimal, peu impliqué</td>
+                            <td>Professionnel, régulier, valorisant</td>
+                        </tr>
+                        <tr>
+                            <td>Assurance</td>
+                            <td>Habitation classique</td>
+                            <td>RC Pro complète et renforcée</td>
+                        </tr>
+                        <tr>
+                            <td>Communication</td>
+                            <td>Absent ou lent</td>
+                            <td>Réactif 24/7</td>
+                        </tr>
+                        <tr>
+                            <td>Valorisation</td>
+                            <td>Dégradation progressive</td>
+                            <td>Amélioration continue</td>
+                        </tr>
+                        <tr>
+                            <td>Vacance</td>
+                            <td>Zéro revenus</td>
+                            <td>Loyer garanti même inoccupé</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             
-            <div class="problem-card">
-                <div class="problem-icon">↓</div>
-                <h3>Bien qui se Dégrade</h3>
-                <p>Pas d'entretien régulier. Le bien vieillit mal et perd de la valeur.</p>
-            </div>
+            <p class="sub-title">Votre bien devient un actif rentable et serein, sans les contraintes d'un bail classique.</p>
         </div>
+    </section>
 
-        <div class="problem-transition">
-            <p>Et si vous aviez un locataire qui paie toujours à date, entretient votre bien, ne part jamais... et paie une vraie rente mensuelle garantie ?</p>
-        </div>
-    </div>
-</section>
-
-<section class="solution" id="solution">
-    <div class="container">
-        <h2>La Solution JB Immo</h2>
-        <p class="section-intro">Nous devenons votre locataire de confiance</p>
-        
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <h3>01 — Confiance et Cadre Légal</h3>
-                <p>Bail professionnel rédigé par avocat. Société déclarée au K-BIS. Activité légale certifiée. Un interlocuteur professionnel unique.</p>
-            </div>
-
-            <div class="benefit-card">
-                <h3>02 — Loyer Garanti Chaque Mois</h3>
-                <p>Versement à date fixe, sans jamais manquer. Fonds de sécurité constitués. Aucune vacance locative. Vous êtes payé même en cas d'inoccupation.</p>
-            </div>
-
-            <div class="benefit-card">
-                <h3>03 — Entretien Professionnel Régulier</h3>
-                <p>Ménage professionnel après chaque occupation. Petites réparations incluses. Appartement constamment entretenu et valorisé.</p>
-            </div>
-
-            <div class="benefit-card">
-                <h3>04 — Sécurité et Couverture Complète</h3>
-                <p>Responsabilité Civile Professionnelle complète. Protège votre logement, notre activité et les tiers. Bien supérieur à l'assurance habitation classique.</p>
-            </div>
-
-            <div class="benefit-card">
-                <h3>05 — Valorisation Constante du Bien</h3>
-                <p>Investissement dans la décoration et aménagements fonctionnels. Mise en valeur photographique professionnelle. Votre bien gagne en attractivité et valeur.</p>
-            </div>
-
-            <div class="benefit-card">
-                <h3>06 — Communication Fluide et Transparence</h3>
-                <p>Interlocuteur unique, gestion centralisée. Réactivité garantie 24/7 pour toute urgence. Rapports réguliers et transparence totale.</p>
-            </div>
-
-            <div class="benefit-card">
-                <h3>07 — Flexibilité et Relation Gagnant-Gagnant</h3>
-                <p>Baux souples et prévoyants. Possibilité de reprendre le logement selon préavis convenu. Ajustement des conditions selon vos besoins.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="comment-ca-marche" id="comment-ca-marche">
-    <div class="container">
-        <h2>3 Étapes Simples pour Votre Tranquillité</h2>
-        
-        <div class="steps-container">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Évaluation Personnalisée</h3>
-                <p>Vous décrivez votre bien. Nous estimons votre loyer garanti et analysons le potentiel.</p>
-            </div>
-
-            <div class="step-arrow">→</div>
-
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Signature du Bail</h3>
-                <p>Rendez-vous avec avocat pour finaliser le bail professionnel. Contrat 100% légal et transparent.</p>
-            </div>
-
-            <div class="step-arrow">→</div>
-
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Sérénité Totale</h3>
-                <p>À partir du mois suivant, loyer garanti versé chaque mois. Vous ne gérez rien.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="comparatif" id="comparatif">
-    <div class="container">
-        <h2>Locataire Classique VS JB Immo</h2>
-        
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Critère</th>
-                    <th>Locataire Classique</th>
-                    <th>JB Immo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Paiement du loyer</strong></td>
-                    <td>Souvent en retard ou incomplet</td>
-                    <td>Garanti, à date fixe</td>
-                </tr>
-                <tr>
-                    <td><strong>Entretien du bien</strong></td>
-                    <td>Minimal, locataire peu impliqué</td>
-                    <td>Professionnel, régulier, valorisant</td>
-                </tr>
-                <tr>
-                    <td><strong>Assurance et couverture</strong></td>
-                    <td>Assurance habitation classique</td>
-                    <td>RC Pro complète et renforcée</td>
-                </tr>
-                <tr>
-                    <td><strong>Communication</strong></td>
-                    <td>Locataire souvent absent ou lent</td>
-                    <td>Professionnel réactif 24/7</td>
-                </tr>
-                <tr>
-                    <td><strong>Valorisation du bien</strong></td>
-                    <td>Bien qui se dégrade progressivement</td>
-                    <td>Bien constamment amélioré</td>
-                </tr>
-                <tr>
-                    <td><strong>Vacance locative</strong></td>
-                    <td>Vous ne touchez rien</td>
-                    <td>Loyer garanti même si inoccupé</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section class="calculateur" id="calculateur">
-    <div class="container">
-        <h2>Estimez Votre Loyer Garanti Mensuel</h2>
-        <p class="section-intro">Découvrez le potentiel de votre bien</p>
-        
-        <div class="calc-box">
-            <form class="calc-form" onsubmit="return false;">
-                <div class="calc-grid">
+    <!-- SECTION 6 - CALCULATEUR -->
+    <section id="calculateur" class="calculateur-section">
+        <div class="container">
+            <h2 class="section-title">Estimez Votre Loyer Garanti Mensuel</h2>
+            <p class="sous-titre">Découvrez le potentiel réel de votre bien</p>
+            
+            <div class="calc-box">
+                <form id="calc-form" class="calc-form">
                     <div class="form-group">
                         <label for="quartier">Secteur de Montpellier</label>
-                        <select id="quartier" required>
-                            <option value="">-- Sélectionnez votre secteur --</option>
-                            <optgroup label="Zones Premium (Tier 1)">
-                                <option value="tier1">Hyper-centre / Corum / Comédie / Gare / Écusson</option>
-                                <option value="tier1">Arceaux / Clemenceau / Jardin du Peyrou</option>
-                                <option value="tier1">Antigone / Polygone / Port Marianne</option>
+                        <select id="quartier" name="quartier" required>
+                            <option value="">-- Sélectionnez votre quartier --</option>
+                            <optgroup label="Tiers 1 - Centre Premium">
+                                <option value="tier1" data-tier="1">Place de la Comédie</option>
+                                <option value="tier1" data-tier="1">Gare</option>
+                                <option value="tier1" data-tier="1">L'Écusson</option>
+                                <option value="tier1" data-tier="1">Le Corum</option>
+                                <option value="tier1" data-tier="1">Les Arceaux</option>
+                                <option value="tier1" data-tier="1">Clemenceau</option>
+                                <option value="tier1" data-tier="1">Antigone</option>
+                                <option value="tier1" data-tier="1">Rives-du-lez</option>
+                                <option value="tier1" data-tier="1">Port-Marianne</option>
                             </optgroup>
-                            <optgroup label="Zones Dynamiques (Tier 2)">
-                                <option value="tier2">Beaux-Arts / Boutonnet</option>
-                                <option value="tier2">La Paillade / La Mosson</option>
-                                <option value="tier2">Proche Ouest / Estanove</option>
+                            <optgroup label="Tiers 2 - Zones Attractives">
+                                <option value="tier2" data-tier="2">Beaux-Arts</option>
+                                <option value="tier2" data-tier="2">Près-d'Arènes</option>
+                                <option value="tier2" data-tier="2">Aiguerelles</option>
+                                <option value="tier2" data-tier="2">Ovalie</option>
+                                <option value="tier2" data-tier="2">Millénaire/Odysseum</option>
                             </optgroup>
                             <optgroup label="Autres Quartiers">
-                                <option value="tier3">Autre quartier (évaluation personnalisée)</option>
+                                <option value="tier3" data-tier="3">Autre quartier de Montpellier</option>
                             </optgroup>
                         </select>
                     </div>
-
+                    
                     <div class="form-group">
                         <label for="surface">Surface (m²)</label>
-                        <input type="number" id="surface" min="15" max="300" placeholder="Ex: 50" required>
+                        <input type="number" id="surface" name="surface" placeholder="Ex: 50" min="10" max="500" required>
                     </div>
-
+                    
                     <div class="form-group">
                         <label for="pieces">Nombre de pièces</label>
-                        <input type="number" id="pieces" min="1" max="5" placeholder="Ex: 3" required>
+                        <input type="number" id="pieces" name="pieces" placeholder="Ex: 3" min="1" max="10" required>
                     </div>
-
+                    
                     <div class="form-group">
-                        <label for="loyerActuel">Loyer actuel (optionnel)</label>
-                        <input type="number" id="loyerActuel" min="300" max="2000" placeholder="Ex: 800">
+                        <label for="loyer-actuel">Loyer actuel (optionnel)</label>
+                        <input type="number" id="loyer-actuel" name="loyer-actuel" placeholder="Ex: 800">
                     </div>
-                </div>
-
-                <button type="button" class="btn btn-primary btn-calculate" onclick="calculateLoyer()">Estimer Mon Loyer Garanti</button>
-            </form>
-
-            <div id="resultContent" class="result-content" style="display: none;">
-                <div class="result-box">
+                    
+                    <button type="submit" class="btn btn-primary btn-calc">Estimer Mon Loyer Garanti</button>
+                </form>
+                
+                <!-- RESULTATS BOX -->
+                <div id="resultats-box" class="resultats-box" style="display: none;">
                     <p class="result-label">Estimation de Loyer Garanti</p>
-                    <p class="result-value" id="resultValue">--</p>
+                    <p class="result-value" id="montant-estime"></p>
                     <p class="result-note">par mois</p>
+                    <p class="disclaimer">Cette estimation est basée sur votre secteur, la surface et le nombre de pièces. Le montant exact sera confirmé lors d'une évaluation personnalisée.</p>
+                    <a href="#contact" class="btn btn-primary">Demander une Évaluation Précise</a>
                 </div>
-                <p class="result-disclaimer">Cette estimation est basée sur votre secteur, la surface et le nombre de pièces. Le montant exact sera confirmé lors d'une évaluation personnalisée.</p>
-                <button class="btn btn-secondary" onclick="scrollTo('#contact')">Demander une Évaluation Précise</button>
-            </div>
-
-            <div id="auditMessage" class="audit-message" style="display: none;">
-                <h3>Évaluation Personnalisée Requise</h3>
-                <p>Votre secteur nécessite une analyse approfondie pour estimer précisément le potentiel de votre bien.</p>
-                <p>Nous vous proposons une évaluation gratuite sous 48 heures.</p>
-                <button class="btn btn-primary" onclick="scrollTo('#contact')">Demander Une Évaluation</button>
+                
+                <!-- AUDIT MESSAGE BOX -->
+                <div id="audit-message-box" class="audit-message-box" style="display: none;">
+                    <h3>Évaluation Personnalisée Requise</h3>
+                    <p>Votre secteur nécessite une analyse approfondie pour estimer précisément le potentiel de votre bien.</p>
+                    <p>Nous vous proposons une évaluation gratuite sous 48 heures.</p>
+                    <a href="#contact" class="btn btn-primary">Demander Une Évaluation</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="faq" id="faq">
-    <div class="container">
-        <h2>Vos Questions Fréquentes</h2>
-        
-        <div class="faq-grid">
-            <div class="faq-item">
-                <h3>C'est légal, cette gestion locative ?</h3>
-                <p>Oui, 100% légal. La gestion locative professionnelle est encadrée par la loi. Notre activité est inscrite au K-BIS. Nous disposons d'un bail professionnel rédigé par avocat, conforme à la loi.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Et si je veux reprendre mon bien ?</h3>
-                <p>Possible. Le bail stipule un préavis convenu (ex: 3 mois). Vous gardez le contrôle total. Nous trouvons ensemble une date qui vous convient.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Quel est le montant de votre commission ?</h3>
-                <p>Transparent et négocié lors du contrat. Notre commission couvre la gestion complète, l'entretien, les assurances, et les réparations courantes. Pas de surprise.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Mon bien doit-il être meublé ?</h3>
-                <p>Idéalement oui, car cela permet une utilisation optimale. Mais on peut en discuter selon votre situation. Nous pouvons vous conseiller sur l'investissement mobilier.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Comment gérez-vous les urgences et réparations ?</h3>
-                <p>Nous avons un réseau de prestataires de confiance. Les petites réparations sont incluses. Les urgences sont traitées 24/7 par notre équipe.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Quelles sont les démarches pour commencer ?</h3>
-                <p>Simple : 1) Décrivez-nous votre bien et votre situation. 2) Évaluation personnalisée. 3) Signature du bail. 4) Première rente au mois suivant.</p>
+    <!-- SECTION 7 - FAQ -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Vos Questions Fréquentes</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">C'est légal, cette gestion locative ?</h3>
+                    <p class="faq-answer">Oui, 100% légal. La gestion locative professionnelle est encadrée par la loi. Notre activité est inscrite au K-BIS. Nous disposons d'un bail professionnel rédigé par avocat, conforme à la loi.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Et si je veux reprendre mon bien ?</h3>
+                    <p class="faq-answer">Possible. Le bail stipule un préavis convenu (ex: 3 mois). Vous gardez le contrôle total. Nous trouvons ensemble une date qui vous convient.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Quel est le montant de votre commission ?</h3>
+                    <p class="faq-answer">Transparent et négocié lors du contrat. Notre commission couvre la gestion complète, l'entretien, les assurances et les réparations courantes. Pas de surprise.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Mon bien doit-il être meublé ?</h3>
+                    <p class="faq-answer">Idéalement oui, car cela permet une utilisation optimale. Mais on peut en discuter selon votre situation. Nous pouvons vous conseiller sur l'investissement mobilier.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Comment gérez-vous les urgences et réparations ?</h3>
+                    <p class="faq-answer">Nous avons un réseau de prestataires de confiance. Les petites réparations sont incluses. Les urgences sont traitées 24/7 par notre équipe.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Quelles sont les démarches pour commencer ?</h3>
+                    <p class="faq-answer">Simple : 1) Décrivez-nous votre bien et votre situation. 2) Évaluation personnalisée. 3) Signature du bail. 4) Première rente au mois suivant.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="contact" id="contact">
-    <div class="container">
-        <h2>Prêt à Sécuriser Vos Revenus ?</h2>
-        <p class="section-intro">Laissez-nous un message. Nous vous recontacterons sous 24 heures.</p>
-        
-        <div class="contact-layout">
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <input type="text" placeholder="Votre nom" required>
+    <!-- SECTION 8 - CONTACT / CTA FINAL -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Prêt à Sécuriser Vos Revenus ?</h2>
+            <p class="sous-titre">Laissez-nous un message. Nous vous recontacterons sous 24 heures.</p>
+            
+            <div class="contact-layout">
+                <div class="contact-form-wrapper">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telephone">Téléphone</label>
+                            <input type="tel" id="telephone" name="telephone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Décrivez brièvement votre bien et votre situation</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Envoyer Ma Demande</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Votre email" required>
+                
+                <div class="contact-info">
+                    <h3>Nos Coordonnées</h3>
+                    <p>Email: jbimmobilier.france@gmail.com</p>
+                    <p>Téléphone: 06 58 79 70 37</p>
+                    <p>Zone d'intervention: Montpellier et agglomération</p>
+                    <p>Horaires: Lundi - Samedi, 9h - 18h</p>
                 </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Votre téléphone" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Décrivez brièvement votre bien et votre situation" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full">Envoyer Ma Demande</button>
-            </form>
-
-            <div class="contact-info">
-                <h3>Nos Coordonnées</h3>
-                <p><strong>Email :</strong> jbimmobilier.france@gmail.com</p>
-                <p><strong>Téléphone :</strong> 06 58 79 70 37</p>
-                <p><strong>Zone d'intervention :</strong> Montpellier et agglomération</p>
-                <p><strong>Horaires :</strong> Lundi - Samedi, 9h - 18h</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer class="footer">
-    <div class="container">
-        <p>Copyright © 2025 JB Immo (SASU). Tous droits réservés. | Gestion Locative Professionnelle - Montpellier</p>
-    </div>
-</footer>
+    <!-- SECTION 9 - FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright © 2025 JB Immo (SASU). Tous droits réservés. | Gestion Locative Professionnelle - Montpellier</p>
+            <div class="footer-links">
+                <a href="#">Mentions légales</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
 
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
