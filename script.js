@@ -147,4 +147,38 @@ document.addEventListener('DOMContentLoaded', function() {
             // via fetch() ou XMLHttpRequest vers votre serveur/API
         });
     }
+    
+    // ================================================================================
+    // ANIMATIONS AU SCROLL - INTERSECTION OBSERVER
+    // ================================================================================
+    
+    // Observer pour les animations d'apparition
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const animateOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+    
+    // Sélectionner tous les éléments à animer
+    const elementsToAnimate = document.querySelectorAll(
+        '.probleme-card, .benefit-card, .fonctionnement-card, ' +
+        '.faq-item, .section-title, .intro-text, .histoire-content p'
+    );
+    
+    elementsToAnimate.forEach(el => {
+        animateOnScroll.observe(el);
+    });
+    
+    // Animation spéciale pour le tableau comparatif
+    const comparatifTable = document.querySelector('.comparatif-table');
+    if (comparatifTable) {
+        animateOnScroll.observe(comparatifTable);
+    }
 });
