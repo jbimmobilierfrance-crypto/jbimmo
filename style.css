@@ -179,6 +179,7 @@ h3 {
 .btn-primary:hover {
     background-color: var(--or-clair);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 168, 106, 0.3);
 }
 
 .btn-secondary {
@@ -189,6 +190,8 @@ h3 {
 
 .btn-secondary:hover {
     background-color: var(--gris-clair);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.15);
 }
 
 .section-cta {
@@ -366,11 +369,13 @@ h3 {
     padding: 30px;
     border-radius: 4px;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .probleme-card:hover {
     border-color: var(--or-discret);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
 }
 
 .probleme-card p {
@@ -424,11 +429,13 @@ h3 {
     padding: 35px;
     border-radius: 4px;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .benefit-card:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
+    border-color: var(--or-discret);
 }
 
 .benefit-icon {
@@ -444,6 +451,12 @@ h3 {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    background-color: var(--or-clair);
+    transform: scale(1.1);
 }
 
 .benefit-title {
@@ -496,6 +509,14 @@ h3 {
     font-size: 24px;
     font-weight: 600;
     margin: 0 auto 20px;
+    box-shadow: 0 4px 12px rgba(201, 168, 106, 0.3);
+    transition: all 0.3s ease;
+}
+
+.step:hover .step-circle {
+    background-color: var(--or-clair);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(201, 168, 106, 0.4);
 }
 
 .step-title {
@@ -571,141 +592,8 @@ h3 {
    SECTION 6 - CALCULATEUR
    ================================================================================ */
 
-.calculateur-section {
-    background: linear-gradient(135deg, var(--gris-fonce) 0%, var(--charbon) 100%);
-    padding: 100px 0;
-    color: var(--blanc);
-}
-
-.calculateur-section .section-title {
-    color: var(--blanc);
-}
-
-.calc-box {
-    background-color: var(--blanc);
-    padding: 50px;
-    max-width: 650px;
-    margin: 0 auto;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    color: var(--gris-fonce);
-}
-
-.calc-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    font-size: 13px;
-    text-transform: uppercase;
-    color: var(--gris-fonce);
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    padding: 14px;
-    border: 1px solid var(--gris-moyen);
-    border-radius: 4px;
-    font-family: var(--font-body);
-    font-size: 15px;
-    transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--or-discret);
-    box-shadow: 0 0 0 3px rgba(201, 168, 106, 0.1);
-}
-
-.btn-calc {
-    grid-column: 1 / -1;
-    margin-top: 30px;
-    width: 100%;
-    padding: 14px 32px;
-    border: none;
-    cursor: pointer;
-}
-
-/* Résultats Box */
-.resultats-box {
-    margin-top: 40px;
-    background-color: var(--blanc-casse);
-    border-left: 4px solid var(--or-discret);
-    padding: 35px;
-    border-radius: 4px;
-}
-
-.result-label {
-    font-size: 13px;
-    text-transform: uppercase;
-    color: var(--gris-fonce);
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.result-value {
-    font-family: var(--font-title);
-    font-size: 42px;
-    color: var(--or-discret);
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.result-note {
-    font-size: 13px;
-    color: var(--gris-fonce);
-    margin-bottom: 20px;
-}
-
-.disclaimer {
-    font-size: 13px;
-    color: var(--gris-fonce);
-    font-style: italic;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* Audit Message Box */
-.audit-message-box {
-    margin-top: 40px;
-    background-color: var(--blanc);
-    border: 2px solid var(--or-discret);
-    padding: 40px;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.audit-message-box h3 {
-    font-size: 24px;
-    color: var(--gris-fonce);
-    margin-bottom: 20px;
-}
-
-.audit-message-box p {
-    font-size: 14px;
-    color: var(--gris-fonce);
-    line-height: 1.7;
-    margin-bottom: 15px;
-}
-
-.audit-message-box .btn {
-    margin-top: 20px;
-}
-
 /* ================================================================================
-   SECTION 7 - FAQ
+   SECTION 6 - FAQ
    ================================================================================ */
 
 .faq-section {
@@ -724,10 +612,12 @@ h3 {
     border-left: 4px solid var(--or-discret);
     padding: 30px;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .faq-item:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateX(4px);
 }
 
 .faq-question {
@@ -743,7 +633,7 @@ h3 {
 }
 
 /* ================================================================================
-   SECTION 8 - CONTACT
+   SECTION 7 - CONTACT
    ================================================================================ */
 
 .contact-section {
@@ -794,7 +684,7 @@ h3 {
 }
 
 /* ================================================================================
-   SECTION 9 - FOOTER
+   SECTION 8 - FOOTER
    ================================================================================ */
 
 .footer {
@@ -887,10 +777,6 @@ h3 {
         font-size: 32px;
     }
     
-    .calc-form {
-        grid-template-columns: 1fr;
-    }
-    
     .contact-layout {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -917,13 +803,5 @@ h3 {
 @media (max-width: 480px) {
     .hero-title {
         font-size: 28px;
-    }
-    
-    .calc-box {
-        padding: 30px 20px;
-    }
-    
-    .result-value {
-        font-size: 32px;
     }
 }
