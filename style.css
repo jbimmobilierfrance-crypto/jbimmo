@@ -1,4 +1,9 @@
+/* ================================================================================
+   VARIABLES CSS - PALETTE JB IMMO
+   ================================================================================ */
+
 :root {
+    /* Couleurs */
     --blanc-casse: #FAF8F5;
     --blanc: #FFFFFF;
     --gris-clair: #F5F3F0;
@@ -7,7 +12,15 @@
     --charbon: #1a1a1a;
     --or-discret: #C9A86A;
     --or-clair: #DEB88A;
+    
+    /* Polices */
+    --font-title: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
 }
+
+/* ================================================================================
+   RESET & BASE
+   ================================================================================ */
 
 * {
     margin: 0;
@@ -20,226 +33,76 @@ html {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-body);
     color: var(--gris-fonce);
-    background-color: var(--blanc-casse);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 20px;
 }
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: rgba(250, 248, 245, 0.98);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--gris-moyen);
-    transition: all 0.3s ease;
-}
+/* ================================================================================
+   TYPOGRAPHIE
+   ================================================================================ */
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 0;
-}
-
-.logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
+h1, h2 {
+    font-family: var(--font-title);
     font-weight: 600;
-    color: var(--gris-fonce);
-    letter-spacing: 2px;
 }
 
-.nav {
-    display: flex;
-    gap: 50px;
+h3 {
+    font-family: var(--font-title);
 }
 
-.nav a {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--gris-fonce);
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
-    text-transform: uppercase;
-}
-
-.nav a:hover {
-    color: var(--or-discret);
-}
-
-section {
-    padding: 100px 0;
-}
-
-h2 {
-    font-family: 'Playfair Display', serif;
+.section-title {
     font-size: 48px;
-    font-weight: 400;
     color: var(--gris-fonce);
     text-align: center;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
+    margin-bottom: 30px;
+    line-height: 1.2;
 }
 
-.section-intro {
-    text-align: center;
+.intro-text {
     font-size: 16px;
-    color: var(--or-discret);
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 60px;
-}
-
-.hero {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    margin-top: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.slide-active {
-    opacity: 1;
-}
-
-.slider-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
+    color: var(--gris-fonce);
     text-align: center;
-    color: var(--blanc);
-    max-width: 900px;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 56px;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    letter-spacing: -1px;
-}
-
-.hero-subtitle {
-    font-size: 20px;
-    font-weight: 300;
     margin-bottom: 40px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-.hero-cta {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+.sous-titre {
+    font-size: 16px;
+    color: var(--or-clair);
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.slider-nav {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
+.sub-title {
+    font-size: 16px;
+    color: var(--gris-fonce);
+    font-style: italic;
+    text-align: center;
+    margin-top: 30px;
 }
 
-.slider-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: var(--blanc);
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-}
-
-.slider-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.6);
-}
-
-.slider-dots {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    display: flex;
-    gap: 12px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.dot-active {
-    background: var(--blanc);
-    width: 28px;
-    border-radius: 5px;
-}
+/* ================================================================================
+   BOUTONS
+   ================================================================================ */
 
 .btn {
+    display: inline-block;
     padding: 16px 32px;
-    border: none;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
     border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
     cursor: pointer;
-    letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    text-transform: uppercase;
+    border: none;
 }
 
 .btn-primary {
@@ -254,249 +117,328 @@ h2 {
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--blanc);
-    border: 2px solid var(--blanc);
+    color: var(--gris-fonce);
+    border: 2px solid var(--gris-fonce);
 }
 
 .btn-secondary:hover {
-    background-color: var(--blanc);
-    color: var(--gris-fonce);
+    background-color: var(--gris-clair);
 }
 
-.btn-full {
-    width: 100%;
+.section-cta {
+    text-align: center;
+    margin-top: 50px;
 }
 
-.btn-calculate {
-    margin-top: 30px;
-}
+/* ================================================================================
+   SECTION 1 - HERO
+   ================================================================================ */
 
-.probleme {
-    background-color: var(--blanc);
-}
-
-.problems-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 35px;
-    margin-bottom: 60px;
-}
-
-.problem-card {
-    padding: 40px 30px;
-    border: 1px solid var(--gris-moyen);
-    background: var(--blanc-casse);
-    transition: all 0.3s ease;
+.hero-section {
+    background: linear-gradient(135deg, var(--blanc-casse) 0%, var(--blanc) 100%);
+    padding: 120px 0 80px;
     text-align: center;
 }
 
-.problem-card:hover {
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 56px;
+    color: var(--gris-fonce);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: var(--gris-fonce);
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 16px;
+    color: var(--gris-fonce);
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.hero-cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.confiance-box {
+    background-color: var(--blanc);
+    border-top: 1px solid var(--gris-moyen);
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.confiance-box p {
+    font-size: 13px;
+    color: var(--gris-fonce);
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* ================================================================================
+   SECTION 2 - PROBLEME
+   ================================================================================ */
+
+.probleme-section {
+    background-color: var(--blanc);
+    padding: 100px 0;
+}
+
+.problemes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.probleme-card {
+    background-color: var(--gris-clair);
+    border: 1px solid var(--gris-moyen);
+    padding: 30px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.probleme-card:hover {
     border-color: var(--or-discret);
-    transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.problem-icon {
-    font-size: 40px;
-    color: var(--or-discret);
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.problem-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--gris-fonce);
-    margin-bottom: 12px;
-}
-
-.problem-card p {
-    font-size: 14px;
-    color: var(--gris-fonce);
-    line-height: 1.6;
-}
-
-.problem-transition {
-    background: var(--gris-clair);
-    padding: 40px;
-    text-align: center;
-    border-left: 4px solid var(--or-discret);
-}
-
-.problem-transition p {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--gris-fonce);
-}
-
-.solution {
-    background-color: var(--blanc-casse);
-}
-
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-}
-
-.benefit-card {
-    padding: 40px;
-    background: var(--blanc);
-    border: 1px solid var(--gris-moyen);
-    transition: all 0.3s ease;
-}
-
-.benefit-card:hover {
-    border-color: var(--or-discret);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-}
-
-.benefit-card h3 {
-    font-family: 'Playfair Display', serif;
+.probleme-card p {
     font-size: 16px;
-    font-weight: 400;
     color: var(--gris-fonce);
-    margin-bottom: 15px;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    text-align: center;
 }
 
-.benefit-card p {
-    font-size: 14px;
+.transition-text {
+    font-size: 18px;
+    color: var(--gris-fonce);
+    font-style: italic;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cta-text-box {
+    background-color: var(--gris-clair);
+    border-left: 4px solid var(--or-discret);
+    padding: 25px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-text-box p {
+    font-size: 16px;
     color: var(--gris-fonce);
     line-height: 1.7;
 }
 
-.comment-ca-marche {
-    background-color: var(--blanc);
+/* ================================================================================
+   SECTION 3 - SOLUTION
+   ================================================================================ */
+
+.solution-section {
+    background-color: var(--blanc-casse);
+    padding: 100px 0;
 }
 
-.steps-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
+    margin-bottom: 50px;
 }
 
-.step {
-    background: var(--blanc-casse);
-    padding: 40px 30px;
+.benefit-card {
+    background-color: var(--blanc);
     border: 1px solid var(--gris-moyen);
-    flex: 1;
-    min-width: 220px;
-    text-align: center;
+    padding: 35px;
+    border-radius: 4px;
     transition: all 0.3s ease;
 }
 
-.step:hover {
-    border-color: var(--or-discret);
+.benefit-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transform: translateY(-5px);
 }
 
-.step-number {
-    width: 50px;
-    height: 50px;
-    background: var(--or-discret);
+.benefit-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--or-discret);
     color: var(--blanc);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-title);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.benefit-title {
+    font-size: 18px;
+    color: var(--gris-fonce);
+    margin-bottom: 15px;
+}
+
+.benefit-text {
+    font-size: 14px;
+    color: var(--gris-fonce);
+    line-height: 1.7;
+}
+
+/* ================================================================================
+   SECTION 4 - COMMENT CA FONCTIONNE
+   ================================================================================ */
+
+.fonctionnement-section {
+    background-color: var(--blanc);
+    padding: 100px 0;
+}
+
+.steps-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 60px 0;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.step-circle {
+    width: 50px;
+    height: 50px;
+    background-color: var(--or-discret);
+    color: var(--blanc);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-title);
     font-size: 24px;
     font-weight: 600;
     margin: 0 auto 20px;
 }
 
-.step h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 400;
+.step-title {
+    font-size: 20px;
     color: var(--gris-fonce);
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
-.step p {
+.step-text {
     font-size: 14px;
     color: var(--gris-fonce);
+    line-height: 1.7;
 }
 
 .step-arrow {
     font-size: 28px;
     color: var(--or-discret);
+    font-weight: bold;
 }
 
-.comparatif {
+/* ================================================================================
+   SECTION 5 - COMPARATIF
+   ================================================================================ */
+
+.comparatif-section {
     background-color: var(--blanc-casse);
+    padding: 100px 0;
 }
 
-.comparison-table {
+.table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+.comparatif-table {
     width: 100%;
     border-collapse: collapse;
-    background: var(--blanc);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    background-color: var(--blanc);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.comparison-table thead {
-    background: var(--gris-fonce);
+.comparatif-table thead {
+    background-color: var(--gris-fonce);
     color: var(--blanc);
 }
 
-.comparison-table th {
-    padding: 25px;
+.comparatif-table th {
+    padding: 20px;
     text-align: left;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
 }
 
-.comparison-table td {
-    padding: 20px 25px;
+.comparatif-table td {
+    padding: 20px;
     border-bottom: 1px solid var(--gris-moyen);
     font-size: 14px;
 }
 
-.comparison-table tbody tr:hover {
-    background-color: var(--blanc-casse);
+.comparatif-table tbody tr {
+    transition: background-color 0.3s ease;
 }
 
-.comparison-table tbody tr:last-child td {
+.comparatif-table tbody tr:hover {
+    background-color: var(--gris-clair);
+}
+
+.comparatif-table tbody tr:last-child td {
     border-bottom: none;
 }
 
-.calculateur {
+/* ================================================================================
+   SECTION 6 - CALCULATEUR
+   ================================================================================ */
+
+.calculateur-section {
     background: linear-gradient(135deg, var(--gris-fonce) 0%, var(--charbon) 100%);
+    padding: 100px 0;
     color: var(--blanc);
 }
 
-.calculateur h2 {
+.calculateur-section .section-title {
     color: var(--blanc);
-}
-
-.calculateur .section-intro {
-    color: var(--or-clair);
 }
 
 .calc-box {
-    background: var(--blanc);
-    color: var(--gris-fonce);
+    background-color: var(--blanc);
     padding: 50px;
-    border-radius: 8px;
     max-width: 650px;
     margin: 0 auto;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    color: var(--gris-fonce);
 }
 
-.calc-grid {
+.calc-form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
-    margin-bottom: 30px;
 }
 
 .form-group {
@@ -504,118 +446,127 @@ h2 {
     flex-direction: column;
 }
 
-.calc-grid .form-group:nth-child(n+3) {
-    grid-column: span 1;
-}
-
-label {
+.form-group label {
     font-size: 13px;
-    font-weight: 600;
-    color: var(--gris-fonce);
-    margin-bottom: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    color: var(--gris-fonce);
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
-input, select {
+.form-group input,
+.form-group select,
+.form-group textarea {
     padding: 14px;
-    font-size: 14px;
     border: 1px solid var(--gris-moyen);
     border-radius: 4px;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-body);
+    font-size: 15px;
     transition: all 0.3s ease;
 }
 
-input:focus, select:focus {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
     outline: none;
     border-color: var(--or-discret);
     box-shadow: 0 0 0 3px rgba(201, 168, 106, 0.1);
 }
 
-.result-content {
-    margin-top: 40px;
-    padding-top: 30px;
-    border-top: 2px solid var(--gris-moyen);
+.btn-calc {
+    grid-column: 1 / -1;
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px 32px;
+    border: none;
+    cursor: pointer;
 }
 
-.result-box {
-    background: var(--blanc-casse);
+/* Résultats Box */
+.resultats-box {
+    margin-top: 40px;
+    background-color: var(--blanc-casse);
+    border-left: 4px solid var(--or-discret);
     padding: 35px;
     border-radius: 4px;
-    text-align: center;
-    margin-bottom: 20px;
-    border-left: 4px solid var(--or-discret);
 }
 
 .result-label {
     font-size: 13px;
-    color: var(--gris-fonce);
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+    color: var(--gris-fonce);
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .result-value {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-title);
     font-size: 42px;
-    font-weight: 400;
     color: var(--or-discret);
+    font-weight: 700;
     margin-bottom: 5px;
 }
 
 .result-note {
     font-size: 13px;
     color: var(--gris-fonce);
+    margin-bottom: 20px;
 }
 
-.result-disclaimer {
+.disclaimer {
     font-size: 13px;
     color: var(--gris-fonce);
-    margin-bottom: 20px;
     font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 25px;
 }
 
-.audit-message {
-    background: var(--blanc);
+/* Audit Message Box */
+.audit-message-box {
+    margin-top: 40px;
+    background-color: var(--blanc);
+    border: 2px solid var(--or-discret);
     padding: 40px;
     border-radius: 4px;
     text-align: center;
-    border: 2px solid var(--or-discret);
 }
 
-.audit-message h3 {
-    font-family: 'Playfair Display', serif;
+.audit-message-box h3 {
     font-size: 24px;
-    font-weight: 400;
     color: var(--gris-fonce);
+    margin-bottom: 20px;
+}
+
+.audit-message-box p {
+    font-size: 14px;
+    color: var(--gris-fonce);
+    line-height: 1.7;
     margin-bottom: 15px;
 }
 
-.audit-message p {
-    font-size: 14px;
-    color: var(--gris-fonce);
-    margin-bottom: 10px;
-}
-
-.audit-message .btn {
+.audit-message-box .btn {
     margin-top: 20px;
 }
 
-.faq {
+/* ================================================================================
+   SECTION 7 - FAQ
+   ================================================================================ */
+
+.faq-section {
     background-color: var(--blanc);
+    padding: 100px 0;
 }
 
 .faq-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 35px;
+    gap: 30px;
 }
 
 .faq-item {
-    padding: 30px;
-    background: var(--blanc-casse);
+    background-color: var(--gris-clair);
     border-left: 4px solid var(--or-discret);
+    padding: 30px;
     transition: all 0.3s ease;
 }
 
@@ -623,62 +574,58 @@ input:focus, select:focus {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.faq-item h3 {
-    font-family: 'Playfair Display', serif;
+.faq-question {
     font-size: 16px;
-    font-weight: 400;
     color: var(--gris-fonce);
     margin-bottom: 12px;
 }
 
-.faq-item p {
+.faq-answer {
     font-size: 14px;
     color: var(--gris-fonce);
     line-height: 1.7;
 }
 
-.contact {
+/* ================================================================================
+   SECTION 8 - CONTACT
+   ================================================================================ */
+
+.contact-section {
     background-color: var(--blanc-casse);
+    padding: 100px 0;
 }
 
 .contact-layout {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 60px;
-    max-width: 1000px;
-    margin: 0 auto;
+    margin-top: 50px;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.contact-form-wrapper {
+    width: 100%;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form .btn {
+    width: 100%;
     padding: 16px;
-    font-size: 14px;
-    border: 1px solid var(--gris-moyen);
-    border-radius: 4px;
-    font-family: 'Lato', sans-serif;
-}
-
-.contact-form input:focus, .contact-form textarea:focus {
-    outline: none;
-    border-color: var(--or-discret);
-    box-shadow: 0 0 0 3px rgba(201, 168, 106, 0.1);
+    margin-top: 25px;
 }
 
 .contact-info {
-    background: var(--blanc);
+    background-color: var(--blanc);
     padding: 40px;
     border: 1px solid var(--gris-moyen);
+    border-radius: 4px;
+    height: fit-content;
 }
 
 .contact-info h3 {
-    font-family: 'Playfair Display', serif;
     font-size: 20px;
-    font-weight: 400;
     color: var(--gris-fonce);
     margin-bottom: 20px;
 }
@@ -686,128 +633,107 @@ input:focus, select:focus {
 .contact-info p {
     font-size: 14px;
     color: var(--gris-fonce);
-    margin-bottom: 12px;
     line-height: 1.8;
+    margin-bottom: 12px;
 }
 
+/* ================================================================================
+   SECTION 9 - FOOTER
+   ================================================================================ */
+
 .footer {
-    background: var(--gris-fonce);
+    background-color: var(--gris-fonce);
     color: var(--blanc);
-    text-align: center;
     padding: 40px 0;
+    text-align: center;
 }
 
 .footer p {
     font-size: 13px;
     opacity: 0.8;
+    margin-bottom: 15px;
 }
 
+.footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--blanc);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--or-clair);
+}
+
+/* ================================================================================
+   RESPONSIVE
+   ================================================================================ */
+
 @media (max-width: 768px) {
-    .container {
-        padding: 0 20px;
-    }
-
-    .nav {
-        gap: 25px;
-    }
-
-    .nav a {
-        font-size: 11px;
-    }
-
-    .hero h1 {
+    .hero-title {
         font-size: 36px;
     }
-
+    
     .hero-subtitle {
-        font-size: 16px;
+        font-size: 18px;
     }
-
-    h2 {
+    
+    .hero-cta-buttons {
+        flex-direction: column;
+    }
+    
+    .hero-cta-buttons .btn {
+        width: 100%;
+    }
+    
+    .section-title {
         font-size: 32px;
     }
-
-    .hero-cta {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .btn {
-        padding: 14px 24px;
-        font-size: 12px;
-    }
-
-    section {
-        padding: 70px 0;
-    }
-
-    .calc-grid {
+    
+    .calc-form {
         grid-template-columns: 1fr;
     }
-
+    
     .contact-layout {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
+    
     .steps-container {
-        gap: 15px;
+        flex-direction: column;
     }
-
+    
     .step-arrow {
         transform: rotate(90deg);
     }
-
-    .comparison-table th, .comparison-table td {
-        padding: 15px;
+    
+    .comparatif-table {
         font-size: 13px;
+    }
+    
+    .comparatif-table th,
+    .comparatif-table td {
+        padding: 12px;
     }
 }
 
 @media (max-width: 480px) {
-    .header-content {
-        padding: 15px 0;
-    }
-
-    .logo-text {
-        font-size: 18px;
-    }
-
-    .nav {
-        display: none;
-    }
-
-    .hero {
-        margin-top: 60px;
-        height: 80vh;
-    }
-
-    .hero h1 {
+    .hero-title {
         font-size: 28px;
     }
-
-    .hero-subtitle {
-        font-size: 14px;
-    }
-
-    h2 {
-        font-size: 26px;
-    }
-
+    
     .calc-box {
         padding: 30px 20px;
     }
-
-    .benefit-card, .problem-card, .faq-item {
-        padding: 25px 20px;
-    }
-
-    section {
-        padding: 50px 0;
-    }
-
-    .btn {
-        padding: 12px 20px;
-        font-size: 11px;
+    
+    .result-value {
+        font-size: 32px;
     }
 }
