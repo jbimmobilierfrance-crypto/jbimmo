@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(currentSlide - 1);
     }
     
-    // Auto-play (toutes les 5 secondes)
+    // Auto-play (toutes les 9 secondes - rythme plus lent et agréable)
     function startSlideshow() {
-        slideInterval = setInterval(nextSlide, 5000);
+        slideInterval = setInterval(nextSlide, 9000);
     }
     
     function stopSlideshow() {
