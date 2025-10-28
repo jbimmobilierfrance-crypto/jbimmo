@@ -70,6 +70,12 @@ body {
     align-items: center;
 }
 
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
 .logo-text {
     font-family: var(--font-title);
     font-size: 24px;
@@ -78,8 +84,22 @@ body {
     transition: color 0.3s ease;
 }
 
+.logo-location {
+    font-family: var(--font-body);
+    font-size: 10px;
+    color: var(--or-clair);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
 #header.scrolled .logo-text {
     color: var(--gris-fonce);
+}
+
+#header.scrolled .logo-location {
+    color: var(--or-discret);
 }
 
 .nav-menu {
@@ -381,12 +401,24 @@ h3 {
     border-radius: 4px;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .probleme-card:hover {
     border-color: var(--or-discret);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     transform: translateY(-4px);
+}
+
+.probleme-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--or-discret);
+    margin-bottom: 20px;
+    stroke-width: 1.5;
 }
 
 .probleme-card p {
@@ -450,23 +482,16 @@ h3 {
 }
 
 .benefit-icon {
-    width: 40px;
-    height: 40px;
-    background-color: var(--or-discret);
-    color: var(--blanc);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-title);
-    font-size: 18px;
-    font-weight: 600;
+    width: 56px;
+    height: 56px;
+    color: var(--or-discret);
     margin-bottom: 20px;
+    stroke-width: 1.5;
     transition: all 0.3s ease;
 }
 
 .benefit-card:hover .benefit-icon {
-    background-color: var(--or-clair);
+    color: var(--or-clair);
     transform: scale(1.1);
 }
 
@@ -483,10 +508,83 @@ h3 {
 }
 
 /* ================================================================================
-   SECTION 4 - COMMENT CA FONCTIONNE
+   SECTION 4 - FONCTIONNEMENT (TRANSPARENCE)
    ================================================================================ */
 
-.fonctionnement-section {
+.fonctionnement-transparence-section {
+    background: linear-gradient(135deg, var(--gris-clair) 0%, var(--blanc-casse) 100%);
+    padding: 100px 0;
+}
+
+.fonctionnement-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.fonctionnement-content .intro-text {
+    font-size: 16px;
+    color: var(--gris-fonce);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.fonctionnement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.fonctionnement-card {
+    background-color: var(--blanc);
+    padding: 35px;
+    border-radius: 4px;
+    border: 1px solid var(--gris-moyen);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.fonctionnement-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+    border-color: var(--or-discret);
+}
+
+.fonctionnement-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--or-discret);
+    margin-bottom: 20px;
+    stroke-width: 1.5;
+}
+
+.fonctionnement-card h3 {
+    font-size: 18px;
+    color: var(--gris-fonce);
+    margin-bottom: 15px;
+    font-family: var(--font-title);
+}
+
+.fonctionnement-card p {
+    font-size: 14px;
+    color: var(--gris-fonce);
+    line-height: 1.7;
+}
+
+.conclusion-text {
+    font-size: 16px;
+    color: var(--gris-fonce);
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* ================================================================================
+   SECTION 5 - COMMENT CA MARCHE
+   ================================================================================ */
+
+.comment-ca-marche-section {
     background-color: var(--blanc);
     padding: 100px 0;
 }
@@ -507,27 +605,20 @@ h3 {
     text-align: center;
 }
 
-.step-circle {
-    width: 50px;
-    height: 50px;
-    background-color: var(--or-discret);
-    color: var(--blanc);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-title);
-    font-size: 24px;
-    font-weight: 600;
+.step-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--or-discret);
     margin: 0 auto 20px;
-    box-shadow: 0 4px 12px rgba(201, 168, 106, 0.3);
+    stroke-width: 1.5;
     transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 12px rgba(201, 168, 106, 0.3));
 }
 
-.step:hover .step-circle {
-    background-color: var(--or-clair);
+.step:hover .step-icon {
+    color: var(--or-clair);
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(201, 168, 106, 0.4);
+    filter: drop-shadow(0 6px 20px rgba(201, 168, 106, 0.4));
 }
 
 .step-title {
@@ -549,7 +640,7 @@ h3 {
 }
 
 /* ================================================================================
-   SECTION 5 - COMPARATIF
+   SECTION 6 - COMPARATIF
    ================================================================================ */
 
 .comparatif-section {
@@ -600,11 +691,7 @@ h3 {
 }
 
 /* ================================================================================
-   SECTION 6 - CALCULATEUR
-   ================================================================================ */
-
-/* ================================================================================
-   SECTION 6 - FAQ
+   SECTION 7 - FAQ
    ================================================================================ */
 
 .faq-section {
@@ -644,7 +731,33 @@ h3 {
 }
 
 /* ================================================================================
-   SECTION 7 - CONTACT
+   SECTION 8 - NOTRE HISTOIRE
+   ================================================================================ */
+
+.notre-histoire-section {
+    background-color: var(--blanc);
+    padding: 100px 0;
+}
+
+.histoire-content {
+    max-width: 900px;
+    margin: 40px auto 0;
+}
+
+.histoire-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--gris-fonce);
+    margin-bottom: 25px;
+}
+
+.histoire-content strong {
+    color: var(--or-discret);
+    font-weight: 600;
+}
+
+/* ================================================================================
+   SECTION 9 - CONTACT
    ================================================================================ */
 
 .contact-section {
@@ -736,7 +849,7 @@ h3 {
 }
 
 /* ================================================================================
-   SECTION 8 - FOOTER
+   SECTION 10 - FOOTER
    ================================================================================ */
 
 .footer {
@@ -842,6 +955,15 @@ h3 {
     .contact-form,
     .contact-info {
         padding: 35px 25px;
+    }
+    
+    .fonctionnement-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .fonctionnement-card {
+        padding: 25px;
     }
     
     .steps-container {
