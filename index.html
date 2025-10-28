@@ -12,23 +12,58 @@
 </head>
 <body>
 
-    <!-- SECTION 1 - HERO / BANNIERE D'ACCUEIL -->
+    <!-- HEADER STICKY -->
+    <header id="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <span class="logo-text">JB Immo</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#fonctionnement">Comment ça marche</a></li>
+                <li><a href="#calculateur">Calculateur</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION 1 - HERO AVEC SLIDER -->
     <section id="hero" class="hero-section">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&h=600&fit=crop" alt="Montpellier Place de la Comédie">
+            </div>
+            <div class="hero-slide">
+                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&h=600&fit=crop" alt="Montpellier Architecture">
+            </div>
+            <div class="hero-slide">
+                <img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=1200&h=600&fit=crop" alt="Montpellier Centre Ville">
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Le locataire idéal pour votre bien existe déjà.</h1>
-                <p class="hero-subtitle">JB Immo — Loyer garanti, bien entretenu, contrat 100 % légal.</p>
-                <p class="hero-description">Déléguez la location de votre bien à des professionnels sérieux, et encaissez vos loyers chaque mois sans jamais gérer un seul locataire.</p>
+                <h1 class="hero-title">Le locataire dont tous les propriétaires rêvent.</h1>
+                <p class="hero-subtitle">Loyer garanti chaque mois. Bien toujours entretenu. Contrat 100% légal.</p>
                 
                 <div class="hero-cta-buttons">
-                    <a href="#calculateur" class="btn btn-primary">Je veux mon estimation gratuite</a>
-                    <a href="#contact" class="btn btn-secondary">Être rappelé par un conseiller JB Immo</a>
-                </div>
-                
-                <div class="confiance-box">
-                    <p>✓ Loyer garanti chaque mois | ✓ Contrat rédigé par avocat | ✓ Société enregistrée (SASU JB Immo) | ✓ Assurance professionnelle incluse</p>
+                    <a href="#calculateur" class="btn btn-primary">Estimer mon Loyer Garanti</a>
+                    <a href="#solution" class="btn btn-secondary">Découvrir la Solution</a>
                 </div>
             </div>
+        </div>
+        
+        <!-- Navigation Slider -->
+        <div class="slider-arrows">
+            <button class="slider-arrow prev" aria-label="Image précédente">‹</button>
+            <button class="slider-arrow next" aria-label="Image suivante">›</button>
+        </div>
+        <div class="slider-dots">
+            <span class="slider-dot active" data-slide="0"></span>
+            <span class="slider-dot" data-slide="1"></span>
+            <span class="slider-dot" data-slide="2"></span>
         </div>
     </section>
 
