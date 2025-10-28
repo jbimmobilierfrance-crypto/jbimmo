@@ -1,8 +1,105 @@
 // ================================================================================
-// CALCULATEUR DE LOYER GARANTI - JB IMMO
+// HEADER STICKY - CHANGEMENT DE STYLE AU SCROLL
+// ================================================================================
+
+const header = document.getElementById('header');
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// ================================================================================
+// SLIDER HERO - AUTO-PLAY ET NAVIGATION
 // ================================================================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    const prevBtn = document.querySelector('.slider-arrow.prev');
+    const nextBtn = document.querySelector('.slider-arrow.next');
+    let currentSlide = 0;
+    let slideInterval;
+    
+    // Fonction pour afficher un slide spécifique
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else {
+            currentSlide = index;
+        }
+        
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+    
+    // Fonction pour passer au slide suivant
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+    
+    // Fonction pour revenir au slide précédent
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+    
+    // Auto-play (toutes les 5 secondes)
+    function startSlideshow() {
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+    
+    function stopSlideshow() {
+        clearInterval(slideInterval);
+    }
+    
+    // Événements pour les flèches
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            stopSlideshow();
+            nextSlide();
+            startSlideshow();
+        });
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            stopSlideshow();
+            prevSlide();
+            startSlideshow();
+        });
+    }
+    
+    // Événements pour les dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+            stopSlideshow();
+            showSlide(index);
+            startSlideshow();
+        });
+    });
+    
+    // Démarrer le slideshow automatique
+    startSlideshow();
+    
+    // Pause au survol
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', stopSlideshow);
+        heroSection.addEventListener('mouseleave', startSlideshow);
+    }
+
+// ================================================================================
+// CALCULATEUR DE LOYER GARANTI - JB IMMO
+// ================================================================================
+
     const calcForm = document.getElementById('calc-form');
     const resultatsBox = document.getElementById('resultats-box');
     const auditMessageBox = document.getElementById('audit-message-box');
