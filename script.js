@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(currentSlide - 1);
     }
     
-    // Auto-play (toutes les 9 secondes - rythme plus lent et agréable)
+    // Auto-play (toutes les 5 secondes - timing optimal)
     function startSlideshow() {
-        slideInterval = setInterval(nextSlide, 9000);
+        slideInterval = setInterval(nextSlide, 5000);
     }
     
     function stopSlideshow() {
@@ -180,5 +180,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const comparatifTable = document.querySelector('.comparatif-table');
     if (comparatifTable) {
         animateOnScroll.observe(comparatifTable);
+    }
+    
+    // ================================================================================
+    // EFFET PARALLAXE LÉGER SUR LE HERO
+    // ================================================================================
+    
+    const heroSection = document.querySelector('#hero');
+    const heroSlider = document.querySelector('.hero-slider');
+    
+    if (heroSection && heroSlider) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroHeight = heroSection.offsetHeight;
+            
+            // Appliquer l'effet parallaxe seulement sur la section hero
+            if (scrolled < heroHeight) {
+                const parallaxSpeed = 0.5;
+                heroSlider.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+            }
+        });
     }
 });
