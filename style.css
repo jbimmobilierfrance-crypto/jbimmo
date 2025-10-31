@@ -279,7 +279,7 @@ h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.38);
     z-index: 1;
 }
 
@@ -305,6 +305,14 @@ h3 {
     font-size: 20px;
     color: var(--blanc);
     font-weight: 300;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-tagline {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
     margin-bottom: 40px;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -843,6 +851,62 @@ h3 {
 }
 
 /* ================================================================================
+   SECTION 7.5 - NOS ENGAGEMENTS
+   ================================================================================ */
+
+.engagements-section {
+    background: linear-gradient(135deg, var(--blanc-casse) 0%, var(--gris-clair) 100%);
+    padding: 100px 0;
+}
+
+.engagements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    margin: 60px 0 0;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.engagement-card {
+    background: var(--blanc);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.engagement-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.engagement-icon {
+    width: 56px;
+    height: 56px;
+    color: var(--or-discret);
+    margin: 0 auto 25px;
+    display: block;
+    stroke-width: 1.5;
+}
+
+.engagement-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gris-fonce);
+    margin-bottom: 15px;
+}
+
+.engagement-card p {
+    font-size: 15px;
+    color: var(--gris-fonce);
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* ================================================================================
    SECTION 8 - NOTRE HISTOIRE
    ================================================================================ */
 
@@ -851,21 +915,43 @@ h3 {
     padding: 100px 0;
 }
 
-.histoire-content {
-    max-width: 900px;
-    margin: 40px auto 0;
+.histoire-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 60px;
 }
 
-.histoire-content p {
+.histoire-text p {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.9;
     color: var(--gris-fonce);
     margin-bottom: 25px;
 }
 
-.histoire-content strong {
+.histoire-text p:last-child {
+    margin-bottom: 0;
+}
+
+.histoire-text strong {
     color: var(--or-discret);
     font-weight: 600;
+}
+
+.histoire-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.histoire-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* ================================================================================
@@ -1218,6 +1304,20 @@ h3 {
     
     .fonctionnement-card {
         padding: 25px;
+    }
+    
+    .engagements-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .engagement-card {
+        padding: 30px;
+    }
+    
+    .histoire-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
     
     .steps-container {
