@@ -25,7 +25,7 @@ const HERO_IMAGES = [
 
 const IMAGES = {
     hero: HERO_IMAGES,
-    histoire: 'ruelle-centre-historique.jpg'
+    histoire: 'https://i.imgur.com/CvwY6Nu.jpg'
 };
 
 // ================================================================================
@@ -96,9 +96,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // ================================================================================
 
     const histoireImg = document.getElementById('histoire-img');
+    const histoireImgSrc = IMAGES.histoire.startsWith('http') ? IMAGES.histoire : encodeURI('/assets/' + IMAGES.histoire);
+
     if (histoireImg) {
-        histoireImg.src = encodeURI('/assets/' + IMAGES.histoire);
-        histoireImg.alt = 'Ruelle du centre historique de Montpellier';
+        histoireImg.src = histoireImgSrc;
+        histoireImg.alt = 'Centre historique de Montpellier';
         histoireImg.loading = 'lazy';
         histoireImg.decoding = 'async';
     } else {
@@ -107,8 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (histoireSection) {
             const img = document.createElement('img');
             img.id = 'histoire-img';
-            img.src = encodeURI('/assets/' + IMAGES.histoire);
-            img.alt = 'Ruelle du centre historique de Montpellier';
+            img.src = histoireImgSrc;
+            img.alt = 'Centre historique de Montpellier';
             img.loading = 'lazy';
             img.decoding = 'async';
             // Remplacer l'image existante si présente
