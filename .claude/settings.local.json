@@ -5,7 +5,11 @@
       "Bash(tree:*)",
       "Bash(.gitignore)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(brew install:*)",
+      "Bash(gh auth login:*)",
+      "Bash(git ls-tree:*)"
     ],
     "deny": [],
     "ask": []
