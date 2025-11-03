@@ -14,17 +14,18 @@
 // ================================================================================
 // CONSTANTE IMAGES - GESTION AUTOMATIQUE DES ASSETS
 // ================================================================================
+const HERO_IMAGES = [
+    'arbre blanc.jpg',
+    'arbre-blanc-2.jpg',
+    'bassin-jacques-coeur-montpellier-3.jpg',
+    'comédie pluie.jpg',
+    'pierres vives.jpg',
+    'place de l\'europe.jpg'
+];
+
 const IMAGES = {
-    hero: [
-        'arbre blanc.jpg',
-        'arbre-blanc-2.jpg',
-        'bassin-jacques-coeur-montpellier-3.jpg',
-        'comédie pluie.jpg',
-        'ee.jpeg',
-        'pierres vives.jpg',
-        'place de l\'europe.jpg'
-    ],
-    histoire: 'bassin-jacques-coeur-montpellier-3.jpg'
+    hero: HERO_IMAGES,
+    histoire: 'ruelle-centre-historique.jpg'
 };
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const histoireImg = document.getElementById('histoire-img');
     if (histoireImg) {
         histoireImg.src = encodeURI('/assets/' + IMAGES.histoire);
+        histoireImg.alt = 'Ruelle du centre historique de Montpellier';
     } else {
         // Si l'image n'existe pas encore, on la crée et l'insère dans la section
         const histoireSection = document.querySelector('.histoire-image');
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const img = document.createElement('img');
             img.id = 'histoire-img';
             img.src = encodeURI('/assets/' + IMAGES.histoire);
-            img.alt = 'Montpellier — Bassin Jacques Cœur';
+            img.alt = 'Ruelle du centre historique de Montpellier';
             // Remplacer l'image existante si présente
             const existingImg = histoireSection.querySelector('img');
             if (existingImg) {

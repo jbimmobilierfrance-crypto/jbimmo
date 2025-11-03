@@ -941,6 +941,16 @@ section {
     border-radius: 2px;
 }
 
+/* Titre "Notre histoire" sur une ligne en desktop */
+@media (min-width: 1200px) {
+    #histoire .section-title,
+    section#histoire h2.section-title {
+        font-size: clamp(2.2rem, 3vw, 3.2rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+}
+
 .histoire-layout {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
