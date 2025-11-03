@@ -361,6 +361,12 @@ a {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background-color: #e9e6e2; /* Fond sable doux par défaut */
+}
+
+/* Fallback si aucune image ne charge */
+.hero-section.hero-fallback {
+    background: linear-gradient(180deg, #efeae5 0%, #e4ded7 100%);
 }
 
 /* Slider d'images */

@@ -28,6 +28,18 @@ const IMAGES = {
     histoire: 'ruelle-centre-historique.jpg'
 };
 
+// ================================================================================
+// FONCTION DE PRÉCHARGEMENT DES IMAGES
+// ================================================================================
+function preloadImage(src) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(src);
+        img.onerror = () => reject(src);
+        img.src = src;
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 
     // ================================================================================
@@ -35,18 +47,48 @@ document.addEventListener('DOMContentLoaded', function() {
     // ================================================================================
 
     const heroSlider = document.querySelector('.hero-slider');
-    if (heroSlider) {
+    const heroSection = document.querySelector('.hero-section');
+
+    // Construire les URLs encodées
+    const heroImageUrls = HERO_IMAGES.map(name => `/assets/${encodeURI(name)}`);
+
+    // Précharger toutes les images et filtrer celles qui sont valides
+    Promise.allSettled(heroImageUrls.map(preloadImage)).then(results => {
+        const validUrls = results
+            .filter(r => r.status === 'fulfilled')
+            .map(r => r.value);
+
+        if (!validUrls.length) {
+            console.warn('[HERO] Aucune image valide — fallback activé');
+            if (heroSection) {
+                heroSection.classList.add('hero-fallback');
+            }
+            return;
+        }
+
+        console.log(`[HERO] ${validUrls.length}/${heroImageUrls.length} images chargées`);
+
+        // Initialiser le slider avec les images valides
+        initHeroSlider(validUrls);
+    });
+
+    function initHeroSlider(urls) {
+        if (!heroSlider || !urls.length) return;
+
         // Vider le contenu existant
         heroSlider.innerHTML = '';
 
-        // Générer les slides depuis la constante IMAGES
-        IMAGES.hero.forEach((imageName, index) => {
+        // Générer les slides avec les images validées
+        urls.forEach((url, index) => {
             const slide = document.createElement('div');
             slide.className = 'hero-slide';
-            if (index === 0) slide.classList.add('active'); // Première image active
-            slide.style.backgroundImage = `url('${encodeURI('/assets/' + imageName)}')`;
+            if (index === 0) slide.classList.add('active');
+            slide.style.backgroundImage = `url("${url}")`;
             heroSlider.appendChild(slide);
         });
+
+        // Démarrer le slider automatique
+        startHeroSlider();
     }
 
     // ================================================================================
@@ -127,28 +169,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // SLIDER HERO - DÉFILEMENT AUTOMATIQUE DES IMAGES
     // ================================================================================
 
-    const slides = document.querySelectorAll('.hero-slide');
-    let currentSlide = 0;
-    const slideInterval = 5000; // 5 secondes
-    
-    function nextSlide() {
-        // Retirer la classe active de la slide actuelle et réinitialiser le scale
-        slides[currentSlide].classList.remove('active');
-        slides[currentSlide].style.transform = 'scale(1)';
-        
-        // Passer à la slide suivante (boucle)
-        currentSlide = (currentSlide + 1) % slides.length;
-        
-        // Ajouter la classe active à la nouvelle slide
-        slides[currentSlide].classList.add('active');
-        
-        // Forcer le reflow pour relancer l'animation
-        void slides[currentSlide].offsetWidth;
-    }
-    
-    // Démarrer le slider automatique
-    if (slides.length > 0) {
+    function startHeroSlider() {
+        const slides = document.querySelectorAll('.hero-slide');
+        if (!slides.length) return;
+
+        let currentSlide = 0;
+        const slideInterval = 5000; // 5 secondes
+
+        function nextSlide() {
+            // Retirer la classe active de la slide actuelle et réinitialiser le scale
+            slides[currentSlide].classList.remove('active');
+            slides[currentSlide].style.transform = 'scale(1)';
+
+            // Passer à la slide suivante (boucle)
+            currentSlide = (currentSlide + 1) % slides.length;
+
+            // Ajouter la classe active à la nouvelle slide
+            slides[currentSlide].classList.add('active');
+
+            // Forcer le reflow pour relancer l'animation
+            void slides[currentSlide].offsetWidth;
+        }
+
+        // Démarrer le slider automatique
         setInterval(nextSlide, slideInterval);
+
+        console.log('[HERO] Slider actif avec', slides.length, 'images');
     }
     
     // ================================================================================
@@ -465,25 +511,10 @@ document.addEventListener('DOMContentLoaded', function() {
     */
     
     // ================================================================================
-    // PRÉCHARGEMENT DES IMAGES DU SLIDER (Optimisation)
-    // ================================================================================
-    
-    slides.forEach((slide, index) => {
-        if (index > 0) { // Ne pas précharger la première (déjà visible)
-            const img = new Image();
-            const bgImage = slide.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-            if (bgImage) {
-                img.src = bgImage[1];
-            }
-        }
-    });
-    
-    // ================================================================================
     // CONSOLE LOG - CONFIRMATION DE CHARGEMENT
     // ================================================================================
-    
+
     console.log('JB Immo - Site chargé avec succès ! 🏠');
-    console.log('Slider actif avec', slides.length, 'images');
     console.log('Animations au scroll activées');
     console.log('FAQ interactive prête');
 });
