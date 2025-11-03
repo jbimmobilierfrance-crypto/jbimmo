@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JB Immo - Gestion locative professionnelle à Montpellier. Collaboration sécurisée pour propriétaires.">
+    <title>JB Immo - Gestion Locative Professionnelle Montpellier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">JB IMMO</div>
+            <ul class="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#solution">Notre Solution</a></li>
+                <li><a href="#gestion">Gestion</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="hero-slides">
+            <div class="hero-slide active">
+                <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Appartement Montpellier 1">
+            </div>
+            <div class="hero-slide">
+                <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Appartement Montpellier 2">
+            </div>
+            <div class="hero-slide">
+                <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Appartement Montpellier 3">
+            </div>
+            <div class="hero-slide">
+                <img src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Appartement Montpellier 4">
+            </div>
+        </div>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1>La solution qui sécurise et optimise vos revenus locatifs</h1>
+            <p class="hero-subtitle">Propriétaires montpelliérains, confiez la gestion de votre bien à un partenaire professionnel qui garantit vos loyers et valorise votre patrimoine</p>
+            <div class="hero-buttons">
+                <a href="#solution" class="btn-primary">Découvrir notre solution</a>
+                <a href="#contact" class="btn-secondary">Nous contacter</a>
+            </div>
+        </div>
+        
+        <div class="slider-controls">
+            <button class="slider-arrow prev" onclick="changeSlide(-1)">‹</button>
+            <button class="slider-arrow next" onclick="changeSlide(1)">›</button>
+        </div>
+        
+        <div class="slider-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+        </div>
+    </section>
+
+    <section id="solution" class="solution">
+        <div class="container">
+            <h2>Une collaboration locative sécurisée pour votre patrimoine</h2>
+            <p class="section-intro">Nous proposons une solution professionnelle aux propriétaires montpelliérains qui souhaitent sécuriser leurs revenus locatifs et se libérer de toute contrainte de gestion.</p>
+            
+            <div class="solution-grid">
+                <div class="solution-left">
+                    <h3>Comment fonctionne notre collaboration ?</h3>
+                    
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-text">
+                            <h4>Nous devenons votre locataire professionnel</h4>
+                            <p>JB Immo signe un bail de location professionnel avec vous. Nous devenons votre locataire officiel avec toutes les garanties légales.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">
+                            <h4>Paiement garanti tous les mois</h4>
+                            <p>Votre loyer est versé à date fixe chaque mois. Aucun retard, aucun impayé, aucune gestion locative pour vous.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">
+                            <h4>Nous valorisons et entretenons votre bien</h4>
+                            <p>Nous utilisons votre bien dans le cadre de notre activité professionnelle, avec entretien régulier et mise en valeur de votre patrimoine.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="solution-right">
+                    <h3>Vos avantages avec JB Immo</h3>
+                    <ul class="advantages">
+                        <li>Société déclarée et immatriculée RCS Montpellier</li>
+                        <li>Bail professionnel rédigé par avocat</li>
+                        <li>Assurance responsabilité civile professionnelle</li>
+                        <li>Paiement garanti tous les mois</li>
+                        <li>Entretien professionnel de votre bien</li>
+                        <li>Ménage régulier par équipes qualifiées</li>
+                        <li>Petites réparations à notre charge</li>
+                        <li>Votre bien reste en excellent état</li>
+                        <li>Collaboration sur le long terme</li>
+                    </ul>
+                    
+                    <div class="trust-badge">
+                        <strong>Partenariat 100% Sécurisé</strong>
+                        <p>Cadre juridique clair, transparence totale, relation de confiance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Paiements garantis</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Montpellier</div>
+                    <div class="stat-label">Ancrage local</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Long terme</div>
+                    <div class="stat-label">Collaboration durable</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gestion" class="gestion">
+        <div class="container">
+            <h2>Gestion locative clé en main</h2>
+            <p class="section-intro">Vous souhaitez mettre votre bien en location meublée mais vous n'avez ni le temps ni l'envie de tout gérer ? Nous nous occupons de tout.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Valorisation du bien</h3>
+                    <p>Photos professionnelles et mise en scène de votre intérieur pour maximiser l'attractivité de votre bien.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Optimisation technique</h3>
+                    <p>Création et gestion complète de votre annonce avec optimisation pour apparaître en première page des recherches.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Communication continue</h3>
+                    <p>Réponses instantanées aux demandes, gestion des réservations, coordination des arrivées et départs.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Entretien professionnel</h3>
+                    <p>Équipe de ménage formée qui intervient systématiquement entre chaque location pour un logement impeccable.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Maintenance réactive</h3>
+                    <p>Intervention rapide en cas de besoin. Réseau d'artisans partenaires pour toute réparation nécessaire.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Tarification intelligente</h3>
+                    <p>Ajustement des tarifs selon la demande et la saisonnalité pour optimiser vos revenus locatifs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="calculator">
+        <div class="container">
+            <h2>Estimez le potentiel de votre bien</h2>
+            <p class="section-intro">Découvrez combien votre bien pourrait générer avec une gestion professionnelle optimisée</p>
+            
+            <div class="calculator-box">
+                <div class="calc-input">
+                    <label>Surface de votre bien (m²)</label>
+                    <input type="number" id="surface" placeholder="55" value="55">
+                </div>
+                
+                <div class="calc-input">
+                    <label>Capacité d'accueil (personnes)</label>
+                    <input type="number" id="capacite" placeholder="2" value="2">
+                </div>
+                
+                <div class="calc-input">
+                    <label>Loyer mensuel actuel (€)</label>
+                    <input type="number" id="loyer" placeholder="750" value="750">
+                </div>
+                
+                <button class="calc-button" onclick="calculer()">Calculer le potentiel</button>
+                
+                <div class="calc-results" id="results">
+                    <div class="result-item">
+                        <div class="result-label">Revenu actuel</div>
+                        <div class="result-value" id="avant">-</div>
+                    </div>
+                    
+                    <div class="result-item highlight">
+                        <div class="result-label">Potentiel avec gestion optimisée</div>
+                        <div class="result-value" id="apres">-</div>
+                    </div>
+                    
+                    <div class="result-gain">
+                        <div class="gain-title">Gain potentiel mensuel</div>
+                        <div class="gain-value" id="gain">-</div>
+                        <div class="gain-percent" id="percent">-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Discutons de votre projet immobilier</h2>
+            <p class="section-intro">Contactez-nous pour échanger sur une collaboration locative ou une gestion professionnelle de votre bien à Montpellier</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-label">Email</div>
+                    <a href="mailto:jbimmobilier.france@gmail.com">jbimmobilier.france@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Siège social</div>
+                    <p>73 Allée Kléber, 34000 Montpellier</p>
+                </div>
+            </div>
+            
+            <a href="mailto:jbimmobilier.france@gmail.com" class="btn-primary">Nous contacter</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>JB IMMO</h4>
+                    <p>Gestion locative professionnelle</p>
+                    <p>Collaboration locative sécurisée</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <a href="#accueil">Accueil</a>
+                    <a href="#solution">Notre Solution</a>
+                    <a href="#gestion">Gestion</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>jbimmobilier.france@gmail.com</p>
+                    <p>73 Allée Kléber</p>
+                    <p>34000 Montpellier</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Informations légales</h4>
+                    <p>SASU JB Immo</p>
+                    <p>RCS Montpellier 988 121 919</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 JB Immo - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

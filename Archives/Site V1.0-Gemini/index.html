@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      JB Immo - Conciergerie & Gestion Locative d'Excellence à Montpellier
+    </title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a href="#accueil" class="logo">JB Immo</a>
+        <nav>
+          <ul>
+            <li><a href="#services">Nos Services</a></li>
+            <li><a href="#calculateur">Le Calculateur</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="accueil" class="hero-section">
+        <div class="hero-content">
+          <h1>
+            JB Immo : La conciergerie qui sécurise, optimise et sublime votre
+            bien.
+          </h1>
+          <a href="#services" class="cta-bouton primary">
+            Découvrir nos services
+          </a>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <h2>Une gestion locative d'excellence à Montpellier</h2>
+          <div class="services-grille">
+            <div class="service-carte">
+              <i class="icon-cle"></i>
+              <h3>Sous-location Légale</h3>
+              <h4>
+                Plus qu'une conciergerie, votre locataire de confiance.
+              </h4>
+              <p>
+                Nous devenons votre locataire officiel via un bail légal. Vous
+                recevez un loyer fixe chaque mois, quoi qu'il arrive. Zéro
+                tracas, zéro impayé, 100% tranquillité.
+              </p>
+            </div>
+
+            <div class="service-carte">
+              <i class="icon-airbnb"></i>
+              <h3>Conciergerie Airbnb</h3>
+              <h4>Révélez le véritable potentiel de votre bien.</h4>
+              <p>
+                Gestion A à Z : photos professionnelles, pricing dynamique,
+                communication voyageurs 7j/7, ménage et maintenance. Nous
+                maximisons votre taux d'occupation et vos revenus.
+              </p>
+            </div>
+
+            <div class="service-carte">
+              <i class="icon-deco"></i>
+              <h3>Home Staging & Décoration</h3>
+              <h4>L'art de sublimer et rentabiliser votre bien.</h4>
+              <p>
+                De l'optimisation de l'espace à la mise en scène "lifestyle"
+                pour les photos, nous transformons votre bien pour déclencher
+                le coup de cœur et justifier un prix plus élevé.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="calculateur" class="calculateur-section">
+        <div class="container">
+          <h2>Révélez le véritable potentiel de votre bien.</h2>
+          <p class="sous-titre">
+            Obtenez une estimation gratuite de vos revenus optimisés en 30
+            secondes.
+          </p>
+
+          <form id="form-calculateur">
+            <div class="form-groupe">
+              <label for="calc-quartier"
+                >Dans quel quartier est situé votre bien ?</label
+              >
+              <select id="calc-quartier" required>
+                <option value="">-- Choisissez votre secteur --</option>
+                <optgroup label="Zone Or (Potentiel Max)">
+                  <option value="tier1">Comédie / Gare / Écusson</option>
+                  <option value="tier1">Le Corum</option>
+                  <option value="tier1">Les Arceaux / Clemenceau</option>
+                  <option value="tier1">Antigone / Rives-du-lez</option>
+                  <option value="tier1">Port-Marianne</option>
+                </optgroup>
+                <optgroup label="Zone Argent (Stratégique)">
+                  <option value="tier2">Beaux-Arts</option>
+                  <option value="tier2">Près-d'Arènes / Aiguerelles</option>
+                  <option value="tier2">Ovalie</option>
+                  <option value="tier2">Millénaire / Odysseum</option>
+                </optgroup>
+                <optgroup label="Autre Secteur">
+                  <option value="autre">
+                    Autre quartier (audit personnalisé)
+                  </option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="form-groupe">
+              <label for="calc-prix"
+                >Quel est votre prix moyen par nuit ?</label
+              >
+              <input
+                type="number"
+                id="calc-prix"
+                placeholder="Ex: 75"
+                required
+              />
+            </div>
+
+            <div class="form-groupe">
+              <label for="calc-nuits"
+                >Combien de nuits louez-vous par mois ?</label
+              >
+              <input
+                type="number"
+                id="calc-nuits"
+                placeholder="Ex: 18"
+                required
+              />
+            </div>
+
+            <div class="form-groupe">
+              <label for="calc-capacite">Capacité d'accueil actuelle ?</label>
+              <select id="calc-capacite" required>
+                <option value="2">2 personnes</option>
+                <option value="4">4 personnes</option>
+                <option value="6">6 personnes</option>
+              </select>
+            </div>
+
+            <div class="form-groupe">
+              <label for="calc-charge">Niveau de charge mentale actuel ?</label>
+              <select id="calc-charge" required>
+                <option value="Facile">Facile</option>
+                <option value="Gérable">Gérable</option>
+                <option value="Épuisante">Épuisante</option>
+              </select>
+            </div>
+
+            <button type="submit" class="cta-bouton primary">
+              Calculez votre potentiel de revenus
+            </button>
+          </form>
+
+          <div
+            id="resultats-calcul"
+            class="resultats-container"
+            style="display: none"
+          >
+            <h3>Voici votre simulation de revenus</h3>
+            <div class="comparaison-table">
+              <div class="colonne-avant">
+                <h4>VOTRE SITUATION ACTUELLE</h4>
+                <p>
+                  Revenu Brut Mensuel :
+                  <strong id="res-brut-actuel">... €</strong>
+                </p>
+                <p>
+                  Taux d'occupation :
+                  <strong id="res-occupation-actuel">... %</strong>
+                </p>
+                <p>
+                  Capacité d'accueil : <strong id="res-cap-actuel">...</strong>
+                </p>
+                <p>
+                  Charge mentale : <strong id="res-charge-actuel">...</strong>
+                </p>
+                <hr />
+                <p class="net-final">
+                  Votre Net Estimé :
+                  <strong id="res-net-actuel">... €</strong>
+                </p>
+              </div>
+              <div class="colonne-apres">
+                <h4>AVEC L'OPTIMISATION JB IMMO</h4>
+                <p>
+                  Revenu Brut Mensuel :
+                  <strong id="res-brut-optimise">... €</strong>
+                </p>
+                <p>Taux d'occupation : <strong>80-85% Garanti</strong></p>
+                <p>
+                  Capacité d'accueil :
+                  <strong id="res-cap-optimise">...</strong>
+                </p>
+                <p>Charge mentale : <strong>ZÉRO</strong></p>
+                <hr />
+                <p class="net-final">
+                  Votre Net Estimé :
+                  <strong id="res-net-optimise">... €</strong>
+                </p>
+              </div>
+            </div>
+            <div class="gain-net-final">
+              <p>GAIN NET ESTIMÉ POUR VOUS :</p>
+              <h2 id="res-gain-net">+ ... € / mois*</h2>
+              <p>... sans aucune gestion de votre part.</p>
+            </div>
+            <a href="#contact" class="cta-bouton primary"
+              >Planifier mon audit gratuit</a
+            >
+            <p class="disclaimer-calcul">
+              <strong>*Une estimation basée sur l'expertise locale :</strong>
+              Cette simulation est une estimation basée sur votre secteur. Le
+              potentiel réel de votre bien sera affiné lors de notre audit
+              gratuit, en fonction de ses caractéristiques précises.
+            </p>
+          </div>
+
+          <div
+            id="resultats-audit"
+            class="resultats-container"
+            style="display: none"
+          >
+            <h3>Votre secteur demande une analyse personnalisée.</h3>
+            <p>
+              Chaque quartier de Montpellier a un potentiel unique. Pour vous
+              donner une estimation fiable et non un chiffre magique, nous
+              devons étudier votre bien plus en détail.
+            </p>
+            <p>
+              Bonne nouvelle : nos services de Home Staging et de gestion de
+              ménage sont disponibles pour tous les secteurs !
+            </p>
+            <a href="#contact" class="cta-bouton primary"
+              >Planifier mon audit gratuit</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="contact-grille">
+            <div class="contact-formulaire">
+              <h2>Contactez-nous</h2>
+              <p>
+                Discutons de votre projet. Réponse garantie sous 24h.
+              </p>
+
+              <form name="contact-jb-immo" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact-jb-immo" />
+
+                <div class="form-groupe">
+                  <label for="contact-nom">Nom complet</label>
+                  <input type="text" id="contact-nom" name="nom" required />
+                </div>
+                <div class="form-groupe">
+                  <label for="contact-email">Email</label>
+                  <input type="email" id="contact-email" name="email" required />
+                </div>
+                <div class="form-groupe">
+                  <label for="contact-tel">Téléphone</label>
+                  <input type="tel" id="contact-tel" name="telephone" />
+                </div>
+                <div class="form-groupe">
+                  <label for="contact-message">Votre message</label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="cta-bouton primary">
+                  Envoyer le message
+                </button>
+              </form>
+              </div>
+            <div class="contact-infos">
+              <h3>Nos Coordonnées</h3>
+              <p>
+                Prêt à transformer votre bien ? Contactez-nous
+                directement.
+              </p>
+              <ul>
+                <li><strong>Email :</strong> jbimmobilier.france@gmail.com</li>
+                <li><strong>Téléphone :</strong> 06 58 79 70 37</li>
+                <li>
+                  <strong>Zone d'intervention :</strong> Montpellier &
+                  Agglomération
+                </li>
+              </ul>
+              <div class="contact-adresse">
+                <strong>JB Immo (SASU)</strong><br />
+                70, allée Kléber<br />
+                34000 Montpellier
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2025 JB Immo - Tous droits réservés.</p>
+        <p>
+          JB Immo (SASU) - 70, allée Kléber, 34000 Montpellier
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

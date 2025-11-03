@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JB Immo - Gagnez +847€/mois avec votre bien à Montpellier. Conciergerie premium, sous-location légale.">
+    <title>JB Immo - Gagnez +847€/mois avec votre bien | Montpellier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>JB IMMO</h1>
+                <span>Montpellier</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#calculateur">Simulateur</a></li>
+                <li><a href="#temoignages">Témoignages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#calculateur" class="nav-cta">Estimer mes revenus</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920')"></div>
+            <div class="slide" style="background-image: url('https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1920')"></div>
+            <div class="slide" style="background-image: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920')"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Conciergerie Premium Montpellier</div>
+            <div class="hero-gain">+847€</div>
+            <div class="hero-gain-label">par mois en moyenne</div>
+            <h1 class="hero-title">Transformez votre bien en machine à revenus</h1>
+            <p class="hero-subtitle">Gestion locative optimisée • Légal • Garanti • Sans effort</p>
+            <div class="hero-ctas">
+                <a href="#calculateur" class="cta-primary">Calculer mon potentiel</a>
+                <a href="#contact" class="cta-secondary">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculateur Section -->
+    <section id="calculateur" class="calculator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Simulateur gratuit</span>
+                <h2 class="section-title">Découvrez le vrai potentiel de votre bien</h2>
+                <p class="section-subtitle">Estimation personnalisée en 30 secondes • 100% gratuit • Sans engagement</p>
+            </div>
+            
+            <div class="calculator-wrapper">
+                <div class="calculator-inputs">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="quartier">Quartier de votre bien</label>
+                            <select id="quartier" required>
+                                <option value="">Sélectionnez un quartier</option>
+                                <optgroup label="🏆 Zone Premium (Potentiel maximum)">
+                                    <option value="tier1">Comédie / Gare / Écusson</option>
+                                    <option value="tier1">Le Corum</option>
+                                    <option value="tier1">Les Arceaux / Clemenceau</option>
+                                    <option value="tier1">Antigone / Rives-du-Lez</option>
+                                    <option value="tier1">Port-Marianne</option>
+                                </optgroup>
+                                <optgroup label="⭐ Zone Stratégique">
+                                    <option value="tier2">Beaux-Arts</option>
+                                    <option value="tier2">Près-d'Arènes / Aiguerelles</option>
+                                    <option value="tier2">Ovalie</option>
+                                    <option value="tier2">Millénaire / Odysseum</option>
+                                </optgroup>
+                                <optgroup label="📍 Autre secteur">
+                                    <option value="tier3">Autre quartier (audit gratuit)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="surface">Surface (m²)</label>
+                            <input type="number" id="surface" placeholder="55" min="15" max="200" required>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="capacite">Capacité d'accueil actuelle</label>
+                            <input type="number" id="capacite" placeholder="4 personnes" min="1" max="12" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="prixNuit">Prix par nuit actuel (€)</label>
+                            <input type="number" id="prixNuit" placeholder="80" min="30" max="500" required>
+                        </div>
+                    </div>
+
+                    <div class="optimizations">
+                        <p class="optimizations-title">Nos optimisations recommandées :</p>
+                        <div class="checkbox-row">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="canape" checked>
+                                <label for="canape">
+                                    <span class="checkbox-label">Canapé-lit supplémentaire</span>
+                                    <span class="checkbox-benefit">+25€/nuit</span>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="photos" checked>
+                                <label for="photos">
+                                    <span class="checkbox-label">Photos pro + Mise en scène</span>
+                                    <span class="checkbox-benefit">+12€/nuit</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="calculateBtn" class="cta-primary large">
+                        Calculer mon potentiel de revenus
+                    </button>
+                </div>
+
+                <div id="calculatorResult" class="calculator-result hidden">
+                    <div id="resultContent"></div>
+                </div>
+
+                <div id="auditMessage" class="audit-message hidden">
+                    <div class="audit-icon">📍</div>
+                    <h3>Votre secteur mérite une analyse personnalisée</h3>
+                    <p>Chaque bien est unique. Nos experts analysent gratuitement le potentiel de votre bien et vous proposent une stratégie sur-mesure.</p>
+                    <a href="#contact" class="cta-primary">Demander mon audit gratuit</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages Section -->
+    <section id="temoignages" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Ils nous font confiance</span>
+                <h2 class="section-title">15 propriétaires ont déjà augmenté leurs revenus</h2>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">+847€</div>
+                    <div class="stat-label">Revenus supplémentaires/mois en moyenne</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Propriétaires satisfaits à Montpellier</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24j</div>
+                    <div class="stat-label">Taux d'occupation moyen garanti</div>
+                </div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"J'ai doublé mes revenus en passant de 18 à 24 jours d'occupation par mois. JB Immo gère tout, je n'ai plus rien à faire."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M.L</div>
+                        <div class="author-info">
+                            <div class="author-name">Marie L.</div>
+                            <div class="author-location">Appartement Antigone, 55m²</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Loyer fixe garanti chaque mois, zéro tracas. Exactement ce que je cherchais pour mon bien que je n'utilisais pas."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">T.D</div>
+                        <div class="author-info">
+                            <div class="author-name">Thomas D.</div>
+                            <div class="author-location">T2 Beaux-Arts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Les photos professionnelles et le home staging ont transformé mon bien. +32€ par nuit et réservations en continu."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S.M</div>
+                        <div class="author-info">
+                            <div class="author-name">Sophie M.</div>
+                            <div class="author-location">Studio Comédie</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Parlons de votre projet</span>
+                <h2 class="section-title">Réponse garantie sous 24h</h2>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <a href="mailto:jbimmobilier.france@gmail.com">jbimmobilier.france@gmail.com</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3>Téléphone</h3>
+                        <a href="tel:+33658797037">06 58 79 70 37</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Zone d'intervention</h3>
+                        <p>Montpellier & Agglomération</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">🏢</div>
+                        <h3>Adresse</h3>
+                        <p>70, allée Kléber<br>34000 Montpellier</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p class="hidden">
+                            <label>Ne pas remplir : <input name="bot-field"></label>
+                        </p>
+                        
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Téléphone *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Votre projet *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Décrivez-nous votre bien et vos objectifs..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="cta-primary large">Envoyer ma demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>JB IMMO</h3>
+                    <p>Conciergerie Premium Montpellier</p>
+                </div>
+                <div class="footer-legal">
+                    <p>&copy; 2025 JB Immo (SASU) - Tous droits réservés</p>
+                    <p>70, allée Kléber - 34000 Montpellier</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
