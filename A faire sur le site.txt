@@ -1,0 +1,8 @@
+1- Il faut que la phrase dans nos engagements " Le locataire dont tous les propriétaires etc... " soit en une ligne, pas de retour à la ligne donc peut être réduire légèrement la police pour que tout rentre.
+
+2- On avait dis dans les sections, les carrés d'information doivent être centré pour éviter qu'un carré se retrouve tout seul à gauche ça fait pas homogène sur PC en tout cas ( sur mobile ça passe car ça défile vers le bas ).
+
+3- Notre histoire, le titre pareil centré en une seule ligne " ... clair " qui est en bas tout seul ça fait pas jolie. L'image à droite un peu plus grande et centré pour qu'elle soit homogène avec le texte.
+
+4- Dans le bas de page " liens rapide " mettre à jour oubien enlever car en vérité il y a déjà le haut de page qui suit à chaque fois... faire quelque chose d'épuré et minimaliste.
+
