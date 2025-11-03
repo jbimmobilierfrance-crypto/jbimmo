@@ -33,3 +33,12 @@ logs/
 tmp/
 temp/
 *.tmp
+
+# Archive folders (not needed for production)
+Archives/
+Contenu/
+V10-stable/
+V10.1-stable/
+
+# Claude Code
+.claude/
