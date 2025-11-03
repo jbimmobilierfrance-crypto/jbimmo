@@ -20,7 +20,8 @@ const IMAGES = {
         'arbre-blanc-2.jpg',
         'bassin-jacques-coeur-montpellier-3.jpg',
         'comédie pluie.jpg',
-        'fontaine soir.jpg',
+        'ee.jpeg',
+        'pierres vives.jpg',
         'place de l\'europe.jpg'
     ],
     histoire: 'bassin-jacques-coeur-montpellier-3.jpg'

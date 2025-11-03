@@ -141,14 +141,28 @@ a {
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: var(--blanc);
-    border: 2px solid var(--blanc);
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid var(--or-clair);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 40px;
+    min-height: 56px;
+}
+
+.btn-secondary svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 
 .btn-secondary:hover {
-    background-color: var(--blanc);
-    color: var(--gris-fonce);
+    background-color: #f6f1e6;
+    color: #333333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(201, 168, 106, 0.25);
 }
 
 .btn-secondary-outline {
