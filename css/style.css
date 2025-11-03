@@ -246,12 +246,19 @@ a {
 }
 
 .logo-location {
-    font-size: 10px;
+    font-size: clamp(12px, 1.1vw, 14px);
     font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--or-clair);
+    letter-spacing: 0.02em;
+    color: #b88f5a;
+    opacity: 0.9;
     font-family: var(--font-body);
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    .logo-location {
+        white-space: normal;
+    }
 }
 
 #header.scrolled .logo-location {
@@ -680,13 +687,26 @@ section {
 
 .engagements-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+    gap: 32px;
     margin-top: 60px;
-    justify-content: center;
-    align-content: start;
-    max-width: 1200px;
-    margin-inline: auto;
+}
+
+@media (min-width: 1200px) {
+    .engagements-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .engagements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .engagements-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -697,6 +717,9 @@ section {
     text-align: center;
     transition: all var(--transition-smooth);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .engagement-card:hover {
@@ -741,13 +764,27 @@ section {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+    gap: 32px;
     margin-top: 60px;
     justify-content: center;
-    align-content: start;
-    max-width: 1200px;
-    margin-inline: auto;
+}
+
+@media (min-width: 1200px) {
+    .benefits-grid {
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -757,6 +794,9 @@ section {
     border-radius: 10px;
     transition: all var(--transition-smooth);
     border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .benefit-card:hover {
