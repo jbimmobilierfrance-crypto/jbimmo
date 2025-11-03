@@ -590,6 +590,13 @@ section {
     margin-right: auto;
 }
 
+/* Variante pour forcer une ligne sur desktop */
+@media (min-width: 768px) {
+    .intro-text-nowrap {
+        white-space: nowrap;
+    }
+}
+
 /* ================================================================================
    SECTION PROBLÈME
    ================================================================================ */
