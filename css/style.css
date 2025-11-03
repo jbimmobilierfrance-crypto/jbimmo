@@ -445,12 +445,13 @@ button:focus-visible,
 .hero-title {
     font-size: clamp(28px, 6vw, 52px);
     color: var(--blanc);
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
     line-height: 1.12;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.8px;
     max-width: 900px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .hero-title-highlight {
@@ -598,13 +599,29 @@ section {
 
 .probleme-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+    gap: 32px;
     margin-top: 60px;
-    justify-content: center;
-    align-content: start;
     max-width: 1200px;
     margin-inline: auto;
+    justify-items: center;
+}
+
+@media (min-width: 1200px) {
+    .probleme-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .probleme-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .probleme-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Ghost-cards pour équilibrer les grilles (gestion JS) */
@@ -623,6 +640,8 @@ section {
     text-align: center;
     transition: all var(--transition-smooth);
     border: 1px solid var(--gris-clair);
+    width: 100%;
+    max-width: 380px;
 }
 
 .probleme-card:hover {
@@ -705,6 +724,9 @@ section {
     display: grid;
     gap: 32px;
     margin-top: 60px;
+    max-width: 1200px;
+    margin-inline: auto;
+    justify-items: center;
 }
 
 @media (min-width: 1200px) {
@@ -736,6 +758,8 @@ section {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
+    max-width: 380px;
 }
 
 .engagement-card:hover {
@@ -782,18 +806,20 @@ section {
     display: grid;
     gap: 32px;
     margin-top: 60px;
-    justify-content: center;
+    max-width: 1200px;
+    margin-inline: auto;
+    justify-items: center;
 }
 
 @media (min-width: 1200px) {
     .benefits-grid {
-        grid-template-columns: repeat(3, minmax(300px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
     .benefits-grid {
-        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -813,6 +839,8 @@ section {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
+    max-width: 380px;
 }
 
 .benefit-card:hover {
@@ -917,6 +945,9 @@ section {
     font-size: 20px;
     margin-bottom: 12px;
     color: var(--gris-fonce);
+    line-height: 1.4;
+    max-width: 280px;
+    margin-inline: auto;
 }
 
 .step-card p {
