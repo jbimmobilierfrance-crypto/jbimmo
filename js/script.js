@@ -99,6 +99,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (histoireImg) {
         histoireImg.src = encodeURI('/assets/' + IMAGES.histoire);
         histoireImg.alt = 'Ruelle du centre historique de Montpellier';
+        histoireImg.loading = 'lazy';
+        histoireImg.decoding = 'async';
     } else {
         // Si l'image n'existe pas encore, on la crée et l'insère dans la section
         const histoireSection = document.querySelector('.histoire-image');
@@ -107,6 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
             img.id = 'histoire-img';
             img.src = encodeURI('/assets/' + IMAGES.histoire);
             img.alt = 'Ruelle du centre historique de Montpellier';
+            img.loading = 'lazy';
+            img.decoding = 'async';
             // Remplacer l'image existante si présente
             const existingImg = histoireSection.querySelector('img');
             if (existingImg) {

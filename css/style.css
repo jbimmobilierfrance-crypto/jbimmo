@@ -86,6 +86,7 @@ h1 {
 h2 {
     font-size: 48px;
     letter-spacing: -0.5px;
+    margin-bottom: 1.2em;
 }
 
 h3 {
@@ -94,6 +95,7 @@ h3 {
     font-weight: 600;
     line-height: 1.3;
     color: var(--gris-fonce);
+    margin-bottom: 0.8em;
 }
 
 p {
@@ -109,6 +111,17 @@ a {
 }
 
 /* ================================================================================
+   ACCESSIBILITÉ - FOCUS VISIBLE
+   ================================================================================ */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+    outline: 2px solid var(--or-discret);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ================================================================================
    BOUTONS
    ================================================================================ */
 .btn {
@@ -117,9 +130,9 @@ a {
     font-size: 16px;
     font-weight: 600;
     font-family: var(--font-body);
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     border: none;
     text-align: center;
 }
@@ -136,7 +149,7 @@ a {
 
 .btn-primary:hover {
     background-color: var(--or-clair);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 8px 20px rgba(201, 168, 106, 0.35);
 }
 
@@ -161,7 +174,7 @@ a {
 .btn-secondary:hover {
     background-color: #f6f1e6;
     color: #333333;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(201, 168, 106, 0.25);
 }
 
@@ -187,7 +200,7 @@ a {
     background-color: var(--or-discret);
     border-color: var(--or-clair);
     color: var(--blanc);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 8px 20px rgba(201, 168, 106, 0.35);
 }
 
@@ -207,7 +220,7 @@ a {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
     z-index: 1000;
     transition: all var(--transition-fast);
 }
@@ -404,14 +417,15 @@ a {
     transform: scale(1.05);
 }
 
-/* Overlay pour lisibilité optimale - Dégradé plus sombre en bas */
+/* Overlay pour lisibilité optimale - Renforcé pour garantir lisibilité sur toutes photos */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.50) 100%);
+    background: linear-gradient(180deg, rgba(11, 11, 11, 0.15) 0%, rgba(11, 11, 11, 0.15) 100%),
+                linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.50) 100%);
     z-index: 1;
 }
 
@@ -429,11 +443,12 @@ a {
 }
 
 .hero-title {
-    font-size: 58px;
+    font-size: clamp(28px, 6vw, 52px);
     color: var(--blanc);
     margin-bottom: 28px;
     text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
-    line-height: 1.2;
+    line-height: 1.12;
+    letter-spacing: 0.2px;
     max-width: 900px;
     font-weight: 600;
 }
@@ -455,11 +470,12 @@ a {
 }
 
 .hero-subtitle {
-    font-size: 19px;
+    font-size: clamp(14px, 1.4vw, 18px);
     color: var(--blanc);
     margin-bottom: 42px;
-    line-height: 1.65;
+    line-height: 1.45;
     font-weight: 400;
+    opacity: 0.92;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
     max-width: 750px;
 }
@@ -990,13 +1006,13 @@ section {
    ================================================================================ */
 .notre-histoire-section {
     background-color: var(--blanc-casse);
-    padding: 100px 0;
 }
 
 .notre-histoire-section .section-title {
     font-size: 52px;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .notre-histoire-section .section-title::after {
@@ -1178,7 +1194,6 @@ section {
    ================================================================================ */
 .contact-section {
     background-color: var(--beige-pale);
-    padding: 100px 0;
 }
 
 .contact-layout {
@@ -1667,11 +1682,12 @@ section {
         padding: 0 10px;
     }
     
-    /* V10.3: Boutons mobile avec relief */
+    /* V10.3: Boutons mobile avec relief et border-radius augmenté */
     .btn {
         width: 100%;
         padding: 18px 30px;
         font-size: 16px;
+        border-radius: 14px;
     }
 
     .btn-primary {
