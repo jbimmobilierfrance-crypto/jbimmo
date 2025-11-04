@@ -517,38 +517,6 @@ document.addEventListener('DOMContentLoaded', function() {
     */
     
     // ================================================================================
-    // MOBILE - HERO TEXT OPTIMIZATION
-    // ================================================================================
-
-    function updateHeroTextForMobile() {
-        const heroTitle = document.querySelector('.hero-title');
-        const heroSubtitle = document.querySelector('.hero-subtitle');
-        const isMobileView = window.innerWidth <= 640;
-
-        if (heroTitle && heroSubtitle) {
-            if (isMobileView) {
-                // Mobile version - simplified
-                heroTitle.innerHTML = '<span class="hero-title-highlight">LOYER GARANTI</span><br>ZÉRO GESTION';
-                heroSubtitle.textContent = 'Gestion locative — Montpellier';
-            } else {
-                // Desktop version - full text
-                heroTitle.innerHTML = '<span class="hero-title-highlight">PROPRIÉTAIRE À MONTPELLIER ?</span><br>RECEVEZ CHAQUE MOIS UN LOYER GARANTI, SANS GESTION NI TRACAS.';
-                heroSubtitle.textContent = 'Gestion locative professionnelle — loyer fixe, sérénité assurée.';
-            }
-        }
-    }
-
-    // Update on load
-    updateHeroTextForMobile();
-
-    // Update on resize with debounce
-    let heroTextResizeTimer;
-    window.addEventListener('resize', function() {
-        clearTimeout(heroTextResizeTimer);
-        heroTextResizeTimer = setTimeout(updateHeroTextForMobile, 150);
-    });
-
-    // ================================================================================
     // MOBILE - SHOW MORE BUTTONS (PROBLÈMES & AVANTAGES)
     // ================================================================================
 
